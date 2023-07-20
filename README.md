@@ -15,3 +15,5 @@
 * [Jellybean.life](https://www.jellybean.life/)
 * [Landings.dev](https://landings.dev/)
 * [SVGL](https://svgl.vercel.app/)
+* [AZ-Black](https://az-black.webflow.io/)
+* [Cocobasic](https://demo.cocobasic.com/kaven-wp/)
