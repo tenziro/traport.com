@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+// * 공통 셋팅
+:root {
+  --bg-wrap: #fff;
+  --bg-header: #fff;
+  --txt-header: #333;
+  --bg-primary: #19181D;
+  --bg-secondary: #fff;
+  --text-primary: #13315C;
+  --text-secondary: #fff;
+  --cal-width-w: 734 * 100vw;
+}
+// * 라이트 모드 셋팅
+@media (prefers-color-scheme: light) {}
+// * 다크 모드 셋팅
+@media (prefers-color-scheme: dark) {}
+// * important
+$imp: unquote("!important");
+
+// * location setting
+$base-image-url: "../../assets/images/img/";
+$common-image-url: "/assets/images/common/";
+$icons-image-url: "/assets/images/icons/";
+
+// * mixin
+// * position setting
+@mixin position($pos: absolute,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $z-index: null,
+  $translateX: null,
+  $translateY: null) {
+  @if ($translateX and $translateY) {
+    transform: translateX($translateX) translateY($translateY);
+  }
+  @else if ($translateX) {
+    transform: translateX($translateX);
+  }
+  @else if ($translateY) {
+    transform: translateY($translateY);
+  }
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-index;
+}
+// * font call
+@mixin font-call($name, $size, $weight, $line-height: null) {
+  font: {
+    family: $name, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+      'Apple SD Gothic Neo', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+      sans-serif;
+    size: $size;
+    weight: $weight;
+  }
+  line-height: $line-height;
+}
+// * flex layout
+@mixin flex($flex: flex,
+  $f-direction: null,
+  $f-wrap: null,
+  $a-items: null,
+  $a-content: null,
+  $a-self: null,
+  $j-content: null,
+  $j-self: null) {
+  display: $flex;
+  flex-direction: $f-direction;
+  flex-wrap: $f-wrap;
+  align-items: $a-items;
+  align-content: $a-content;
+  align-self: $a-self;
+  justify-content: $j-content;
+  justify-self: $j-self;
+}
+// * border setting
+@mixin border($pos: null, $width: null, $style: null, $color: null, $radius: null) {
+  @if ($pos ==top) {
+    border: {
+      top: $width $style $color;
+    }
+  }
+  @else if ($pos ==right) {
+    border: {
+      right: $width $style $color;
+    }
+  }
+  @else if ($pos ==bottom) {
+    border: {
+      bottom: $width $style $color;
+    }
+  }
+  @else if ($pos ==left) {
+    border: {
+      left: $width $style $color;
+    }
+  }
+  @else if ($pos ==all) {
+    border: {
+      width: $width;
+      color: $color;
+      style: $style;
+    }
+  }
+  border: {
+    radius: $radius;
+  }
+}
+// * ellipsis
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+// * align
+.align {
+  &-l {
+    text-align: left $imp;
+  }
+  &-r {
+    text-align: right $imp;
+  }
+  &-c {
+    text-align: center $imp;
+  }
+  &-m {
+    vertical-align: middle $imp;
+  }
+  &-b {
+    vertical-align: bottom $imp;
+  }
+  &-t {
+    vertical-align: top $imp;
+  }
+}
+// * margin
+.mg {
+  &-t-auto {
+    margin-top: auto $imp;
+  }
+  &-l-auto {
+    margin-left: auto $imp;
+  }
+}
+
+@import "fonts", "reset", "components", "layout";
