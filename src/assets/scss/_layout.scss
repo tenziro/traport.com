@@ -1074,12 +1074,38 @@
     }
     .visual-text1 {
       font: {
-        size: 52px;
+        size: clamp(38px, 1068px, 5.722vw);
       }
     }
     .visual-text2 {
       font: {
         size: 18px;
+      }
+    }
+  }
+  #introduce {
+    .service-detail-info {
+      .item {
+        padding: {
+          left: 0;
+          right: 0;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+    .history-detail-info {
+      flex-direction: column;
+      .title {
+        @include position(relative, 0);
+        font: {
+          size: 48px;
+        }
+        margin: {
+          bottom: 30px;
+          right: 0;
+        }
       }
     }
   }
@@ -1163,7 +1189,7 @@
     .visual-text1 {
       letter-spacing: 1;
       font: {
-        size: clamp(24px, 734px, 7.084vw);
+        size: clamp(24px, 734px, 5.722vw);
       }
       + .visual-text1 {
         margin-top: calc(10 / var(--cal-width-w));
@@ -1173,6 +1199,40 @@
       margin-top: calc(40 / var(--cal-width-w));
       font: {
         size: clamp(10px, 734px, 2.452vw);
+      }
+    }
+  }
+  #introduce {
+    .service-detail-info {
+      .item {
+        p {
+          text-align: left;
+          &:nth-child(1) {
+            @include font-call(GmarketSans, clamp(24px, 734px, 2.997vw), 700, 140%);
+          }
+          &:nth-child(2) {
+            @include font-call(GmarketSans, clamp(14px, 734px, 2.452vw), 500, 140%);
+          }
+        }
+      }
+    }
+    .history-detail-info {
+      .title {
+        @include font-call(GmarketSans, clamp(24px, 734px, 2.997vw), 700, 140%);
+      }
+      .history-list {
+        dl {
+          dt {
+            @include font-call(GmarketSans, clamp(18px, 734px, 2.452vw), 700, 140%);
+            margin-bottom: 10px;
+          }
+          dd {
+            @include font-call(GmarketSans, clamp(14px, 734px, 2.452vw), 500, 140%);
+          }
+          + dl {
+            margin-top: 20px;
+          }
+        }
       }
     }
   }
