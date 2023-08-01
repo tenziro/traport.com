@@ -1,6 +1,6 @@
 function scrollDim() {
-  const maxDarkness = 0.9;
-  const minDarkness = 0.6;
+  const maxDarkness = 0.95;
+  const minDarkness = 0.45;
   const maxScroll = $("#visual").height();
 
   $(window).scroll(function () {
@@ -75,8 +75,21 @@ $(document).ready(function () {
 
   scrollDim();
 
-  let currentIndex = 0;
+  const backgrounds = [
+    '../assets/images/img/bg-visual1.jpg',
+    '../assets/images/img/bg-visual2.jpg',
+    '../assets/images/img/bg-visual3.jpg',
+    '../assets/images/img/bg-visual4.jpg',
+    '../assets/images/img/bg-visual5.jpg',
+    '../assets/images/img/bg-visual6.jpg'
+  ];
+
   const $backgroundItems = $('.visual-item');
+  let currentIndex = 0;
+
+  for (let i = 0; i < backgrounds.length; i++) {
+    $backgroundItems.eq(i).css('background-image', `url(${backgrounds[i]})`);
+  }
 
   function showNextBackground() {
     $backgroundItems.stop().fadeTo(1200, 0, function () {
@@ -86,7 +99,7 @@ $(document).ready(function () {
       }, 1000)
     });
 
-    currentIndex = getRandomIndex(currentIndex, 3);
+    currentIndex = getRandomIndex(currentIndex, backgrounds.length);
     $backgroundItems.eq(currentIndex).stop().fadeTo(1200, 1, function () {
       $(this).addClass('scale');
     });

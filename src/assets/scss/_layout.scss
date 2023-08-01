@@ -78,30 +78,15 @@
       }
       opacity: 0;
       transition: opacity 1s ease-in-out;
-      &:nth-child(1) {
-        background: {
-          image: url($base-image-url + 'bg-visual1.jpg');
-        }
-      }
-      &:nth-child(2) {
-        background: {
-          image: url($base-image-url + 'bg-visual2.jpg');
-        }
-      }
-      &:nth-child(3) {
-        background: {
-          image: url($base-image-url + 'bg-visual3.jpg');
-        }
-      }
       &.scale {
-        animation: forwards visual-scale 60s;
+        animation: forwards visual-scale 36s;
       }
     }
   }
   .dim {
     @include position(absolute, 0, 0, 0, 0, 1);
     background: {
-      color: rgba(0, 0, 0, 0.665);
+      color: rgba(0, 0, 0, 0.45);
     }
   }
   .title {
@@ -1577,6 +1562,6 @@
     transform: scale(1);
   }
   to {
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
 }
