@@ -6,13 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>트래포트</title>
   <script src="../assets/js/jquery-3.7.0.min.js"></script>
+  <script src="../assets/js/gsap.min.js"></script>
   <script src="../assets/js/aos.js"></script>
   <script src="../assets/js/common.js"></script>
   <link rel="stylesheet" href="../assets/css/common.css">
   <link rel="stylesheet" href="../assets/css/aos.css">
-  <!-- <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/common/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/common/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/common/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/common/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/common/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/common/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/common/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/common/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/common/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/../assets/images/commonapple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/common/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/common/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/common/favicon-16x16.png"> -->
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/images/common/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/common/favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="../assets/images/common/favicon.ico">
+  <meta name="msapplication-TileColor" content="#13315c">
+  <meta name="msapplication-TileImage" content="../assets/images/common/ms-icon-144x144.png">
+  <meta name="theme-color" content="#13315c">
 </head>
 
 <body>
@@ -38,6 +53,11 @@
             <span><strong>트래포트는 여행산업에서 필요한 IT 서비스를 고객사에 제공합니다.</strong></span>
           </p>
         </div>
+        <ul class="visual-list">
+          <li class="visual-item"></li>
+          <li class="visual-item"></li>
+          <li class="visual-item"></li>
+        </ul>
         <div class="dim"></div>
         <div class="scroll-animation"></div>
       </section>
@@ -466,7 +486,7 @@
                   </svg>
                   <span>자유로운 연차 사용</span>
                 </dt>
-                <dd>급한일이 있을때, 어디론가 떠나고 싶을때,<br>조퇴, 반차, 연차, 모두 자유롭게 사용해요.</dd>
+                <dd>급한일이 있을때, 어디론가 떠나고 싶을때,<br>조퇴/반차/연차, 모두 자유롭게 사용해요.</dd>
               </dl>
               <dl data-aos="fade-up">
                 <dt>
@@ -550,7 +570,7 @@
                   </svg>
                   <span>비혼선언 축하금 지원</span>
                 </dt>
-                <dd>비혼을 선언한 구성원에게도 기혼 직원과<br>동일하게 경조금과 경조휴가를 드려요!</dd>
+                <dd>비혼을 선언한 구성원에게도 결혼하는 직원과<br>동일하게 경조금과 경조휴가를 드려요!</dd>
               </dl>
               <dl data-aos="fade-up">
                 <dt>
@@ -561,7 +581,7 @@
                   </svg>
                   <span>경조사 지원</span>
                 </dt>
-                <dd>기쁜 일, 슬픈 일 모두 챙겨드려요.<br>경조사비, 화환, 근조화환을 지원해요.</dd>
+                <dd>기쁜 일, 슬픈 일 모두 챙겨드려요.<br>경조사비, 화환 또는 근조화환을 지원해요.</dd>
               </dl>
               <dl data-aos="fade-up">
                 <dt>
@@ -570,7 +590,7 @@
                   </svg>
                   <span>해외 워크샵</span>
                 </dt>
-                <dd>열심히 일한 당신 떠나라!<br>1년 동안 고생한 구성원들과 해외 워크샵을 가요!</dd>
+                <dd>열심히 일한 우리 모두에게 주는 선물!<br>1년 동안 고생한 구성원들과 함께 해외 워크샵을 가요!</dd>
               </dl>
             </div>
           </div>
@@ -606,7 +626,7 @@
               </summary>
               <div class="position-item-body">
                 <ul>
-                  <li>Spring Boot 개발 또는 구축 경험이 있으신 사람</li>
+                  <li>Spring Boot 개발 또는 구축 경험이 있는 사람</li>
                   <li>Spring Webflux + Java, Kotlin을 이용한 백엔드 구축 경험이 있는 사람</li>
                   <li>Python + Django Web Framework 구축 경험이 있는 사람</li>
                   <li>AWS/DevOps 구축 경험이 있는 사람</li>
@@ -721,7 +741,7 @@
       <div class="inside">
         <ul class="company-info">
           <li>
-            <span>(주)트래포트</span>
+            <span>트래포트(주)</span>
             <span>대표자명 : 안경열</span>
             <span>사업자등록번호 : 211-88-19164</span>
             <span><a href="#" class="link">사업자정보확인</a></span>

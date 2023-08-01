@@ -2,19 +2,70 @@
 
 // * 공통 셋팅
 :root {
-  --bg-wrap: #fff;
-  --bg-header: #fff;
-  --txt-header: #333;
-  --bg-primary: #19181D;
-  --bg-secondary: #fff;
-  --text-primary: #13315C;
-  --text-secondary: #fff;
   --cal-width-w: 734 * 100vw;
 }
 // * 라이트 모드 셋팅
-@media (prefers-color-scheme: light) {}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-contents: #fff;
+    --bg-contents2: #fbfbfb;
+    --bg-footer: #f9f9f9;
+    --border-footer: #f1f1f1;
+    --footer-link: #333;
+    --footer-text: #666;
+    --footer-bullet: 136, 136, 136;
+    --text-primary: #121212;
+    --text-secondary: #888;
+    --border-primary: #eaeaea;
+    --title-primary: #13315C;
+    --title-secondary: #5754FE;
+    --sub-primary: #121212;
+    --sub-secondary: #121212;
+    --gradient-type1-text: #fff;
+    --gradient-type1-1: #243B55;
+    --gradient-type1-2: #141E30;
+    --detail-text: #121212;
+    --detail-svg-icon: #333;
+    --recruit-svg-icon: #fff;
+    --bg-recruit-item: #f9f9f9;
+    --gradient-type2-text: #333;
+    --gradient-type2-1: #13315C;
+    --gradient-type2-2: #757beb;
+    --bg-location-item: #f9f9f9;
+    --location-text: #121212;
+  }
+}
 // * 다크 모드 셋팅
-@media (prefers-color-scheme: dark) {}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-contents: #121212;
+    --bg-contents2: #191919;
+    --bg-footer: #191919;
+    --border-footer: #282828;
+    --footer-link: #fff;
+    --footer-text: #aaa;
+    --footer-bullet: 145, 145, 145;
+    --text-primary: #fff;
+    --text-secondary: #aaa;
+    --border-primary: #292929;
+    --title-primary: #5693eb;
+    --title-secondary: #77dffa;
+    --sub-primary: #fff;
+    --sub-secondary: #fff;
+    --gradient-type1-text: #fff;
+    --gradient-type1-1: #1c1c1c;
+    --gradient-type1-2: #040404;
+    --detail-text: #fff;
+    --detail-svg-icon: #999;
+    --bg-recruit-item: #090909;
+    --recruit-svg-icon: #fff;
+    --gradient-type2-text: #ddd;
+    --gradient-type2-1: #2b59f8;
+    --gradient-type2-2: #4ac2fe;
+    --bg-location-item: #090909;
+    --location-text: #fff;
+  }
+}
 // * important
 $imp: unquote("!important");
 

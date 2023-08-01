@@ -1,26 +1,5 @@
 @charset "UTF-8";
 
-.loading-area {
-  @include flex(flex, column, null, null, null, null, center);
-  @include position(fixed, 0, 0, 0, 0, 1000);
-  height: 100dvh;
-  background: {
-    color: #13315C;
-  }
-  .progress-bar {
-    width: 0;
-    height: 30px;
-    background: {
-      color: #fff;
-    }
-  }
-  .progress {
-    @include font-call(GmarketSans, 72px, 500, 140%);
-    color: #fff;
-    text-align: center;
-  }
-}
-
 // * header
 #header {
   @include position(fixed, 16px, null, null, 50%, 100, -50%);
@@ -84,13 +63,40 @@
 #visual {
   @include flex(flex, null, null, center, null, null, center);
   @include position(relative);
+  overflow: hidden;
   min-height: 100dvh;
   clip: rect(0, auto, auto, 0);
-  background: {
-    position: 50% 50%;
-    size: cover;
-    image: url($base-image-url + 'bg-visual.jpg');
-    attachment: fixed;
+  .visual-list {
+    @include position(fixed, 0, 0, 0, 0, 0);
+    .visual-item {
+      @include position(absolute, 0, 0, 0, 0, 0);
+      height: 100dvh;
+      background: {
+        position: 50% 50%;
+        size: cover;
+        attachment: fixed;
+      }
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      &:nth-child(1) {
+        background: {
+          image: url($base-image-url + 'bg-visual1.jpg');
+        }
+      }
+      &:nth-child(2) {
+        background: {
+          image: url($base-image-url + 'bg-visual2.jpg');
+        }
+      }
+      &:nth-child(3) {
+        background: {
+          image: url($base-image-url + 'bg-visual3.jpg');
+        }
+      }
+      &.scale {
+        animation: forwards visual-scale 60s;
+      }
+    }
   }
   .dim {
     @include position(absolute, 0, 0, 0, 0, 1);
@@ -230,7 +236,7 @@
 #introduce {
   padding: 150px 0;
   background: {
-    color: #fff;
+    color: var(--bg-contents2);
   }
   .service-detail-info {
     @include flex(flex, column, wrap);
@@ -243,17 +249,17 @@
         text-align: center;
         &:nth-child(1) {
           @include font-call(GmarketSans, 28px, 700);
-          color: #121212;
+          color: var(--text-primary);
           margin-bottom: 10px;
         }
         &:nth-child(2) {
           @include font-call(GmarketSans, 18px, 500, 140%);
-          color: #888;
+          color: var(--text-secondary);
           word-break: keep-all;
         }
       }
       + .item {
-        @include border(top, 1px, solid, #eaeaea);
+        @include border(top, 1px, solid, var(--border-primary));
       }
     }
   }
@@ -266,7 +272,7 @@
       @include font-call(GmarketSans, 60px, 700);
       @include position(sticky, 40px);
       flex: none;
-      color: #121212;
+      color: var(--sub-primary);
       margin-right: 100px;
     }
     .history-list {
@@ -274,12 +280,12 @@
       dl {
         dt {
           @include font-call(GmarketSans, 28px, 700);
-          color: #121212;
+          color: var(--sub-primary);
           margin-bottom: 20px;
         }
         dd {
           @include font-call(GmarketSans, 18px, 500, 140%);
-          color: #666;
+          color: var(--text-secondary);
           word-break: keep-all;
           + dd {
             margin-top: 5px;
@@ -300,7 +306,7 @@
 #service {
   padding: 150px 0;
   background: {
-    color: #f9f9f9;
+    color: var(--bg-contents);
   }
   .section-subtitle1 {
     margin-bottom: 40px;
@@ -314,9 +320,9 @@
       flex: 1 1 calc(100%/2 - 20px);
       min-height: 212px;
       padding: 30px;
-      background: #141E30;
-      background: -webkit-linear-gradient(to right, #243B55, #141E30);
-      background: linear-gradient(to right, #243B55, #141E30);
+      background: var(--gradient-type1-2);
+      background: -webkit-linear-gradient(to bottom, var(--gradient-type1-1), var(--gradient-type1-2));
+      background: linear-gradient(to bottom, var(--gradient-type1-1), var(--gradient-type1-2));
       border: {
         radius: 16px;
       }
@@ -326,12 +332,12 @@
         }
         &:nth-child(2) {
           @include font-call(GmarketSans, 22px, 700);
-          color: #fff;
+          color: var(--gradient-type1-text);
           margin-bottom: 10px;
         }
         &:nth-child(3) {
           @include font-call(GmarketSans, 16px, 500, 140%);
-          color: #fff;
+          color: var(--gradient-type1-text);
           word-break: keep-all;
         }
       }
@@ -339,7 +345,7 @@
     .svg-icon {
       width: 46px;
       height: 46px;
-      fill: #fff;
+      fill: var(--gradient-type1-text);
     }
   }
   .api-info,
@@ -645,9 +651,9 @@
     .item {
       flex: 1 1 calc(100%/3 - 40px);
       padding: 30px;
-      background: #141E30;
-      background: -webkit-linear-gradient(to right, #243B55, #141E30);
-      background: linear-gradient(to right, #243B55, #141E30);
+      background: var(--gradient-type1-2);
+      background: -webkit-linear-gradient(to bottom, var(--gradient-type1-1), var(--gradient-type1-2));
+      background: linear-gradient(to bottom, var(--gradient-type1-1), var(--gradient-type1-2));
       border: {
         radius: 16px;
       }
@@ -686,10 +692,11 @@
       width: 22px;
       height: 22px;
       margin-right: 8px;
-      fill: #333;
+      fill: var(--detail-svg-icon);
     }
     span {
       @include font-call(GmarketSans, 16px, 500, 140%);
+      color: var(--detail-text);
     }
   }
 }
@@ -699,7 +706,7 @@
   @include flex(flex, column, wrap, null, null, null, center);
   padding: 150px 0 0;
   background: {
-    color: #fff;
+    color: var(--bg-contents2);
   }
   .recruit-info {
     @include flex(flex, null, wrap, stretch);
@@ -709,7 +716,7 @@
     .item {
       flex: 1 1;
       padding: 30px;
-      background: #f9f9f9;
+      background: var(--bg-recruit-item);
       border: {
         radius: 16px;
       }
@@ -719,8 +726,8 @@
         }
         &:nth-child(2) {
           @include font-call(GmarketSans, 22px, 700);
-          color: #13315C;
-          background-image: -webkit-linear-gradient(45deg, #13315C 20%, #757beb 50%);
+          color: var(--gradient-type2-1);
+          background-image: -webkit-linear-gradient(45deg, var(--gradient-type2-1) 20%, var(--gradient-type2-2) 50%);
           background-clip: text;
           text-fill-color: transparent;
           -webkit-background-clip: text;
@@ -729,7 +736,7 @@
         }
         &:nth-child(3) {
           @include font-call(GmarketSans, 16px, 500, 140%);
-          color: #333;
+          color: var(--gradient-type2-text);
           word-break: break-word;
         }
       }
@@ -737,7 +744,7 @@
     .svg-icon {
       width: 46px;
       height: 46px;
-      fill: #121212;
+      fill: var(--recruit-svg-icon);
     }
   }
   .life,
@@ -753,20 +760,21 @@
       width: 22px;
       height: 22px;
       margin-right: 8px;
-      fill: #121212;
+      fill: var(--detail-text);
     }
     dl {
       flex: 0 0 calc(100% / 3 - calc(40px / 3));
       dt {
         @include flex(flex, null, null, center);
         margin-bottom: 10px;
+        color: var(--detail-text);
         span {
           @include font-call(GmarketSans, 18px, 500);
         }
       }
       dd {
         @include font-call(GmarketSans, 14px, 500, 160%);
-        color: #797979;
+        color: var(--text-secondary);
       }
     }
   }
@@ -794,6 +802,7 @@
         }
         .subject {
           @include font-call(GmarketSans, 18px, 500);
+          color: var(--text-primary);
         }
         .svg-icon {
           flex: none;
@@ -801,6 +810,7 @@
           height: 24px;
           margin-left: auto;
           transition: transform 0.5s;
+          fill: var(--text-primary);
         }
       }
       &-body {
@@ -841,7 +851,7 @@
         }
       }
       + .position-item {
-        @include border(top, 1px, solid, #e5e5e5);
+        @include border(top, 1px, solid, var(--border-primary));
         margin-top: 20px;
         padding-top: 20px;
       }
@@ -899,7 +909,7 @@
 #location {
   padding: 150px 0;
   background: {
-    color: #fff;
+    color: var(--bg-contents);
   }
   .contact-info {
     @include flex(flex, null, wrap, stretch);
@@ -908,19 +918,20 @@
     .svg-icon {
       width: 46px;
       height: 46px;
-      fill: #121212;
+      fill: var(--location-text);
     }
     .item {
       @include flex(flex, column, null, center);
       flex: 1 1;
       padding: 30px;
-      background: #f9f9f9;
+      background: var(--bg-location-item);
       border: {
         radius: 16px;
       }
       p {
         @include font-call(GmarketSans, 22px, 700);
         margin-top: 20px;
+        color: var(--location-text);
       }
     }
   }
@@ -935,6 +946,7 @@
     margin-top: 20px;
     li {
       @include flex(flex, null, null, center);
+      color: var(--detail-text);
       + li {
         margin-top: 10px;
       }
@@ -944,7 +956,7 @@
       width: 22px;
       height: 22px;
       margin-right: 8px;
-      fill: #333;
+      fill: var(--detail-svg-icon);
     }
     span {
       @include font-call(GmarketSans, 16px, 500, 140%);
@@ -956,7 +968,7 @@
 #cert {
   margin-top: 60px;
   background: {
-    color: #fff;
+    color: var(--bg-contents);
   }
   .cert-list {
     @include flex(flex, null, null, stretch);
@@ -984,10 +996,10 @@
 
 // * footer
 #footer {
-  @include border(top, 2px, solid, #f1f1f1);
+  @include border(top, 1px, solid, var(--border-footer));
   padding: 50px 0 100px;
   background: {
-    color: #f9f9f9;
+    color: var(--bg-footer);
   }
   .company-info {
     address {
@@ -999,10 +1011,10 @@
         margin-top: 8px;
       }
       .link {
-        color: #333;
+        color: var(--footer-link);
       }
       span {
-        color: #666;
+        color: var(--footer-text);
         + span {
           @include flex(inline-flex, null, null, center);
           &:before {
@@ -1015,7 +1027,7 @@
               radius: 100%;
             }
             background: {
-              color: rgba(#888, 0.7);
+              color: rgba(var(--footer-bullet), 0.7);
             }
           }
         }
@@ -1028,6 +1040,7 @@
         }
       }
       &:last-child {
+        margin-top: 15px;
         span {
           font: {
             size: 13px;
@@ -1041,15 +1054,16 @@
 // ! common
 .section-title1 {
   @include font-call(GmarketSans, 42px, 700);
-  color: #13315C;
+  color: var(--title-primary);
 }
 .section-title2 {
   @include font-call(GmarketSans, 32px, 700);
-  color: #5754FE;
+  color: var(--title-secondary);
 }
 .section-subtitle1 {
   @include font-call(GmarketSans, 26px, 500);
   margin-top: 10px;
+  color: var(--sub-primary);
 }
 .section-subtitle2 {
   @include font-call(GmarketSans, 22px, 500);
@@ -1057,11 +1071,11 @@
     top: 10px;
     bottom: 50px;
   }
+  color: var(--sub-secondary);
 }
 
 // ! responsive setting
 @media only screen and (max-width: 1068px) {
-  #header {}
   .scroll-animation {
     transform: scale(80%);
   }
@@ -1082,6 +1096,14 @@
         size: 18px;
       }
     }
+    .visual-list {
+      @include position(absolute, 0, 0, 0, 0, 0);
+      .visual-item {
+        background: {
+          attachment: unset;
+        }
+      }
+    }
   }
   #introduce {
     .service-detail-info {
@@ -1089,9 +1111,6 @@
         padding: {
           left: 0;
           right: 0;
-        }
-        span {
-          display: none;
         }
       }
     }
@@ -1203,6 +1222,7 @@
     }
   }
   #introduce {
+    padding: 100px 0;
     .service-detail-info {
       .item {
         p {
@@ -1214,6 +1234,9 @@
             @include font-call(GmarketSans, clamp(14px, 734px, 2.452vw), 500, 140%);
           }
         }
+      }
+      span {
+        display: none;
       }
     }
     .history-detail-info {
@@ -1237,6 +1260,7 @@
     }
   }
   #service {
+    padding: 100px 0;
     .ota-detail-info,
     .ctm-detail-info {
       gap: 15px 0;
@@ -1546,5 +1570,13 @@
   to {
     top: 40px;
     opacity: 0;
+  }
+}
+@keyframes visual-scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
   }
 }
