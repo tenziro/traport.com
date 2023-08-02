@@ -129,26 +129,26 @@
         }
         &:nth-child(1) {
           span {
-            transition: opacity 0.5s ease 1s;
+            transition: opacity 0.5s ease 0.5s;
           }
           &:before {
-            transition: width 0.5s 0s, left 0.5s ease 1s;
+            transition: width 0.5s 0s, left 0.5s ease 1.5s;
           }
         }
         &:nth-child(2) {
           span {
-            transition: opacity 0.5s ease 1.5s;
+            transition: opacity 0.5s ease 1s;
           }
           &:before {
-            transition: width 0.5s 0.5s, left 0.5s ease 1.5s;
+            transition: width 0.5s 0.5s, left 0.5s ease 2s;
           }
         }
         &:nth-child(3) {
           span {
-            transition: opacity 0.5s ease 2s;
+            transition: opacity 0.5s ease 1.5s;
           }
           &:before {
-            transition: width 0.5s 1s, left 0.5s ease 2s;
+            transition: width 0.5s 1s, left 0.5s ease 2.5s;
           }
         }
       }
@@ -1548,12 +1548,16 @@
 }
 // * animation keyframes
 @keyframes mouse-move {
-  from {
+  0% {
     top: 20px;
     opacity: 1;
   }
-  to {
+  90% {
     top: 40px;
+    opacity: 0;
+  }
+  100% {
+    top: 20px;
     opacity: 0;
   }
 }
