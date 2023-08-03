@@ -1,16 +1,27 @@
 function scrollDim() {
   const maxDarkness = 0.95;
   const minDarkness = 0.45;
-  const maxScroll = $("#visual").height();
+  const visualHeight = $("#visual").outerHeight();
+  const visualHeight2 = $("#visual").outerHeight() - 28;
 
   $(window).scroll(function () {
     const currentScroll = $(this).scrollTop();
 
-    if (currentScroll <= maxScroll) {
-      const darkness = (currentScroll / maxScroll) * (maxDarkness - minDarkness) + minDarkness;
+    if (currentScroll <= visualHeight) {
+      const darkness = (currentScroll / visualHeight) * (maxDarkness - minDarkness) + minDarkness;
       $('#visual .dim').css('background-color', `rgba(0, 0, 0, ${darkness})`);
     } else {
       $('#visual .dim').css('background-color', `rgba(0, 0, 0, ${maxDarkness})`);
+    }
+
+    if (currentScroll >= visualHeight) {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        $(".lang-change, .btn-mo-menu, #mo-header").addClass("dark");
+      }
+    } else {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        $(".lang-change, .btn-mo-menu, #mo-header").removeClass("dark");
+      }
     }
   });
 }
@@ -23,6 +34,13 @@ const eventVisual = {
     }, 1500);
   }
 }
+
+function isMobile() {
+  return $(window).width() <= 768;
+}
+
+let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+let isMobileWidth = isMobile();
 
 $(document).ready(function () {
   eventVisual.init();
@@ -116,9 +134,38 @@ $(document).ready(function () {
   }
 
   showNextBackground();
+
+  $('.btn-mo-menu').on('click', function () {
+    $(this).stop().toggleClass('is-active')
+    $('#mo-header').stop().toggleClass('is-active');
+  });
+
+  // 모바일 기기인 경우, 모바일 전용 div를 숨깁니다.
+  if (isMobileDevice || isMobileWidth) {
+    $('#mo-header').show().removeClass('is-active');
+    $('.lang-change').addClass('mo');
+    $('.btn-mo-menu').removeClass('is-active');
+    $('#header').hide();
+  } else {
+    $('.lang-change').removeClass('mo');
+    $('#header').show();
+    $('#mo-header').hide();
+  }
 });
 
-$(document).resize(function () {
+$(window).on('resize', function () {
+  isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  isMobileWidth = isMobile();
+
+  if (isMobileDevice || isMobileWidth) {
+    $('#mo-header').show().removeClass('is-active');
+    $('.lang-change').addClass('mo');
+    $('.btn-mo-menu').removeClass('is-active');
+    $('#header').hide();
+  } else {
+    $('.lang-change').removeClass('mo');
+    $('#header').show();
+    $('#mo-header').hide();
+  }
   scrollDim();
 });
-
