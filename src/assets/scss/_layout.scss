@@ -70,10 +70,9 @@
 
 // * mobile header
 #mo-header {
-  @include position(fixed, null, null, null, null, 1000);
-  display: none;
+  @include position(fixed, null, null, null, null, 500);
   &:before {
-    @include position(fixed, 0, 0, 0, 0, 1);
+    @include position(fixed, 0, 0, 0, 0, 501);
     content: "";
     height: 80px;
     backdrop-filter: blur(5px);
@@ -93,9 +92,7 @@
       }
     }
   }
-  &.is-active {
-    display: block;
-  }
+  // &.is-active {}
   &.is-click {
     .main-nav {
       transform: translateY(0);
@@ -119,7 +116,7 @@
   }
   .main-nav {
     @include position(fixed, 0, 0, 0, 0, 900);
-    padding: 80px 30px 30px;
+    padding: 100px 16px 30px;
     backdrop-filter: blur(10px);
     transform: translateY(-100%);
     transition: transform 1.125s cubic-bezier(0.39, 0.99, 0.46, 1);
@@ -136,18 +133,6 @@
       }
       + .nav-item {
         margin-top: max(20px, calc(20 / var(--cal-width-w)));
-      }
-      &:nth-child(4) {
-        transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
-      }
-      &:nth-child(3) {
-        transition: opacity 1s ease 0.5s, transform 1s ease 0.4s;
-      }
-      &:nth-child(2) {
-        transition: opacity 1s ease 0.7s, transform 1s ease 0.5s;
-      }
-      &:nth-child(1) {
-        transition: opacity 1s ease 0.9s, transform 1s ease 0.6s;
       }
     }
   }
@@ -258,7 +243,7 @@
       content: "";
       width: 16px;
       height: 16px;
-      transition: transform 0.5s ease-out;
+      transition: transform 0.35s ease-out;
       border: {
         radius: 100%;
       }
@@ -266,7 +251,7 @@
   }
   .ko,
   .en {
-    transition: opacity 0.5s linear;
+    transition: opacity 0.35s linear;
     font: {
       size: 12px;
     }
@@ -314,7 +299,7 @@
     @include flex(flex, null, null, center);
   }
   &.mo {
-    @include position(fixed, 28px, null, null, 16px, 1100);
+    @include position(fixed, 28px, 28px, null, null, 1100);
     @include flex(flex, null, null, center);
   }
 }
@@ -327,7 +312,7 @@
   aspect-ratio: 10/1;
   text-indent: -9999em;
   background: {
-    position: left top;
+    position: 50% 50%;
     size: contain;
     repeat: no-repeat;
   }
@@ -336,7 +321,7 @@
     display: block;
   }
   &.mo {
-    @include position(fixed, 33px, null, null, 50%, 1000, -50%);
+    @include position(fixed, 31px, null, null, 28px, 1000);
     display: block;
   }
   &:not(.dark) {
@@ -413,7 +398,7 @@
         attachment: fixed;
       }
       &.scale {
-        animation: forwards visual-scale 40s;
+        animation: forwards visual-scale 45s;
       }
     }
   }
@@ -1101,11 +1086,12 @@
           radius: 10px;
         }
         background: {
-          color: #f9f9f9;
+          color: var(--bg-position);
         }
         li {
           @include position(relative);
           padding-left: 16px;
+          color: var(--position-text);
           &:before {
             @include position(absolute, 10px, null, null, 0, 1);
             content: "";
@@ -1115,7 +1101,7 @@
               radius: 100%;
             }
             background: {
-              color: #121212;
+              color: var(--position-text);
             }
           }
           + li {

@@ -127,24 +127,35 @@ $(document).ready(function () {
   showNextBackground();
 
   // * mobile script
-  $('.btn-mo-menu').on('click', function () {
-    $(this).stop().toggleClass('is-active')
-    $('#mo-header').stop().toggleClass('is-click');
-    if ($(this).hasClass('is-active')) {
-      $('body').addClass('overflow-hidden');
-    } else {
-      $('body').removeClass('overflow-hidden');
-    }
-  });
+  // $("#mo-header .nav-item a").click(function (event) {
+  //   event.preventDefault();
+  //   const target = $($(this).attr("href"));
+  //   $("html, body").animate({
+  //     scrollTop: target.offset().top
+  //   }, 300);
+  //   $('#mo-header').removeClass('is-click');
+  //   $('.btn-mo-menu, .lang-change.mo').removeClass('is-active');
+  // });
+  // $('.btn-mo-menu').on('click', function () {
+  //   $(this).stop().toggleClass('is-active')
+  //   $('#mo-header').stop().toggleClass('is-click');
+  //   if ($(this).hasClass('is-active')) {
+  //     $('body').addClass('overflow-hidden');
+  //     $('.lang-change.mo').addClass('is-active');
+  //   } else {
+  //     $('body').removeClass('overflow-hidden');
+  //     $('.lang-change.mo').removeClass('is-active');
+  //   }
+  // });
   if (isMobileDevice || isMobileWidth) {
-    $('.btn-mo-menu').removeClass('is-active');
+    // $('.btn-mo-menu').removeClass('is-active');
     $('#header').removeClass('is-active');
-    $('#mo-header').addClass('is-active').removeClass('is-click');
+    // $('#mo-header').addClass('is-active').removeClass('is-click');
     $('.lang-change').removeClass('pc').addClass('mo');
     $('.header-logo').removeClass('pc').addClass('mo');
   } else {
     $('#header').addClass('is-active');
-    $('#mo-header').removeClass('is-active');
+    // $('#mo-header').removeClass('is-active');
     $('.lang-change').removeClass('mo').addClass('pc');
     $('.header-logo').removeClass('mo').addClass('pc');
   }
@@ -155,14 +166,14 @@ $(window).on('resize', function () {
   isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   isMobileWidth = isMobile();
   if (isMobileDevice || isMobileWidth) {
-    $('#mo-header').addClass('is-active').removeClass('is-click');
-    $('.btn-mo-menu').removeClass('is-active');
+    // $('#mo-header').addClass('is-active').removeClass('is-click');
+    // $('.btn-mo-menu').removeClass('is-active');
     $('#header').removeClass('is-active');
     $('.lang-change').removeClass('pc').addClass('mo');
     $('.header-logo').removeClass('pc').addClass('mo');
   } else {
     $('#header').addClass('is-active');
-    $('#mo-header').removeClass('is-active');
+    // $('#mo-header').removeClass('is-active');
     $('.lang-change').removeClass('mo').addClass('pc');
     $('.header-logo').removeClass('mo').addClass('pc');
   }
