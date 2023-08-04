@@ -1,3 +1,4 @@
+// * visual script
 const eventVisual = {
   init: function () {
     const visualTitle = $('#visual .title');
@@ -23,35 +24,36 @@ const eventVisual = {
 
       if (currentScroll >= visualHeight2) {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-          $(".lang-change, .btn-mo-menu, #mo-header").addClass("dark");
+          $(".lang-change, .btn-mo-menu, #mo-header, .header-logo").addClass("dark");
         }
       } else {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-          $(".lang-change, .btn-mo-menu, #mo-header").removeClass("dark");
+          $(".lang-change, .btn-mo-menu, #mo-header, .header-logo").removeClass("dark");
         }
       }
     });
   }
 }
 
+// * mobile script
 function isMobile() {
   return $(window).width() <= 768;
 }
-
 let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 let isMobileWidth = isMobile();
 
+// * ready...
 $(document).ready(function () {
   eventVisual.init();
   eventVisual.motion();
 
-  // AOS 설정
+  // * AOS 설정
   AOS.init({
     once: true,
     duration: 1000,
   });
 
-  // nav 설정
+  // * nav setting
   $("#header .nav-item a").click(function (event) {
     event.preventDefault();
     const target = $($(this).attr("href"));
@@ -59,7 +61,6 @@ $(document).ready(function () {
       scrollTop: target.offset().top
     }, 300);
   });
-
   function updateActiveNavItem() {
     const scrollPos = $(document).scrollTop();
     $("#header .nav-item a").each(function () {
@@ -73,14 +74,12 @@ $(document).ready(function () {
       }
     });
   }
-
   function checkFooterVisibility() {
     const footer = $("#footer");
     if (isScrolledIntoView(footer)) {
       $("#header .nav-item a").removeClass("focus");
     }
   }
-
   function isScrolledIntoView(elem) {
     const docViewTop = $(window).scrollTop();
     const docViewBottom = docViewTop + $(window).height();
@@ -91,6 +90,7 @@ $(document).ready(function () {
   $(document).on("scroll", updateActiveNavItem);
   $(document).on("scroll", checkFooterVisibility);
 
+  // * background
   const backgrounds = [
     '../assets/images/img/bg-visual1.jpg',
     '../assets/images/img/bg-visual2.jpg',
@@ -99,14 +99,11 @@ $(document).ready(function () {
     '../assets/images/img/bg-visual5.jpg',
     '../assets/images/img/bg-visual6.jpg'
   ];
-
   const $backgroundItems = $('.visual-item');
   let currentIndex = 0;
-
   for (let i = 0; i < backgrounds.length; i++) {
     $backgroundItems.eq(i).css('background-image', `url(${backgrounds[i]})`);
   }
-
   function showNextBackground() {
     $backgroundItems.stop().fadeTo(1200, 0, function () {
       let targetBg = $(this);
@@ -114,15 +111,12 @@ $(document).ready(function () {
         targetBg.removeClass('scale');
       }, 1000)
     });
-
     currentIndex = getRandomIndex(currentIndex, backgrounds.length);
     $backgroundItems.eq(currentIndex).stop().fadeTo(1200, 1, function () {
       $(this).addClass('scale');
     });
-
     setTimeout(showNextBackground, 10000);
   }
-
   function getRandomIndex(currentIndex, maxIndex) {
     let randomIndex = currentIndex;
     while (randomIndex === currentIndex) {
@@ -130,44 +124,46 @@ $(document).ready(function () {
     }
     return randomIndex;
   }
-
   showNextBackground();
 
+  // * mobile script
   $('.btn-mo-menu').on('click', function () {
     $(this).stop().toggleClass('is-active')
-    $('#mo-header').stop().toggleClass('is-active');
+    $('#mo-header').stop().toggleClass('is-click');
+    if ($(this).hasClass('is-active')) {
+      $('body').addClass('overflow-hidden');
+    } else {
+      $('body').removeClass('overflow-hidden');
+    }
   });
-
-  // 모바일 기기인 경우, 모바일 전용 div를 숨깁니다.
   if (isMobileDevice || isMobileWidth) {
-    $('#mo-header').show().removeClass('is-active');
-    $('.lang-change').addClass('mo');
     $('.btn-mo-menu').removeClass('is-active');
     $('#header').removeClass('is-active');
+    $('#mo-header').addClass('is-active').removeClass('is-click');
     $('.lang-change').removeClass('pc').addClass('mo');
+    $('.header-logo').removeClass('pc').addClass('mo');
   } else {
-    $('.lang-change').removeClass('mo');
     $('#header').addClass('is-active');
-    $('#mo-header').hide();
+    $('#mo-header').removeClass('is-active');
     $('.lang-change').removeClass('mo').addClass('pc');
+    $('.header-logo').removeClass('mo').addClass('pc');
   }
 });
 
+// * resize...
 $(window).on('resize', function () {
   isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   isMobileWidth = isMobile();
-
   if (isMobileDevice || isMobileWidth) {
-    $('#mo-header').show().removeClass('is-active');
-    $('.lang-change').addClass('mo');
+    $('#mo-header').addClass('is-active').removeClass('is-click');
     $('.btn-mo-menu').removeClass('is-active');
     $('#header').removeClass('is-active');
     $('.lang-change').removeClass('pc').addClass('mo');
+    $('.header-logo').removeClass('pc').addClass('mo');
   } else {
-    $('.lang-change').removeClass('mo');
     $('#header').addClass('is-active');
-    $('#mo-header').hide();
+    $('#mo-header').removeClass('is-active');
     $('.lang-change').removeClass('mo').addClass('pc');
+    $('.header-logo').removeClass('mo').addClass('pc');
   }
-  eventVisual.motion();
 });
