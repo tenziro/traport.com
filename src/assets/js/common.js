@@ -1,32 +1,50 @@
-function scrollDim() {
-  const maxDarkness = 0.95;
-  const minDarkness = 0.45;
-  const maxScroll = $("#visual").height();
-
-  $(window).scroll(function () {
-    const currentScroll = $(this).scrollTop();
-
-    if (currentScroll <= maxScroll) {
-      const darkness = (currentScroll / maxScroll) * (maxDarkness - minDarkness) + minDarkness;
-      $('#visual .dim').css('background-color', `rgba(0, 0, 0, ${darkness})`);
-    } else {
-      $('#visual .dim').css('background-color', `rgba(0, 0, 0, ${maxDarkness})`);
-    }
-  });
-}
-
 const eventVisual = {
   init: function () {
     const visualTitle = $('#visual .title');
     setTimeout(function () {
       visualTitle.addClass('animate-start');
     }, 1500);
+  },
+  motion: function () {
+    const maxDarkness = 0.95;
+    const minDarkness = 0.45;
+    const visualHeight = $("#visual").outerHeight();
+    const visualHeight2 = $("#visual").outerHeight() - 28;
+
+    $(window).scroll(function () {
+      const currentScroll = $(this).scrollTop();
+
+      if (currentScroll <= visualHeight) {
+        const darkness = (currentScroll / visualHeight) * (maxDarkness - minDarkness) + minDarkness;
+        $('#visual .dim').css('background-color', `rgba(0, 0, 0, ${darkness})`);
+      } else {
+        $('#visual .dim').css('background-color', `rgba(0, 0, 0, ${maxDarkness})`);
+      }
+
+      if (currentScroll >= visualHeight2) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          $(".lang-change, .btn-mo-menu, #mo-header").addClass("dark");
+        }
+      } else {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          $(".lang-change, .btn-mo-menu, #mo-header").removeClass("dark");
+        }
+      }
+    });
   }
 }
 
+function isMobile() {
+  return $(window).width() <= 768;
+}
+
+let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+let isMobileWidth = isMobile();
+
+
 $(document).ready(function () {
   eventVisual.init();
-
+  eventVisual.motion();
   // AOS 설정
   AOS.init({
     once: true,
@@ -34,7 +52,7 @@ $(document).ready(function () {
   });
 
   // nav 설정
-  $(".nav-item a").click(function (event) {
+  $("#header .nav-item a").click(function (event) {
     event.preventDefault();
     const target = $($(this).attr("href"));
     $("html, body").animate({
@@ -44,11 +62,11 @@ $(document).ready(function () {
 
   function updateActiveNavItem() {
     const scrollPos = $(document).scrollTop();
-    $(".nav-item a").each(function () {
+    $("#header .nav-item a").each(function () {
       const currLink = $(this);
       const refElement = $(currLink.attr("href"));
       if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-        $(".nav-item a").removeClass("focus");
+        $("#header .nav-item a").removeClass("focus");
         currLink.addClass("focus");
       } else {
         currLink.removeClass("focus");
@@ -59,7 +77,7 @@ $(document).ready(function () {
   function checkFooterVisibility() {
     const footer = $("#footer");
     if (isScrolledIntoView(footer)) {
-      $(".nav-item a").removeClass("focus");
+      $("#header .nav-item a").removeClass("focus");
     }
   }
 
@@ -72,8 +90,6 @@ $(document).ready(function () {
   }
   $(document).on("scroll", updateActiveNavItem);
   $(document).on("scroll", checkFooterVisibility);
-
-  scrollDim();
 
   const backgrounds = [
     '../assets/images/img/bg-visual1.jpg',
@@ -116,9 +132,42 @@ $(document).ready(function () {
   }
 
   showNextBackground();
+
+  $('.btn-mo-menu').on('click', function () {
+    $(this).stop().toggleClass('is-active')
+    $('#mo-header').stop().toggleClass('is-active');
+  });
+
+  // 모바일 기기인 경우, 모바일 전용 div를 숨깁니다.
+  if (isMobileDevice || isMobileWidth) {
+    $('#mo-header').show().removeClass('is-active');
+    $('.lang-change').addClass('mo');
+    $('.btn-mo-menu').removeClass('is-active');
+    $('#header').removeClass('is-active');
+    $('.lang-change').removeClass('pc').addClass('mo');
+  } else {
+    $('.lang-change').removeClass('mo');
+    $('#header').addClass('is-active');
+    $('#mo-header').hide();
+    $('.lang-change').removeClass('mo').addClass('pc');
+  }
 });
 
-$(document).resize(function () {
-  scrollDim();
-});
+$(window).on('resize', function () {
+  isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  isMobileWidth = isMobile();
 
+  if (isMobileDevice || isMobileWidth) {
+    $('#mo-header').show().removeClass('is-active');
+    $('.lang-change').addClass('mo');
+    $('.btn-mo-menu').removeClass('is-active');
+    $('#header').removeClass('is-active');
+    $('.lang-change').removeClass('pc').addClass('mo');
+  } else {
+    $('.lang-change').removeClass('mo');
+    $('#header').addClass('is-active');
+    $('#mo-header').hide();
+    $('.lang-change').removeClass('mo').addClass('pc');
+  }
+  eventVisual.motion();
+});
