@@ -41,10 +41,10 @@ function isMobile() {
 let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 let isMobileWidth = isMobile();
 
-
 $(document).ready(function () {
   eventVisual.init();
   eventVisual.motion();
+
   // AOS 설정
   AOS.init({
     once: true,
