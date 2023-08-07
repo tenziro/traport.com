@@ -74,8 +74,6 @@ const traport = {
     const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (isDarkMode) {
       $('.header-logo, #mo-header').removeClass('dark');
-    } else {
-      $('.header-logo, #mo-header').addClass('dark');
     }
   },
   updatePcNav: function () {
