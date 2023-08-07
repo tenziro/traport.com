@@ -34,7 +34,7 @@ const traport = {
     });
   },
   motionImage: function () {
-    // * background
+    let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const backgrounds = [
       '../assets/images/img/bg-visual1.jpg',
       '../assets/images/img/bg-visual2.jpg',
@@ -48,17 +48,28 @@ const traport = {
     for (let i = 0; i < backgrounds.length; i++) {
       $backgroundItems.eq(i).css('background-image', `url(${backgrounds[i]})`);
     }
+    function handleScaleClass() {
+      if (!isMobileDevice && $(window).width() > 768) {
+        $backgroundItems.eq(currentIndex).addClass('scale');
+      } else {
+        $backgroundItems.eq(currentIndex).removeClass('scale');
+      }
+    }
     function showNextBackground() {
       $backgroundItems.stop().fadeTo(1200, 0, function () {
         let targetBg = $(this);
         setTimeout(function () {
           targetBg.removeClass('scale');
-        }, 1000)
+        }, 1000);
       });
+
       currentIndex = getRandomIndex(currentIndex, backgrounds.length);
       $backgroundItems.eq(currentIndex).stop().fadeTo(1200, 1, function () {
-        $(this).addClass('scale');
+        if (!isMobileDevice && $(window).width() > 768) {
+          $(this).addClass('scale');
+        }
       });
+
       setTimeout(showNextBackground, 10000);
     }
     function getRandomIndex(currentIndex, maxIndex) {
@@ -68,6 +79,10 @@ const traport = {
       }
       return randomIndex;
     }
+    $(window).on('resize', function () {
+      handleScaleClass();
+    });
+    handleScaleClass();
     showNextBackground();
   },
   toggleDarkMode: function () {
@@ -115,6 +130,9 @@ const traport = {
     }
     $(document).on("scroll", updateActiveNavItem);
     $(document).on("scroll", checkScrollEnd);
+    $(window).on('resize', function () {
+      traport.updatePcNav();
+    });
   },
   updateMoNav: function () {
     $("#mo-header .nav-item a").click(function (event) {
@@ -160,6 +178,9 @@ const traport = {
       $('.lang-change').removeClass('mo').addClass('pc');
       $('.header-logo').removeClass('mo').addClass('pc');
     }
+    $(window).on('resize', function () {
+      traport.mobileResize();
+    });
   },
   recruitModal: function () {
     const modal = $('.modal');
@@ -197,10 +218,4 @@ $(document).ready(function () {
     once: true,
     duration: 1000,
   });
-});
-
-// * resize...
-$(window).on('resize', function () {
-  traport.updatePcNav();
-  traport.mobileResize();
 });
