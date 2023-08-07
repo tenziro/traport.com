@@ -122,7 +122,7 @@ textarea {
     radius: 0;
   }
   &:disabled {
-    // -webkit-text-fill-color: var(--c-gray-4);
+    color: var(--form-disabled);
     opacity: 1;
   }
 }
@@ -134,7 +134,7 @@ input,
 textarea {
   // caret-color: var(--c-orange);
   &::placeholder {
-    // color: var(--c-gray-3);
+    color: var(--form-placeholder);
     opacity: 1;
   }
 }
@@ -193,4 +193,10 @@ strong {
 }
 .overflow-hidden {
   overflow: hidden;
+}
+sup {
+  &:after {
+    content: "*";
+    color: #ff1100;
+  }
 }

@@ -36,6 +36,18 @@
     --gradient-type2-2: #757beb;
     --bg-location-item: #f9f9f9;
     --location-text: #121212;
+
+    --text-modal: #121212;
+    --bg-modal: #fff;
+    --bg-modal-before: 255, 255, 255;
+    --bg-modal-contents: #fafafa;
+    --modal-border: #e0e0e0;
+    --bg-form: #fff;
+    --form-text: #121212;
+    --form-border: #e0e0e0;
+    --form-placeholder: #ccc;
+    --form-disabled: #f2f2f2;
+    --form-disabled-text: #aaa;
   }
 }
 // * 다크 모드 셋팅
@@ -72,6 +84,18 @@
     --gradient-type2-2: #4ac2fe;
     --bg-location-item: #191919;
     --location-text: #fff;
+
+    --text-modal: #fff;
+    --bg-modal: #141414;
+    --bg-modal-before: 0, 0, 0;
+    --bg-modal-contents: #191919;
+    --bg-form: #333;
+    --modal-border: #282828;
+    --form-text: #fff;
+    --form-border: #282828;
+    --form-placeholder: #666;
+    --form-disabled: #121212;
+    --form-disabled-text: #333;
   }
 }
 // * important

@@ -79,41 +79,44 @@ const traport = {
     }
   },
   updatePcNav: function () {
-    $("#header .nav-item a").click(function (event) {
+    const headerNav = $("#header .nav-item a");
+    headerNav.click(function (event) {
       event.preventDefault();
-      const target = $($(this).attr("href"));
+      var target = $($(this).attr("href"));
       $("html, body").animate({
         scrollTop: target.offset().top
-      }, 300);
+      }, 800);
     });
+
     function updateActiveNavItem() {
-      const scrollPos = $(document).scrollTop();
-      $("#header .nav-item a").each(function () {
-        const currLink = $(this);
-        const refElement = $(currLink.attr("href"));
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-          $("#header .nav-item a").removeClass("focus");
+      var scrollPos = $(document).scrollTop();
+      var windowHeight = $(window).height();
+
+      headerNav.each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        var elementTop = refElement.offset().top;
+        var elementBottom = elementTop + refElement.outerHeight();
+
+        if (elementTop <= scrollPos && elementBottom > scrollPos) {
+          headerNav.removeClass("focus");
           currLink.addClass("focus");
+          return false;
         } else {
           currLink.removeClass("focus");
         }
       });
     }
-    function checkFooterVisibility() {
-      const footer = $("#footer");
-      if (isScrolledIntoView(footer)) {
-        $("#header .nav-item a").removeClass("focus");
+    function checkScrollEnd() {
+      var documentHeight = $(document).height();
+      var windowHeight = $(window).height();
+      var scrollPos = $(window).scrollTop();
+      if (documentHeight - windowHeight === scrollPos) {
+        headerNav.removeClass("focus");
       }
     }
-    function isScrolledIntoView(elem) {
-      const docViewTop = $(window).scrollTop();
-      const docViewBottom = docViewTop + $(window).height();
-      const elemTop = $(elem).offset().top;
-      const elemBottom = elemTop + $(elem).height();
-      return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-    }
     $(document).on("scroll", updateActiveNavItem);
-    $(document).on("scroll", checkFooterVisibility);
+    $(document).on("scroll", checkScrollEnd);
   },
   updateMoNav: function () {
     $("#mo-header .nav-item a").click(function (event) {
@@ -159,6 +162,21 @@ const traport = {
       $('.lang-change').removeClass('mo').addClass('pc');
       $('.header-logo').removeClass('mo').addClass('pc');
     }
+  },
+  recruitModal: function () {
+    const modal = $('.modal');
+    const modalContents = $('.modal-contents');
+    const btnRecruit = $('.btn-recruit-apply');
+    const btnModalClose = $('.modal .btn-modal-close');
+
+    btnRecruit.on('click', function () {
+      modal.addClass('is-active');
+      $('body').addClass('overflow-hidden');
+    });
+    btnModalClose.on('click', function () {
+      modal.removeClass('is-active');
+      $('body').removeClass('overflow-hidden');
+    });
   }
 }
 
@@ -168,11 +186,14 @@ $(document).ready(function () {
   traport.motionBg();
   traport.motionImage();
   traport.toggleDarkMode();
+  traport.updatePcNav();
+  traport.mobileResize();
+  traport.recruitModal();
+
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
     traport.toggleDarkMode();
   });
-  traport.updatePcNav();
-  traport.mobileResize();
+
   // * AOS 설정
   AOS.init({
     once: true,
@@ -182,5 +203,6 @@ $(document).ready(function () {
 
 // * resize...
 $(window).on('resize', function () {
+  traport.updatePcNav();
   traport.mobileResize();
 });

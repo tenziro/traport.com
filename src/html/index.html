@@ -666,7 +666,7 @@
       </section>
 
       <!-- ! location -->
-      <article id="location">
+      <section id="location">
         <div class="inside">
           <h2 class="section-title1 align-c" data-aos="fade-up">오시는 길</h2>
           <h3 class="section-subtitle1 align-c" data-aos="fade-up">여러분의 방문을 환영합니다.</h3>
@@ -724,7 +724,8 @@
             </li>
           </ul>
         </div>
-        <!-- <article id="cert">
+        <!--
+          <article id="cert">
           <div class="inside">
             <div class="cert-list">
               <div class="cert-item">
@@ -779,8 +780,9 @@
               </div>
             </div>
           </div>
-        </article> -->
-        </section>
+        </article>
+      -->
+      </section>
     </main>
     <footer id="footer">
       <div class="inside">
@@ -809,9 +811,120 @@
       <form action="">
         <div class="modal-header">
           <h1>입사 지원하기</h1>
+          <button type="button" class="btn-modal-close">
+            <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 7.05 16.95 6 12 10.95 7.05 6 6 7.05 10.95 12 6 16.95 7.05 18 12 13.05 16.95 18 18 16.95 13.05 12 18 7.05Z"></path>
+            </svg>
+          </button>
         </div>
-        <div class="modal-body"></div>
-        <div class="modal-footer"></div>
+        <div class="modal-body">
+          <ul class="apply-form">
+            <li>
+              <dl>
+                <dt><sup>이름</sup></dt>
+                <dd>
+                  <div class="input">
+                    <input type="text" placeholder="한글 이름 입력">
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup>생년월일</sup></dt>
+                <dd>
+                  <div class="input">
+                    <input type="number" placeholder="생년월일 8자리 입력(숫자만 입력)" maxlength="8">
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup>성별</sup></dt>
+                <dd>
+                  <div class="select">
+                    <select name="" id="" required>
+                      <option value="" disabled selected>성별 선택</option>
+                      <option value="">남자</option>
+                      <option value="">여자</option>
+                    </select>
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup>이메일 주소</sup></dt>
+                <dd>
+                  <div class="input">
+                    <input type="email" placeholder="이메일 주소 입력">
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup>연락처</sup></dt>
+                <dd>
+                  <div class="input">
+                    <input type="tel" placeholder="휴대폰 번호 입력(숫자만 입력)" maxlength="11">
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup>최종 학력</sup></dt>
+                <dd>
+                  <div class="select">
+                    <select name="" id="" required>
+                      <option value="" disabled selected>최종 학력 선택</option>
+                      <option value="">고등학교 졸업</option>
+                      <option value="">대학교 재학중</option>
+                      <option value="">대학교 졸업(전문학사)</option>
+                      <option value="">대학교 졸업(학사 이상)</option>
+                    </select>
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup>경력 기간</sup></dt>
+                <dd>
+                  <div class="select">
+                    <select name="" id="" required>
+                      <option value="" disabled selected>경력 기간 선택</option>
+                      <option value="">1년 미만</option>
+                      <option value="">1년 이상 3년 미만</option>
+                      <option value="">3년 이상 5년 미만</option>
+                      <option value="">5년 이상 8년 미만</option>
+                      <option value="">8년 이상</option>
+                    </select>
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup>지원 포지션</sup></dt>
+                <dd>
+                  <div class="select">
+                    <select name="" id="" required>
+                      <option value="" disabled selected>지원 포지션 선택</option>
+                      <option value="">프론트엔드(Frontend)</option>
+                      <option value="">백엔드(Backend)</option>
+                    </select>
+                  </div>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn-apply">입사 지원 접수하기</button>
+        </div>
       </form>
     </div>
   </div>

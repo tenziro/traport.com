@@ -1,17 +1,72 @@
 @charset "UTF-8";
 
-#wrap {
-  overflow: hidden;
+
+// * components
+.input {
+  display: block;
+  input {
+    @include flex(flex, null, null, center);
+    @include border(all, 1px, solid, var(--form-border), 8px);
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    color: var(--form-text);
+    background: {
+      color: var(--bg-form);
+    }
+    &:disabled {
+      cursor: not-allowed;
+      color: var(--form-disabled-text);
+      background: {
+        color: var(--form-disabled);
+      }
+    }
+  }
+}
+.select {
+  @include position(relative);
+  display: block;
+  select {
+    @include flex(flex, null, null, center);
+    @include border(all, 1px, solid, var(--form-border), 8px);
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    color: var(--form-text);
+    background: {
+      color: var(--bg-form);
+    }
+    &:invalid {
+      color: var(--form-placeholder);
+    }
+    &:disabled {
+      cursor: not-allowed;
+      color: var(--form-disabled-text);
+      background: {
+        color: var(--form-disabled);
+      }
+    }
+  }
+  &:after {
+    @include position(absolute, 50%, 20px, null, null, 1, null, -50%);
+    content: "";
+    border: {
+      top: 6px solid var(--form-text);
+      right: 6px solid transparent;
+      left: 6px solid transparent;
+    }
+  }
+  &:has(select:disabled) {
+    &:after {
+      border: {
+        top: 6px solid var(--form-disabled-text);
+      }
+    }
+  }
 }
 
 // * header
 #header {
-  &.is-active {
-    @include flex(flex, null, null, center);
-  }
-  &:not(.is-active) {
-    display: none;
-  }
   @include position(fixed, 16px, null, null, 50%, 100, -50%);
   @include border(all, 1px, solid, hsla(0, 0%, 100%, 0.1), 25px);
   overflow: hidden;
@@ -20,6 +75,12 @@
   padding: 0 10px;
   backdrop-filter: blur(34px);
   box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.21);
+  &.is-active {
+    @include flex(flex, null, null, center);
+  }
+  &:not(.is-active) {
+    display: none;
+  }
   background: {
     color: rgba(33, 33, 33, 0.8);
   }
@@ -1094,8 +1155,8 @@
         }
         li {
           @include position(relative);
-          padding-left: 16px;
           color: var(--position-text);
+          padding-left: 16px;
           &:before {
             @include position(absolute, 10px, null, null, 0, 1);
             content: "";
@@ -1354,33 +1415,106 @@
 .modal {
   @include position(fixed, 0, 0, 0, 0, 2000);
   display: none;
+  padding: 20px;
   &.is-active {
     @include flex(flex, null, null, center, null, null, center);
+    .modal-contents {
+      animation: modal-in .8s forwards;
+    }
   }
-  padding: 20px;
   &:before {
     @include position(fixed, 0, 0, 0, 0, 2000);
     content: "";
-    background: {
-      color: rgba(255, 255, 255, 0.2);
-    }
     backdrop-filter: blur(5px);
+    background: {
+      color: rgba(var(--bg-modal-before), 0.2);
+    }
   }
   &-contents {
     @include position(relative, null, null, null, null, 2001);
+    @include border(all, 1px, solid, var(--modal-border), 16px);
+    transform: translateY(500px);
+    transition: transform 1s ease 0.3s;
     flex: none;
-    width: 620px;
-    border: {
-      radius: 16px;
-    }
+    width: 100%;
+    max-width: 620px;
     background: {
-      color: #fff;
+      color: var(--bg-modal);
+    }
+    &:has(form) {
+      form {
+        @include flex(flex, column);
+        max-height: calc(70dvh - 120px);
+      }
+    }
+    &:not(:has(form)) {
+      @include flex(flex, column);
+      max-height: calc(70dvh - 120px);
     }
   }
   &-header {
     @include flex(flex, null, null, center);
-    @include border(bottom, 1px, solid, #eee);
-    height: 42px;
+    @include border(bottom, 1px, solid, var(--modal-border));
+    @include font-call(GmarketSans, 20px, 500);
+    @include position(relative);
+    flex: none;
+    height: 72px;
+    padding: 0 20px;
+    color: var(--text-modal);
+    .btn-modal-close {
+      @include position(absolute, 50%, 12px, null, null, null, null, -50%);
+      width: 32px;
+      height: 32px;
+      .svg-icon {
+        width: 32px;
+        height: 32px;
+        fill: var(--text-modal);
+      }
+    }
+  }
+  &-body {
+    flex: 1 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: {
+      color: var(--bg-modal-contents);
+    }
+  }
+  &-footer {
+    @include flex(flex, null, null, center, null, null, center);
+    flex: none;
+    padding: 30px 20px;
+  }
+  .apply-form {
+    li {
+      + li {
+        @include border(top, 1px, dashed, var(--modal-border));
+        margin-top: 20px;
+        padding-top: 20px;
+      }
+    }
+    dt {
+      margin-bottom: 10px;
+      color: var(--text-modal);
+    }
+  }
+  .btn-apply {
+    @include flex(flex, null, null, center, null, null, center);
+    @include font-call(GmarketSans, 18px, 500);
+    width: 100%;
+    max-width: 320px;
+    height: 52px;
+    color: #fff;
+    transition: all 0.5s;
+    border: {
+      radius: 8px;
+    }
+    background: {
+      color: #5754FE;
+    }
+    &:hover {
+      filter: brightness(120%) saturate(120%);
+    }
   }
 }
 
@@ -1905,6 +2039,28 @@
     }
   }
 
+  .modal {
+    padding: 0;
+    &:before {
+      content: none;
+    }
+    &-contents {
+      @include position(fixed, 0, 0, 0, 0, 1);
+      @include border(all, 0, solid, #eee, 0);
+      max-width: none;
+      &:has(form) {
+        form {
+          max-height: none;
+          height: 100dvh;
+        }
+      }
+      &:not(:has(form)) {
+        max-height: none;
+        height: 100dvh;
+      }
+    }
+  }
+
   .section-title1 {
     @include font-call(GmarketSans, clamp(32px, 768px, 5.722vw), 700);
   }
@@ -1951,5 +2107,15 @@
   }
   to {
     transform: translateX(-100%);
+  }
+}
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
