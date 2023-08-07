@@ -218,4 +218,8 @@ $(document).ready(function () {
     once: true,
     duration: 1000,
   });
+
+  $('.header-logo').on('click', function () {
+    $(window).scrollTop(0);
+  });
 });

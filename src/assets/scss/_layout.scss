@@ -135,7 +135,7 @@
   &:before {
     @include position(fixed, 0, 0, 0, 0, 501);
     height: 80px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(30px);
     mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
   }
   &:not(.dark) {
@@ -384,6 +384,7 @@
   &.pc {
     @include position(fixed, 33px, null, null, 28px, 1000);
     display: block;
+    cursor: pointer;
   }
   &.mo {
     @include position(fixed, 31px, null, null, 28px, 1000);
@@ -1420,7 +1421,7 @@
   &.is-active {
     @include flex(flex, null, null, center, null, null, center);
     .modal-contents {
-      animation: modal-in .8s forwards;
+      animation: modal-in .45s forwards;
     }
   }
   &:before {
