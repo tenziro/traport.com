@@ -200,6 +200,7 @@ const traport = {
     });
     btnModalClose.on('click', function () {
       modal.removeClass('is-active');
+      privacyDetail.removeClass('is-active');
       $('body').removeClass('overflow-hidden');
     });
   }
