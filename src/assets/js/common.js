@@ -10,7 +10,6 @@ const traport = {
     const maxDarkness = 0.95;
     const minDarkness = 0.45;
     const visualHeight = $("#visual").outerHeight();
-    const visualHeight2 = $("#visual").outerHeight() - 28;
 
     $(window).scroll(function () {
       const currentScroll = $(this).scrollTop();
@@ -22,13 +21,13 @@ const traport = {
         $('#visual .dim').css('background-color', `rgba(0, 0, 0, ${maxDarkness})`);
       }
 
-      if (currentScroll >= visualHeight2) {
+      if (currentScroll >= visualHeight) {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-          $(".lang-change, .btn-mo-menu, #mo-header, .header-logo").addClass("dark");
+          $("#header, #mo-header, .lang-change, .btn-mo-menu, .header-logo").addClass("dark");
         }
       } else {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-          $(".lang-change, .btn-mo-menu, #mo-header, .header-logo").removeClass("dark");
+          $("#header, #mo-header, .lang-change, .btn-mo-menu, .header-logo").removeClass("dark");
         }
       }
     });
@@ -88,7 +87,13 @@ const traport = {
   toggleDarkMode: function () {
     const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (isDarkMode) {
-      $('.header-logo, #mo-header, .lang-change').removeClass('dark');
+      $('#header, #mo-header, .header-logo, .lang-change').removeClass('dark');
+    }
+  },
+  toggleLightMode: function () {
+    const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches;
+    if (isLightMode) {
+      $('#header, #mo-header, .header-logo, .lang-change').addClass('dark');
     }
   },
   updatePcNav: function () {
@@ -211,6 +216,9 @@ $(document).ready(function () {
 
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
     traport.toggleDarkMode();
+  });
+  window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", function () {
+    traport.toggleLightMode();
   });
 
   // * AOS 설정

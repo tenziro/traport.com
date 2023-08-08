@@ -67,25 +67,30 @@
 
 // * header
 #header {
-  @include position(fixed, 16px, null, null, 50%, 100, -50%);
-  @include border(all, 1px, solid, hsla(0, 0%, 100%, 0.1), 25px);
-  overflow: hidden;
-  width: max-content;
-  height: 50px;
-  padding: 0 10px;
-  backdrop-filter: blur(34px);
-  box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.21);
+  @include position(fixed, 0, 0, null, 0, 500);
+  padding-top: 16px;
   &.is-active {
-    @include flex(flex, null, null, center);
+    @include flex(flex, null, null, center, null, null, center);
+    &:before {
+      content: "";
+    }
   }
   &:not(.is-active) {
     display: none;
   }
-  background: {
-    color: rgba(33, 33, 33, 0.8);
-  }
   .main-nav {
     @include flex(flex, null, null, center);
+    @include position(relative, null, null, null, null, 502);
+    @include border(all, 1px, solid, hsla(0, 0%, 100%, 0.1), 25px);
+    overflow: hidden;
+    width: max-content;
+    height: 50px;
+    padding: 0 10px;
+    background: {
+      color: rgba(33, 33, 33, 0.8);
+    }
+    backdrop-filter: blur(34px);
+    box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.21);
     flex: none;
     gap: 6px;
     .nav-item {
@@ -98,7 +103,7 @@
       padding: 8px 16px;
       transition: opacity 200ms ease, color 350ms ease;
       &:not(.focus) {
-        color: #81859f;
+        color: #999;
         opacity: 0.8;
         &:after {
           transition: background 350ms ease;
@@ -127,6 +132,26 @@
       }
     }
   }
+  &:before {
+    @include position(fixed, 0, 0, 0, 0, 501);
+    height: 80px;
+    backdrop-filter: blur(40px);
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+  }
+  &:not(.dark) {
+    &:before {
+      background: {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+  &.dark {
+    &:before {
+      background: {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
 }
 
 // * mobile header
@@ -141,14 +166,14 @@
   &:not(.dark) {
     &:before {
       background: {
-        color: rgba(0, 0, 0, 0.6);
+        color: rgba(0, 0, 0, 1);
       }
     }
   }
   &.dark {
     &:before {
       background: {
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 1);
       }
     }
   }
@@ -258,7 +283,6 @@
 
 // * 언어 변경
 .lang-change {
-  display: none;
   .control-input {
     width: 0;
     height: 0;
@@ -323,6 +347,9 @@
   }
   span {
     flex: none;
+  }
+  &:not(.pc):not(.mo) {
+    display: none;
   }
   &:not(.dark) {
     .control-text {
