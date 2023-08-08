@@ -100,21 +100,19 @@ const traport = {
     const headerNav = $("#header .nav-item a");
     headerNav.click(function (event) {
       event.preventDefault();
-      var target = $($(this).attr("href"));
+      let target = $($(this).attr("href"));
       $("html, body").animate({
-        scrollTop: target.offset().top
+        scrollTop: target.offset().top + 1
       }, 800);
     });
 
     function updateActiveNavItem() {
-      var scrollPos = $(document).scrollTop();
-      var windowHeight = $(window).height();
-
+      let scrollPos = $(document).scrollTop();
       headerNav.each(function () {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-        var elementTop = refElement.offset().top;
-        var elementBottom = elementTop + refElement.outerHeight();
+        let currLink = $(this);
+        let refElement = $(currLink.attr("href"));
+        let elementTop = refElement.offset().top;
+        let elementBottom = elementTop + refElement.outerHeight();
 
         if (elementTop <= scrollPos && elementBottom > scrollPos) {
           headerNav.removeClass("focus");
@@ -126,10 +124,10 @@ const traport = {
       });
     }
     function checkScrollEnd() {
-      var documentHeight = $(document).height();
-      var windowHeight = $(window).height();
-      var scrollPos = $(window).scrollTop();
-      if (documentHeight - windowHeight === scrollPos) {
+      let documentHeight = $(document).height();
+      let windowHeight = $(window).height();
+      let scrollPos = $(window).scrollTop();
+      if (documentHeight - windowHeight <= scrollPos) {
         headerNav.removeClass("focus");
       }
     }
