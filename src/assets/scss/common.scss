@@ -161,6 +161,25 @@ $icons-image-url: "../..//assets/images/icons/";
   justify-content: $j-content;
   justify-self: $j-self;
 }
+// * scrollbar
+@mixin scrollbar($width, $thumb-bg, $thumb-radius, $track-bg: null) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-bg;
+    border-radius: $thumb-radius;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $track-bg;
+  }
+  &::-webkit-scrollbar-button {
+    width: $width;
+    height: $width;
+    background-color: transparent;
+  }
+}
 // * border setting
 @mixin border($pos: null, $width: null, $style: null, $color: null, $radius: null) {
   @if ($pos ==top) {
