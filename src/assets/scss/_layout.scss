@@ -64,6 +64,53 @@
     }
   }
 }
+.checkbox {
+  @include position(relative);
+  display: inline-block;
+  .control-input {
+    @include position(absolute);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    &:checked {
+      + .control-text {
+        &:before {
+          background: {
+            color: #5754fe;
+          }
+        }
+      }
+    }
+    &:not(:checked) {
+      + .control-text {
+        &:before {
+          @include border(all, 1px, solid, var(--form-border));
+        }
+      }
+    }
+  }
+  .control-text {
+    @include flex(inline-flex, null, null, center);
+    color: var(--form-text);
+    font: {
+      size: 14px;
+    }
+    span {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+    &:before {
+      content: "";
+      flex: none;
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      border: {
+        radius: 3px;
+      }
+    }
+  }
+}
 
 // * header
 #header {
@@ -284,6 +331,7 @@
 // * 언어 변경
 .lang-change {
   .control-input {
+    @include position(absolute);
     width: 0;
     height: 0;
     opacity: 0;
@@ -1543,6 +1591,49 @@
     }
     &:hover {
       filter: brightness(120%) saturate(120%);
+    }
+  }
+  .recruit-agree {
+    margin-top: 20px;
+    dt {
+      @include flex(flex, null, null, flex-start);
+      margin-bottom: 10px;
+    }
+    .btn-privacy-detail {
+      margin-left: auto;
+      color: var(--text-modal);
+      font: {
+        size: 14px;
+      }
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+    .privacy-detail {
+      @include border(all, 1px, solid, var(--form-border), 8px);
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      padding: 16px;
+      color: var(--text-modal);
+      background: {
+        color: var(--bg-form);
+      }
+      line-height: 160%;
+      font: {
+        size: 13px;
+      }
+      &.is-active {
+        display: block;
+      }
+      &:not(.is-active) {
+        display: none;
+      }
+    }
+    .noti {
+      color: var(--text-modal);
+      font: {
+        size: 14px;
+      }
     }
   }
 }

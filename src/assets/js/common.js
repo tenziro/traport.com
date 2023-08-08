@@ -187,10 +187,13 @@ const traport = {
   },
   recruitModal: function () {
     const modal = $('.modal');
-    const modalContents = $('.modal-contents');
+    const btnPrivacy = $('.btn-privacy-detail');
+    const privacyDetail = $('.privacy-detail');
     const btnRecruit = $('.btn-recruit-apply');
     const btnModalClose = $('.modal .btn-modal-close');
-
+    btnPrivacy.on('click', function () {
+      privacyDetail.toggleClass('is-active');
+    });
     btnRecruit.on('click', function () {
       modal.addClass('is-active');
       $('body').addClass('overflow-hidden');
