@@ -203,6 +203,37 @@ const traport = {
       privacyDetail.removeClass('is-active');
       $('body').removeClass('overflow-hidden');
     });
+  },
+  daumMap: function () {
+    var mapContainer = document.getElementById('map'),
+      mapOption = {
+        center: new kakao.maps.LatLng(37.57209605223843, 126.98538889757558),
+        level: 3,
+        mapTypeId: kakao.maps.MapTypeId.ROADMAP
+      };
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+    var mapTypeControl = new kakao.maps.MapTypeControl();
+    map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+    var zoomControl = new kakao.maps.ZoomControl();
+    map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+    var markerImageUrl = 'https://traport.tenziro.net/assets/images/icons/icon-pin.png',
+      markerImageSize = new kakao.maps.Size(50, 50),
+      markerImageOptions = {
+        offset: new kakao.maps.Point(25, 50)
+      };
+
+    var markerImage = new kakao.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
+
+    var marker = new kakao.maps.Marker({
+      position: new kakao.maps.LatLng(37.57209605223843, 126.98538889757558),
+      image: markerImage,
+      map: map
+    });
+    $(window).resize(function () {
+      var markerPosition = marker.getPosition();
+      map.relayout();
+      map.setCenter(markerPosition);
+    });
   }
 }
 
@@ -215,7 +246,7 @@ $(document).ready(function () {
   traport.updatePcNav();
   traport.mobileResize();
   traport.recruitModal();
-
+  traport.daumMap();
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
     traport.toggleDarkMode();
   });

@@ -4,6 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileColor" content="#13315c">
+  <meta name="msapplication-TileImage" content="../assets/images/common/ms-icon-144x144.png">
+  <meta name="theme-color" content="#13315c">
+  <meta name="title" content="트래포트 - Leading the travel industry with Technology" />
+  <meta name="description" content="트래포트는 여행산업에 필요한 IT 서비스를 고객사에 제공합니다." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.traport.com" />
+  <meta property="og:title" content="트래포트 - Leading the travel industry with Technology" />
+  <meta property="og:description" content="트래포트는 여행산업에 필요한 IT 서비스를 고객사에 제공합니다." />
+  <meta property="og:image" content="https://traport.tenziro.net/assets/images/common/meta-img.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.traport.com" />
+  <meta property="twitter:title" content="트래포트 - Leading the travel industry with Technology" />
+  <meta property="twitter:description" content="트래포트는 여행산업에 필요한 IT 서비스를 고객사에 제공합니다." />
+  <meta property="twitter:image" content="https://traport.tenziro.net/assets/images/common/meta-img.png" />
+  <title>트래포트 - Leading the travel industry with Technology</title>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dd7920952c2b016162fe01f116274be2"></script>
   <script src="../assets/js/jquery-3.7.0.min.js"></script>
   <script src="../assets/js/gsap.min.js"></script>
   <script src="../assets/js/aos.js"></script>
@@ -24,27 +41,13 @@
   <link rel="icon" type="image/png" sizes="96x96" href="../assets/images/common/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/common/favicon-16x16.png">
   <link rel="icon" type="image/x-icon" href="../assets/images/common/favicon.ico">
-  <meta name="msapplication-TileColor" content="#13315c">
-  <meta name="msapplication-TileImage" content="../assets/images/common/ms-icon-144x144.png">
-  <meta name="theme-color" content="#13315c">
-  <title>트래포트 - Leading the travel industry with Technology</title>
-  <meta name="title" content="트래포트 - Leading the travel industry with Technology" />
-  <meta name="description" content="트래포트는 여행산업에 필요한 IT 서비스를 고객사에 제공합니다." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.traport.com" />
-  <meta property="og:title" content="트래포트 - Leading the travel industry with Technology" />
-  <meta property="og:description" content="트래포트는 여행산업에 필요한 IT 서비스를 고객사에 제공합니다." />
-  <meta property="og:image" content="https://traport.tenziro.net/assets/images/common/meta-img.png" />
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://www.traport.com" />
-  <meta property="twitter:title" content="트래포트 - Leading the travel industry with Technology" />
-  <meta property="twitter:description" content="트래포트는 여행산업에 필요한 IT 서비스를 고객사에 제공합니다." />
-  <meta property="twitter:image" content="https://traport.tenziro.net/assets/images/common/meta-img.png" />
 </head>
 
 <body>
   <div id="wrap">
     <h1 class="header-logo">TRAPORT</h1>
+
+    <!-- ! pc header -->
     <header id="header">
       <nav class="main-nav">
         <div class="nav-item"><a href="#introduce">회사소개</a></div>
@@ -53,6 +56,8 @@
         <div class="nav-item"><a href="#location">오시는길</a></div>
       </nav>
     </header>
+
+    <!-- ! mobile header -->
     <header id="mo-header">
       <!-- <button type="button" class="btn-mo-menu">
         <span></span><span></span><span></span>
@@ -710,9 +715,11 @@
               <p><a href="mailto:recruit@traport.com">recruit@traport.com</a></p>
             </div>
           </div>
-          <div class="map" data-aos="zoom-in">
-            <a href="https://url.kr/jcy1wz" target="_blank"><img src="../assets/images/img/img-map.png" alt="map"></a>
-          </div>
+        </div>
+        <div id="map" data-aos="zoom-in">
+
+        </div>
+        <div class="inside">
           <ul class="map-info">
             <li data-aos="fade-up">
               <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -804,6 +811,8 @@
       -->
       </section>
     </main>
+
+    <!-- ! footer -->
     <footer id="footer">
       <div class="inside">
         <ul class="company-info">
