@@ -1,6 +1,9 @@
-# 트래포트 Homepage
+# 트래포트 회사 사이트
 
 ## 기획
+### 참고 문서
+* Axure : [https://ywmb8h.axshare.com/](https://ywmb8h.axshare.com/)
+
 ### 사이트 개요
 1. One Page로 사이트를 구성한다.
 2. 반응형으로 PC/모바일 구분없이 보여지도록 제작한다.
