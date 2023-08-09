@@ -217,9 +217,9 @@ const traport = {
     var zoomControl = new kakao.maps.ZoomControl();
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
     var markerImageUrl = 'https://traport.tenziro.net/assets/images/icons/icon-pin.png',
-      markerImageSize = new kakao.maps.Size(50, 50),
+      markerImageSize = new kakao.maps.Size(64, 64),
       markerImageOptions = {
-        offset: new kakao.maps.Point(25, 50)
+        offset: new kakao.maps.Point(32, 64)
       };
 
     var markerImage = new kakao.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
@@ -228,6 +228,9 @@ const traport = {
       position: new kakao.maps.LatLng(37.57209605223843, 126.98538889757558),
       image: markerImage,
       map: map
+    });
+    kakao.maps.event.addListener(marker, 'click', function () {
+      window.open('https://place.map.kakao.com/993407235');
     });
     $(window).resize(function () {
       var markerPosition = marker.getPosition();
