@@ -1555,7 +1555,7 @@
     }
   }
   &-body {
-    @include scrollbar(4px, #5754FE, 4px, transparent);
+    @include scrollbar(6px, #5754FE, 3px, transparent);
     flex: 1 1;
     padding: 20px;
     overflow-y: auto;
@@ -1616,7 +1616,7 @@
     }
     .privacy-detail {
       @include border(all, 1px, solid, var(--form-border), 8px);
-      @include scrollbar(4px, #5754FE, 4px, transparent);
+      @include scrollbar(6px, #5754FE, 3px, transparent);
       max-height: 300px;
       overflow-y: auto;
       margin-bottom: 10px;

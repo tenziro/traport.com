@@ -15,7 +15,7 @@
 }
 html {
   scroll-behavior: smooth;
-  @include scrollbar(4px, #5754FE, 4px, transparent);
+  @include scrollbar(6px, #5754FE, 3px, transparent);
 }
 body {
   @include position(relative);
