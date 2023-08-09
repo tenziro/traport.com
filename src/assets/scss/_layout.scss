@@ -1793,6 +1793,10 @@
       }
     }
   }
+
+  #map {
+    height: 480px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .inside {
@@ -2124,6 +2128,10 @@
         @include font-call(GmarketSans, clamp(13px, 768px, 2.180vw), 500, 140%);
       }
     }
+  }
+
+  #map {
+    height: 320px;
   }
 
   #footer {
