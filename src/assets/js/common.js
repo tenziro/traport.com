@@ -237,6 +237,17 @@ const traport = {
       map.relayout();
       map.setCenter(markerPosition);
     });
+  },
+  langChange: function () {
+    $('#languageCheck').change(function () {
+      if ($(this).is(':checked')) {
+        $('html').attr('lang', 'en');
+        $('body').removeClass('ko').addClass('en');
+      } else {
+        $('html').attr('lang', 'ko');
+        $('body').removeClass('en').addClass('ko');
+      }
+    });
   }
 }
 
@@ -250,6 +261,7 @@ $(document).ready(function () {
   traport.mobileResize();
   traport.recruitModal();
   traport.daumMap();
+  traport.langChange();
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
     traport.toggleDarkMode();
   });
