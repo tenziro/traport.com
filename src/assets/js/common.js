@@ -221,9 +221,7 @@ const traport = {
       markerImageOptions = {
         offset: new kakao.maps.Point(32, 64)
       };
-
     var markerImage = new kakao.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
-
     var marker = new kakao.maps.Marker({
       position: new kakao.maps.LatLng(37.57209605223843, 126.98538889757558),
       image: markerImage,

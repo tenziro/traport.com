@@ -550,9 +550,9 @@
     }
   }
   .title {
-    @include flex(flex, column, null, center, null, null, center);
     @include position(relative, null, null, null, null, 3);
     text-align: center;
+    display: none;
     p {
       @include position(relative);
       overflow: hidden;
@@ -723,7 +723,6 @@
     gap: 20px;
     .item {
       @include position(relative);
-      flex: 1 1 calc(100%/2 - 20px);
       min-height: 212px;
       padding: 30px;
       background: var(--gradient-type1-2);
@@ -825,6 +824,7 @@
         @include font-call(GmarketSans, 32px, 700);
         width: 240px;
         height: 240px;
+        padding-top: 20px;
         color: #fff;
         background: #232526;
         background: -webkit-linear-gradient(to right, #414345, #232526);
@@ -970,6 +970,7 @@
         @include font-call(GmarketSans, 32px, 700);
         width: 240px;
         height: 240px;
+        padding-top: 20px;
         color: #fff;
         background: #232526;
         background: -webkit-linear-gradient(to right, #414345, #232526);
@@ -1055,7 +1056,6 @@
     margin-top: 40px;
     gap: 20px;
     .item {
-      flex: 1 1 calc(100%/3 - 40px);
       padding: 30px;
       background: var(--gradient-type1-2);
       background: -webkit-linear-gradient(to bottom, var(--gradient-type1-1), var(--gradient-type1-2));
@@ -1070,12 +1070,11 @@
         &:nth-child(2) {
           @include font-call(GmarketSans, 22px, 700);
           color: #fff;
-          margin-bottom: 10px;
         }
         &:nth-child(3) {
           @include font-call(GmarketSans, 16px, 500, 140%);
           color: #ccc;
-          word-break: keep-all;
+          margin-top: 10px;
         }
       }
     }
@@ -1157,10 +1156,12 @@
   .benefit {
     margin-top: 100px;
   }
+  .life-info {
+    gap: 50px 20px;
+  }
   .life-info,
   .benefit-info {
     @include flex(flex, null, wrap, stretch);
-    gap: 50px 20px;
     .svg-icon {
       flex: none;
       width: 22px;
@@ -1169,7 +1170,6 @@
       fill: var(--detail-text);
     }
     dl {
-      flex: 0 0 calc(100% / 3 - calc(40px / 3));
       dt {
         @include flex(flex, null, null, center);
         color: var(--detail-text);
@@ -1412,6 +1412,84 @@
       line-height: 140%;
       font: {
         size: 18px;
+      }
+    }
+  }
+}
+
+//! 다국어 설정
+body {
+  &.ko {
+    #visual {
+      .title {
+        &.ko {
+          @include flex(flex, column, null, center, null, null, center);
+        }
+      }
+    }
+    #service {
+      .ota-detail-info {
+        .item {
+          flex: 1 1 calc(100%/2 - calc(40px / 2));
+        }
+      }
+      .ctm-detail-info {
+        .item {
+          flex: 1 1 calc(100%/3 - calc(40px / 3));
+        }
+      }
+    }
+    #recruit {
+      .life-info,
+      .benefit-info {
+        dl {
+          flex: 0 0 calc(100% / 3 - calc(40px / 3));
+        }
+      }
+      .benefit-info {
+        gap: 50px 20px;
+      }
+    }
+  }
+  &.en {
+    #visual {
+      .title {
+        &.en {
+          @include flex(flex, column, null, center, null, null, center);
+        }
+      }
+    }
+    #service {
+      .ota-detail-info {
+        .item {
+          flex: 1 1 calc(100%/2 - calc(20px / 2));
+        }
+      }
+      .ctm-detail-info {
+        .item {
+          flex: 1 1 calc(100%/2 - calc(20px / 2));
+          p {
+            &:nth-child(3) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    #recruit {
+      .life-info,
+      .benefit-info {
+        dl {
+          flex: 0 0 calc(100% / 2 - calc(40px / 2));
+        }
+      }
+      .benefit-info {
+        gap: 20px;
+        dl {
+          dd {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -1739,9 +1817,6 @@
   }
   #service {
     .ctm-detail-info {
-      .item {
-        flex: 0 0 calc(100%/2 - 10px);
-      }
       .svg-icon {
         width: 34px;
         height: 34px;
@@ -1796,6 +1871,50 @@
 
   #map {
     height: 480px;
+  }
+
+  //! 다국어 설정
+  body {
+    &.ko {
+      #service {
+        .ota-detail-info,
+        .ctm-detail-info {
+          .item {
+            flex: 0 0 calc(100%/2 - calc(40px / 2));
+          }
+        }
+      }
+      #recruit {
+        .life-info,
+        .benefit-info {
+          dl {
+            flex: 0 0 calc(100% / 2 - calc(40px / 2));
+          }
+        }
+      }
+    }
+    &.en {
+      #service {
+        .ota-detail-info {
+          .item {
+            flex: 0 0 100%;
+          }
+        }
+        .ctm-detail-info {
+          .item {
+            flex: 0 0 100%;
+          }
+        }
+      }
+      #recruit {
+        .life-info,
+        .benefit-info {
+          dl {
+            flex: 0 0 calc(100% / 2 - calc(40px / 2));
+          }
+        }
+      }
+    }
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1878,7 +1997,6 @@
     .ctm-detail-info {
       gap: 15px 0;
       .item {
-        flex: 0 0 100%;
         min-height: auto;
       }
       .svg-icon {
@@ -1945,6 +2063,7 @@
           @include font-call(GmarketSans, clamp(20px, 768px, 4.360vw), 700);
           width: max(180px, calc(240 / var(--cal-width-w)));
           height: max(180px, calc(240 / var(--cal-width-w)));
+          padding-top: max(20px, calc(20 / var(--cal-width-w)));
           span {
             @include font-call(GmarketSans, clamp(16px, 768px, 2.180vw), 700, 140%);
             margin-top: 10px;
@@ -2039,7 +2158,6 @@
     .benefit-info {
       gap: 30px;
       dl {
-        flex: 0 0 100%;
         .svg-icon {
           width: max(16px, calc(22 / var(--cal-width-w)));
         }
@@ -2168,6 +2286,50 @@
             &:not(.footer-logo) {
               @include font-call(GmarketSans, clamp(11px, 768px, 1.823vw), 500);
             }
+          }
+        }
+      }
+    }
+  }
+
+  //! 다국어 설정
+  body {
+    &.ko {
+      #service {
+        .ota-detail-info,
+        .ctm-detail-info {
+          .item {
+            flex: 0 0 100%;
+          }
+        }
+      }
+      #recruit {
+        .life-info,
+        .benefit-info {
+          dl {
+            flex: 0 0 100%;
+          }
+        }
+      }
+    }
+    &.en {
+      #service {
+        .ota-detail-info {
+          .item {
+            flex: 0 0 100%;
+          }
+        }
+        .ctm-detail-info {
+          .item {
+            flex: 0 0 100%;
+          }
+        }
+      }
+      #recruit {
+        .life-info,
+        .benefit-info {
+          dl {
+            flex: 0 0 100%;
           }
         }
       }
