@@ -1,0 +1,34 @@
+{
+  "ko": {
+    "header-menu1": "회사소개",
+    "header-menu2": "사업소개",
+    "header-menu3": "채용안내",
+    "header-menu4": "오시는길",
+    "intro-title": "회사소개",
+    "intro-title2": "We are different",
+    "intro-service-title": "Since 2008",
+    "intro-service-title2": "여행산업을 변화시키고 있는 Travel Tech Company",
+    "intro-service-text1-1": "국내 최초 Dynamic Package Service",
+    "intro-service-text1-2": "2010년, 국내 OTA 업계 최초로 Dynamic Package의 개념을 만들었습니다.",
+    "intro-service-text2-1": "국내 최초 Meta Booking Platform",
+    "intro-service-text2-2": "2015년 처음 선보인 이후, 대부분의 이커머스 여행 메타 서비스의 표준이 되었습니다.",
+    "intro-service-text3-1": "국내 최초 출장 Platform",
+    "intro-service-text3-2": "삼성, LG 등 그룹사의 출장자들은 트래포트가 만든 출장 플랫폼을 사용하고 있습니다."
+  },
+  "en": {
+    "header-menu1": "ABOUT US",
+    "header-menu2": "BUSINESS",
+    "header-menu3": "RECRUIT",
+    "header-menu4": "LOCATION",
+    "intro-title": "ABOUT US",
+    "intro-title2": "We are different",
+    "intro-service-title": "Since 2008",
+    "intro-service-title2": "Travel Tech Company which is changing the travel industry",
+    "intro-service-text1-1": "Dynamic Package Service",
+    "intro-service-text1-2": "We created the concept of Dynamic Package for the first time in the domestic OTA industry in 2010.",
+    "intro-service-text2-1": "Meta Booking Platform",
+    "intro-service-text2-2": "It has become the standard for most e-commerce travel meta-services since 2015.",
+    "intro-service-text3-1": "CTM Platform",
+    "intro-service-text3-2": "Business travelers who work in Samsung and LG are using the platform that we supplied."
+  }
+}

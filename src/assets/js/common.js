@@ -237,28 +237,74 @@ const traport = {
     });
   },
   langChange: function () {
-    const checkbox = $('#languageCheck');
-    const storedValue = localStorage.getItem('languageCheckboxState');
-    if (storedValue) {
-      checkbox.prop('checked', JSON.parse(storedValue));
-      updateLanguageClass(checkbox.prop('checked'));
-    }
-    checkbox.on('change', function () {
-      const isChecked = $(this).prop('checked');
-      localStorage.setItem('languageCheckboxState', JSON.stringify(isChecked));
-      updateLanguageClass(isChecked);
-    });
-    function updateLanguageClass(isEnglish) {
-      const body = $('body');
-      const htmlLang = $('html');
-      if (isEnglish) {
-        body.removeClass('ko').addClass('en');
-        htmlLang.attr('lang', 'en')
-      } else {
-        body.removeClass('en').addClass('ko');
-        htmlLang.attr('lang', 'ko');
+    class Language {
+      constructor () {
+        this.currentLanguage = this.loadLanguageFromLocalStorage() || "ko";
+        this.languageData = null;
+        this.showLoadingIndicator();
+        this.loadLanguageData(() => {
+          this.hideLoadingIndicator();
+          this.updateContent();
+        });
+        this.initLanguageToggle();
+      }
+
+      showLoadingIndicator() {
+        $("body").append("<div id='loadingIndicator'><svg width='42' height='42' class='svg-icon' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M16.5 6h-.75V1.5h-1.5V6h-4.5V1.5h-1.5V6H7.5A1.5 1.5 0 0 0 6 7.5V12a6.006 6.006 0 0 0 5.25 5.948V22.5h1.5v-4.552A6.006 6.006 0 0 0 18 12V7.5A1.5 1.5 0 0 0 16.5 6Z'></path></svg></div>");
+      }
+
+      hideLoadingIndicator() {
+        $("#loadingIndicator").remove();
+      }
+
+      setLanguage(language) {
+        this.currentLanguage = language;
+        this.updateContent();
+        this.saveLanguageToLocalStorage();
+      }
+      loadLanguageData(callback) {
+        $.getJSON('../assets/js/languages.json', (data) => {
+          this.languageData = data;
+          if (typeof callback === "function") {
+            callback();
+          }
+        });
+      }
+      updateContent() {
+        if (!this.languageData) {
+          return;
+        }
+        const data = this.languageData[this.currentLanguage];
+        $("[data-localize]").each(function () {
+          const key = $(this).data("localize");
+          if (key) {
+            $(this).text(data[key]);
+          }
+        });
+        $("html").attr("lang", this.currentLanguage);
+        $("body").removeClass("ko en").addClass(this.currentLanguage);
+      }
+      saveLanguageToLocalStorage() {
+        localStorage.setItem("selectedLanguage", this.currentLanguage);
+      }
+      loadLanguageFromLocalStorage() {
+        return localStorage.getItem("selectedLanguage");
+      }
+
+      initLanguageToggle() {
+        const savedLanguage = this.loadLanguageFromLocalStorage();
+        if (savedLanguage === "en") {
+          $("#languageCheck").prop("checked", true);
+        }
+
+        // Language toggle event handler
+        $("#languageCheck").on("change", () => {
+          const targetLanguage = $("#languageCheck").prop("checked") ? "en" : "ko";
+          this.setLanguage(targetLanguage);
+        });
       }
     }
+    const language = new Language();
   }
 }
 

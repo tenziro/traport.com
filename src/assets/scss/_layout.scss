@@ -1761,6 +1761,19 @@ body {
   }
 }
 
+// ! 로딩
+#loadingIndicator {
+  @include position(fixed, 0, 0, 0, 0, 99999);
+  @include flex(flex, null, null, center, null, null, center);
+  background: {
+    color: var(--bg-contents);
+  }
+  .svg-icon {
+    fill: var(--text-primary);
+    animation: plug infinite 0.8s ease;
+  }
+}
+
 // ! responsive setting
 @media only screen and (max-width: 1068px) {
   .scroll-animation {
@@ -2416,6 +2429,17 @@ body {
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes plug {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
     transform: translateY(0);
   }
 }
