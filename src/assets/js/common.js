@@ -237,15 +237,28 @@ const traport = {
     });
   },
   langChange: function () {
-    $('#languageCheck').change(function () {
-      if ($(this).is(':checked')) {
-        $('html').attr('lang', 'en');
-        $('body').removeClass('ko').addClass('en');
-      } else {
-        $('html').attr('lang', 'ko');
-        $('body').removeClass('en').addClass('ko');
-      }
+    const checkbox = $('#languageCheck');
+    const storedValue = localStorage.getItem('languageCheckboxState');
+    if (storedValue) {
+      checkbox.prop('checked', JSON.parse(storedValue));
+      updateLanguageClass(checkbox.prop('checked'));
+    }
+    checkbox.on('change', function () {
+      const isChecked = $(this).prop('checked');
+      localStorage.setItem('languageCheckboxState', JSON.stringify(isChecked));
+      updateLanguageClass(isChecked);
     });
+    function updateLanguageClass(isEnglish) {
+      const body = $('body');
+      const htmlLang = $('html');
+      if (isEnglish) {
+        body.removeClass('ko').addClass('en');
+        htmlLang.attr('lang', 'en')
+      } else {
+        body.removeClass('en').addClass('ko');
+        htmlLang.attr('lang', 'ko');
+      }
+    }
   }
 }
 
