@@ -1776,6 +1776,8 @@ body {
   }
   .svg-icon {
     fill: var(--text-primary);
+    width: 42px;
+    height: 42px;
     animation: plug infinite 0.8s ease;
   }
 }
@@ -2456,7 +2458,7 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(5px);
+    transform: translateY(10px);
   }
   100% {
     transform: translateY(0);
