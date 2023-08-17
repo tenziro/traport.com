@@ -77,6 +77,10 @@
         &:before {
           background: {
             color: #5754fe;
+            image: url($common-image-url + 'ico-checkbox.png');
+            size: contain;
+            position: 50% 50%;
+            repeat: no-repeat;
           }
         }
       }
@@ -1723,9 +1727,15 @@ body {
       }
     }
     .noti {
+      @include flex(flex, null, null, flex-start);
       color: var(--text-modal);
       font: {
         size: 14px;
+      }
+      &:before {
+        content: "※";
+        margin-right: 5px;
+        flex: none;
       }
     }
   }

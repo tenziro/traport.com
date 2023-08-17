@@ -173,10 +173,10 @@
     "recruit-apply-form-select4-1": "지원 포지션 선택",
     "recruit-apply-form-select4-2": "프론트엔드(Frontend)",
     "recruit-apply-form-select4-3": "백엔드(Backend)",
-    "recruit-apply-form-check": "[필수] <span>개인 정보 수집/이용</span>에 동의합니다.",
+    "recruit-apply-form-check": "<span>개인 정보 수집/이용</span>에 동의합니다.",
     "recruit-apply-form-check-detail": "내용보기",
     "recruit-apply-form-text": "1. 수집 목적<br>- 채용 접수<br>2. 수집 항목<br>- 이름, 생년월일, 성별, 이메일 주소, 연락처, 포트폴리오, 최종 학력, 경력 기간, 지원 포지션<br>3. 보유 기간<br>- 채용 종료 시까지",
-    "recruit-apply-form-text2": "※ 접수된 내용은 채용 절차 진행 외의 용도로 사용되지 않습니다.",
+    "recruit-apply-form-text2": "접수된 내용은 채용 절차 진행 외의 용도로 사용되지 않습니다.",
     "recruit-apply-form-apply-btn": "입사 지원 접수하기"
   },
   "en": {
@@ -353,10 +353,10 @@
     "recruit-apply-form-select4-1": "Select",
     "recruit-apply-form-select4-2": "Frontend",
     "recruit-apply-form-select4-3": "Backend",
-    "recruit-apply-form-check": "[Required]&nbsp;<span>Collection and use of personal information</span>&nbsp;agreement",
+    "recruit-apply-form-check": "<span>Collection and use of personal information</span>&nbsp;agreement",
     "recruit-apply-form-check-detail": "See More",
-    "recruit-apply-form-text": "1. 수집 목적<br>- 채용 접수<br>2. 수집 항목<br>- 이름, 생년월일, 성별, 이메일 주소, 연락처, 포트폴리오, 최종 학력, 경력 기간, 지원 포지션<br>3. 보유 기간<br>- 채용 종료 시까지",
-    "recruit-apply-form-text2": "※ The information received will not be used for any purpose other than the recruitment process.",
+    "recruit-apply-form-text": "1. Purpose of collection<br>- Recruitment application<br>2. Collection items<br>- Name, Date of birth, Gender, Email address, Phone number, Portfolio, Education, Career, Position<br>3. Period of retentation<br>- Until the end of recruitment",
+    "recruit-apply-form-text2": "The information received will not be used for any purpose other than the recruitment process.",
     "recruit-apply-form-apply-btn": "Apply"
   }
 }
