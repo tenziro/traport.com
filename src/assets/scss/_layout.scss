@@ -119,7 +119,7 @@
 // * header
 #header {
   @include position(fixed, 0, 0, null, 0, 500);
-  padding-top: 16px;
+  padding-top: 14px;
   &.is-active {
     @include flex(flex, null, null, center, null, null, center);
     &:before {
@@ -132,11 +132,10 @@
   .main-nav {
     @include flex(flex, null, null, center);
     @include position(relative, null, null, null, null, 502);
-    @include border(all, 1px, solid, hsla(0, 0%, 100%, 0.1), 25px);
+    @include border(all, 1px, solid, hsla(0, 0%, 100%, 0.1), 26px);
     overflow: hidden;
     width: max-content;
-    height: 50px;
-    padding: 0 10px;
+    padding: 0 12px;
     background: {
       color: rgba(33, 33, 33, 0.8);
     }
@@ -146,12 +145,13 @@
     gap: 6px;
     .nav-item {
       @include position(relative);
+      @include flex(flex, null, null, center, null, null, center);
+      height: 50px;
     }
     a {
       @include position(relative, null, null, null, null, 1);
       @include font-call(Pretendard, 14px, 600);
-      display: block;
-      padding: 8px 16px;
+      padding: 6px 12px;
       transition: opacity 200ms ease, color 350ms ease;
       &:not(.focus) {
         color: #999;
@@ -163,7 +163,7 @@
       &.focus {
         color: #fff;
         border: {
-          radius: 100px;
+          radius: 20px;
         }
         background: {
           color: hsla(0, 0%, 100%, 0.1);
@@ -461,7 +461,7 @@
     repeat: no-repeat;
   }
   &.pc {
-    @include position(fixed, 33px, null, null, 28px, 1000);
+    @include position(fixed, 31px, null, null, 28px, 1000);
     display: block;
     cursor: pointer;
   }
@@ -1802,6 +1802,20 @@ body {
   .inside {
     padding: 0 40px;
   }
+  #header {
+    padding-top: 17px;
+    .main-nav {
+      @include border(all, 1px, solid, hsla(0, 0%, 100%, 0.1), 22px);
+      .nav-item {
+        height: 44px;
+      }
+      a {
+        font: {
+          size: 13px;
+        }
+      }
+    }
+  }
   #visual {
     background: {
       attachment: unset;
@@ -1980,18 +1994,6 @@ body {
 @media only screen and (max-width: 768px) {
   .inside {
     padding: 0 20px;
-  }
-  #header {
-    height: calc(50 / var(--cal-width-w));
-    min-height: 40px;
-    .main-nav {
-      a {
-        padding: calc(8 / var(--cal-width-w)) calc(16 / var(--cal-width-w));
-        font: {
-          size: clamp(12px, 768px, 1.907vw);
-        }
-      }
-    }
   }
   #visual {
     p {
