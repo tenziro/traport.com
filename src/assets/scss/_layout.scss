@@ -2053,7 +2053,9 @@ body {
         }
       }
       span {
-        display: none;
+        &:not(:nth-child(2)) {
+          display: none;
+        }
       }
     }
     .history-detail-info {
