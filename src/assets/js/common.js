@@ -1,31 +1,28 @@
 // * init script
 const traport = {
-  motionText: function () {
-    const visualTitle = $('#visual .title');
-    setTimeout(function () {
-      visualTitle.addClass('animate-start');
-    }, 1500);
-  },
   motionBg: function () {
     const maxDarkness = 0.95;
     const minDarkness = 0.45;
     const visualHeight = $("#visual").outerHeight();
-
+    const bgDim = $('#visual .dim');
+    const bgList = $('#visual .visual-list');
     $(window).scroll(function () {
       const currentScroll = $(this).scrollTop();
 
       if (currentScroll <= visualHeight) {
         const darkness = (currentScroll / visualHeight) * (maxDarkness - minDarkness) + minDarkness;
-        $('#visual .dim').css('background-color', `rgba(0, 0, 0, ${darkness})`);
+        bgDim.css('background-color', `rgba(0, 0, 0, ${darkness})`);
       } else {
-        $('#visual .dim').css('background-color', `rgba(0, 0, 0, ${maxDarkness})`);
+        bgDim.css('background-color', `rgba(0, 0, 0, ${maxDarkness})`);
       }
 
       if (currentScroll >= visualHeight) {
+        bgList.css('position', 'absolute');
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
           $("#header, #mo-header, .lang-change, .btn-mo-menu, .header-logo").addClass("dark");
         }
       } else {
+        bgList.css('position', 'fixed');
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
           $("#header, #mo-header, .lang-change, .btn-mo-menu, .header-logo").removeClass("dark");
         }
@@ -274,6 +271,7 @@ const traport = {
         if (!this.languageData) {
           return;
         }
+        $(window).scrollTop(0);
         const data = this.languageData[this.currentLanguage];
         $("[data-localize]").each(function () {
           const key = $(this).data("localize");
@@ -288,6 +286,15 @@ const traport = {
         });
         $("html").attr("lang", this.currentLanguage);
         $("body").removeClass("ko en").addClass(this.currentLanguage);
+        if ($('body').hasClass('ko')) {
+          setTimeout(function () {
+            $('#visual .title.ko').addClass('animate-start');
+          }, 1800);
+        } else {
+          setTimeout(function () {
+            $('#visual .title.en').addClass('animate-start');
+          }, 1800);
+        }
       }
       saveLanguageToLocalStorage() {
         localStorage.setItem("selectedLanguage", this.currentLanguage);
@@ -306,6 +313,17 @@ const traport = {
         $("#languageCheck").on("change", () => {
           const targetLanguage = $("#languageCheck").prop("checked") ? "en" : "ko";
           this.setLanguage(targetLanguage);
+          if (this.currentLanguage === 'ko') {
+            $("#visual .title.en").removeClass("animate-start");
+            setTimeout(function () {
+              $('#visual .title.ko').addClass("animate-start");
+            }, 500);
+          } else {
+            $("#visual .title.ko").removeClass("animate-start");
+            setTimeout(function () {
+              $('#visual .title.en').addClass("animate-start");
+            }, 500);
+          }
         });
       }
     }
@@ -315,7 +333,6 @@ const traport = {
 
 // * ready...
 $(document).ready(function () {
-  traport.motionText();
   traport.motionBg();
   traport.motionImage();
   traport.toggleDarkMode();
