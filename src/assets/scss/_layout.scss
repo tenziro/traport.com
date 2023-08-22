@@ -1646,6 +1646,7 @@ body {
   }
   &-body {
     @include scrollbar(6px, #5754FE, 3px, transparent);
+    -webkit-overflow-scrolling: auto;
     flex: 1 1;
     padding: 20px;
     overflow-y: auto;
