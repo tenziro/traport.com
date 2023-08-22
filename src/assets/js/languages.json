@@ -239,7 +239,7 @@
     "service-ota-text6": "Create new reservation with newly found hotel and cancel existing customer reservation",
     "service-ota-text7": "RESULT",
     "service-ota-text8": "Maximize OTA revenue by finding suppliers that are cheaper than customers' booking",
-    "service-ota-text9": "Hotel code mapping and room mapping which are the core technologies required for rebooking. We developed through machine learning after 3 years of research and development and trial and error.",
+    "service-ota-text9": "Hotel code mapping and room mapping which are the core technologies required for rebooking.<br>We developed through machine learning after 3 years of research and development and trial and error.",
     "service-ota-text10": "OTA doesn't require new development or financial investment.",
     "service-ota-text11": "It's a revenue share process so you don't have to pay for it if we doesn't find a cheaper price.",
     "service-api-title": "Single API",
