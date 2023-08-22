@@ -241,16 +241,16 @@
         opacity: 1;
         transform: translateY(0);
         &:nth-child(1) {
-          transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+          transition: opacity 1s ease 300ms, transform 1s ease 300ms;
         }
         &:nth-child(2) {
-          transition: opacity 1s ease 0.5s, transform 1s ease 0.4s;
+          transition: opacity 1s ease 500ms, transform 1s ease 400ms;
         }
         &:nth-child(3) {
-          transition: opacity 1s ease 0.7s, transform 1s ease 0.5s;
+          transition: opacity 1s ease 700ms, transform 1s ease 500ms;
         }
         &:nth-child(4) {
-          transition: opacity 1s ease 0.9s, transform 1s ease 0.6s;
+          transition: opacity 1s ease 900ms, transform 1s ease 600ms;
         }
       }
     }
@@ -563,11 +563,19 @@
       width: fit-content;
       letter-spacing: -2px;
       &:before {
-        @include position(absolute, 0, 0, 0, 0, 1);
+        @include position(absolute, 0, 0, 0, 0, 2);
         content: "";
         width: 0;
         background: {
           color: #fff;
+        }
+      }
+      &:after {
+        @include position(absolute, 0, 0, 0, 0, 1);
+        content: "";
+        width: 0;
+        background: {
+          color: #2b59f8;
         }
       }
     }
@@ -591,28 +599,41 @@
           left: 105%;
           width: 100%;
         }
+        &:after {
+          left: 105%;
+          width: 100%;
+        }
         &:nth-child(1) {
           span {
-            transition: opacity 0.5s ease 0.5s;
+            transition: opacity 500ms ease 500ms;
           }
           &:before {
-            transition: width 0.5s 0s, left 0.5s ease 1.5s;
+            transition: width 500ms 0ms, left 500ms ease 1500ms;
+          }
+          &:after {
+            transition: width 540ms 0ms, left 540ms ease 1500ms;
           }
         }
         &:nth-child(2) {
           span {
-            transition: opacity 0.5s ease 1s;
+            transition: opacity 500ms ease 1s;
           }
           &:before {
-            transition: width 0.5s 0.5s, left 0.5s ease 2s;
+            transition: width 500ms 500ms, left 500ms ease 2000ms;
+          }
+          &:after {
+            transition: width 540ms 500ms, left 540ms ease 2000ms;
           }
         }
         &:nth-child(3) {
           span {
-            transition: opacity 0.5s ease 1.5s;
+            transition: opacity 500ms ease 1500ms;
           }
           &:before {
-            transition: width 0.5s 1s, left 0.5s ease 2.5s;
+            transition: width 500ms 1000ms, left 500ms ease 2500ms;
+          }
+          &:after {
+            transition: width 540ms 1000ms, left 540ms ease 2500ms;
           }
         }
       }
@@ -1225,7 +1246,7 @@
           width: 24px;
           height: 24px;
           margin-left: auto;
-          transition: transform 0.5s;
+          transition: transform 500ms;
           fill: var(--text-primary);
         }
       }
@@ -1312,7 +1333,7 @@
   max-width: 320px;
   height: 52px;
   color: #fff;
-  transition: all 0.5s;
+  transition: all 500ms;
   border: {
     radius: 8px;
   }
@@ -1607,7 +1628,7 @@ body {
     @include position(relative, null, null, null, null, 2001);
     @include border(all, 1px, solid, var(--modal-border), 16px);
     transform: translateY(500px);
-    transition: transform 1s ease 0.3s;
+    transition: transform 1s ease 300ms;
     flex: none;
     width: 100%;
     max-width: 620px;
@@ -1680,7 +1701,7 @@ body {
     max-width: 320px;
     height: 52px;
     color: #fff;
-    transition: all 0.5s;
+    transition: all 500ms;
     border: {
       radius: 8px;
     }
