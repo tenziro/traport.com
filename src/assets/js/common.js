@@ -160,7 +160,6 @@ const traport = {
     function isMobile() {
       return $(window).width() <= 768;
     }
-
     let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     let isMobileWidth = isMobile();
 
@@ -329,6 +328,44 @@ const traport = {
       }
     }
     const language = new Language();
+  },
+  mouseControl: function () {
+    let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const circle = $('.mouse-circle');
+    const clickItem = $('a, button, summary');
+
+    if (isMobileDevice) {
+      circle.hide();
+    } else {
+      circle.show();
+    }
+
+    let currentX = 0;
+    let currentY = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    $(document).on('mousemove', function (e) {
+      targetX = e.clientX;
+      targetY = e.clientY;
+    });
+
+    function animateCircle() {
+      const diffX = targetX - currentX;
+      const diffY = targetY - currentY;
+      currentX += diffX * 0.1;
+      currentY += diffY * 0.1;
+      circle.css('left', `${currentX}px`);
+      circle.css('top', `${currentY}px`);
+      requestAnimationFrame(animateCircle);
+    }
+    animateCircle();
+    clickItem.on('mouseenter', function () {
+      circle.addClass('circle-hover').css('transform', 'translate(-50%, -50%) scale(0.7)');
+    });
+    clickItem.on('mouseleave', function () {
+      circle.removeClass('circle-hover').css('transform', 'translate(-50%, -50%)');
+    });
   }
 }
 
@@ -342,6 +379,7 @@ $(document).ready(function () {
   traport.recruitModal();
   traport.daumMap();
   traport.langChange();
+  traport.mouseControl();
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
     traport.toggleDarkMode();
   });
@@ -355,7 +393,8 @@ $(document).ready(function () {
     duration: 1000,
   });
 
-  $('.header-logo').on('click', function () {
+  $('.header-logo').on('click', function (e) {
+    e.preventDefault();
     $(window).scrollTop(0);
   });
 });
