@@ -353,15 +353,15 @@ const traport = {
     function animateCircle() {
       const diffX = targetX - currentX;
       const diffY = targetY - currentY;
-      currentX += diffX * 0.1;
-      currentY += diffY * 0.1;
+      currentX += diffX * 0.2;
+      currentY += diffY * 0.2;
       circle.css('left', `${currentX}px`);
       circle.css('top', `${currentY}px`);
       requestAnimationFrame(animateCircle);
     }
     animateCircle();
     clickItem.on('mouseenter', function () {
-      circle.addClass('circle-hover').css('transform', 'translate(-50%, -50%) scale(0.7)');
+      circle.addClass('circle-hover').css('transform', 'translate(-50%, -50%) scale(1.4)');
     });
     clickItem.on('mouseleave', function () {
       circle.removeClass('circle-hover').css('transform', 'translate(-50%, -50%)');
