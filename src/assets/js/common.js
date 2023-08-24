@@ -366,6 +366,14 @@ const traport = {
     clickItem.on('mouseleave', function () {
       circle.removeClass('circle-hover').css('transform', 'translate(-50%, -50%)');
     });
+  },
+  smoothScroll: function () {
+    const lenis = new Lenis()
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
   }
 }
 
@@ -380,6 +388,7 @@ $(document).ready(function () {
   traport.daumMap();
   traport.langChange();
   traport.mouseControl();
+  traport.smoothScroll();
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
     traport.toggleDarkMode();
   });
