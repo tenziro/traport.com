@@ -187,15 +187,18 @@ const traport = {
     const privacyDetail = $('.privacy-detail');
     const btnRecruit = $('.btn-recruit-apply');
     const btnModalClose = $('.modal .btn-modal-close');
+    const lenis = new Lenis();
     btnPrivacy.on('click', function () {
       privacyDetail.toggleClass('is-active');
     });
     btnRecruit.on('click', function () {
       modal.addClass('is-active');
+      lenis.stop();
       $('body').addClass('overflow-hidden');
     });
     btnModalClose.on('click', function () {
       modal.removeClass('is-active');
+      lenis.start();
       privacyDetail.removeClass('is-active');
       $('body').removeClass('overflow-hidden');
     });

@@ -1,5 +1,24 @@
 @charset "UTF-8";
 
+// * lenis
+html.lenis {
+  height: auto;
+}
+.lenis {
+  &.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  &.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  &.lenis-stopped {
+    overflow: hidden !important;
+  }
+  &.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
 
 // * components
 .input {
@@ -1653,7 +1672,7 @@ body {
     &:has(form) {
       form {
         @include flex(flex, column);
-        max-height: calc(70dvh - 120px);
+        max-height: calc(100dvh - 120px);
       }
     }
     &:not(:has(form)) {
