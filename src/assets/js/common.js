@@ -364,7 +364,7 @@ const traport = {
     }
     animateCircle();
     clickItem.on('mouseenter', function () {
-      circle.addClass('circle-hover').css('transform', 'translate(-50%, -50%) scale(1.4)');
+      circle.addClass('circle-hover').css('transform', 'translate(-50%, -50%) scale(1.2)');
     });
     clickItem.on('mouseleave', function () {
       circle.removeClass('circle-hover').css('transform', 'translate(-50%, -50%)');

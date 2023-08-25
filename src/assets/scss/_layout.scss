@@ -137,9 +137,9 @@ html.lenis {
 .mouse-circle {
   @include position(fixed, null, null, null, null, 99999, -50%, -50%);
   @include border(all, 2px, solid, #5754FE, 100%);
-  width: 28px;
-  height: 28px;
-  transition: background 300ms, transform 300ms, border 0.300ms;
+  width: 20px;
+  height: 20px;
+  transition: background 300ms, transform 300ms, border 300ms;
   transform-origin: center center;
   pointer-events: none;
   &.circle-hover {
