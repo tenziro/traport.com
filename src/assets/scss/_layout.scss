@@ -1253,7 +1253,7 @@ html.lenis {
     margin-top: 100px;
     .position-item {
       &-header {
-        @include flex(flex, null, null, center);
+        @include flex(flex, null, null, flex-start);
         @include position(relative);
         cursor: pointer;
         .label {
@@ -1273,6 +1273,7 @@ html.lenis {
         }
         .subject {
           @include font-call(GmarketSans, 18px, 500);
+          line-height: 140%;
           color: var(--text-primary);
         }
         .svg-icon {
@@ -1749,7 +1750,6 @@ body {
   .recruit-agree {
     margin-top: 20px;
     dt {
-      @include flex(flex, null, null, flex-start);
       margin-bottom: 10px;
     }
     .btn-privacy-detail {

@@ -1,5 +1,17 @@
 // * init script
 const traport = {
+  init: function () {
+    this.motionBg();
+    this.motionImage();
+    this.toggleDarkMode();
+    this.updatePcNav();
+    this.mobileResize();
+    this.recruitModal();
+    this.daumMap();
+    this.langChange();
+    this.mouseControl();
+    this.smoothScroll();
+  },
   motionBg: function () {
     const maxDarkness = 0.95;
     const minDarkness = 0.45;
@@ -17,11 +29,13 @@ const traport = {
       }
 
       if (currentScroll >= visualHeight) {
+        bgDim.css('position', 'absolute');
         bgList.css('position', 'absolute');
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
           $("#header, #mo-header, .lang-change, .btn-mo-menu, .header-logo").addClass("dark");
         }
       } else {
+        bgDim.css('position', 'fixed');
         bgList.css('position', 'fixed');
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
           $("#header, #mo-header, .lang-change, .btn-mo-menu, .header-logo").removeClass("dark");
@@ -183,13 +197,17 @@ const traport = {
   },
   recruitModal: function () {
     const modal = $('.modal');
-    const btnPrivacy = $('.btn-privacy-detail');
+    const btnPrivacy = $('.recruit-agree .control-input');
     const privacyDetail = $('.privacy-detail');
     const btnRecruit = $('.btn-recruit-apply');
     const btnModalClose = $('.modal .btn-modal-close');
     const lenis = new Lenis();
-    btnPrivacy.on('click', function () {
-      privacyDetail.toggleClass('is-active');
+    btnPrivacy.on('change', function () {
+      if ($(this).is(':checked')) {
+        privacyDetail.addClass('is-active');
+      } else {
+        privacyDetail.removeClass('is-active');
+      }
     });
     btnRecruit.on('click', function () {
       modal.addClass('is-active');
@@ -356,8 +374,8 @@ const traport = {
     function animateCircle() {
       const diffX = targetX - currentX;
       const diffY = targetY - currentY;
-      currentX += diffX * 0.2;
-      currentY += diffY * 0.2;
+      currentX += diffX * 0.5;
+      currentY += diffY * 0.5;
       circle.css('left', `${currentX}px`);
       circle.css('top', `${currentY}px`);
       requestAnimationFrame(animateCircle);
@@ -382,16 +400,7 @@ const traport = {
 
 // * ready...
 $(document).ready(function () {
-  traport.motionBg();
-  traport.motionImage();
-  traport.toggleDarkMode();
-  traport.updatePcNav();
-  traport.mobileResize();
-  traport.recruitModal();
-  traport.daumMap();
-  traport.langChange();
-  traport.mouseControl();
-  traport.smoothScroll();
+  traport.init();
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
     traport.toggleDarkMode();
   });

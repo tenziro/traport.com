@@ -14,10 +14,10 @@
   }
   cursor: none !important;
 }
-html {
-  // scroll-behavior: smooth;
-  // @include scrollbar(6px, #5754FE, 3px, transparent);
-}
+// html {
+//   scroll-behavior: smooth;
+//   @include scrollbar(6px, #5754FE, 3px, transparent);
+// }
 body {
   @include position(relative);
   -webkit-font-smoothing: antialiased;
