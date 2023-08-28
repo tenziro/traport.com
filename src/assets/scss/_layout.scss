@@ -1410,9 +1410,10 @@ html.lenis {
       }
     }
   }
-  .map {
+  #map {
     overflow: hidden;
     margin-top: 40px;
+    height: 420px;
     border: {
       radius: 16px;
     }
@@ -1437,11 +1438,6 @@ html.lenis {
       @include font-call(GmarketSans, 16px, 500, 140%);
     }
   }
-}
-
-#map {
-  height: 600px;
-  margin-top: 40px;
 }
 
 // ! cert
@@ -1961,7 +1957,6 @@ body {
     @include font-call(GmarketSans, 16px, 500);
     height: 46px;
   }
-
   #location {
     .contact-info {
       gap: 20px;
@@ -1971,12 +1966,10 @@ body {
         }
       }
     }
+    #map {
+      height: 320px;
+    }
   }
-
-  #map {
-    height: 480px;
-  }
-
   #footer {
     .company-info {
       li {
@@ -2351,6 +2344,10 @@ body {
         }
       }
     }
+    #map {
+      margin-top: calc(40 / var(--cal-width-w));
+      height: calc(300 / var(--cal-width-w));
+    }
     .map-info {
       li {
         align-items: flex-start;
@@ -2368,11 +2365,6 @@ body {
       }
     }
   }
-
-  #map {
-    height: 320px;
-  }
-
   #footer {
     padding: max(30px, calc(50 / var(--cal-width-w))) 0;
     .company-info {
