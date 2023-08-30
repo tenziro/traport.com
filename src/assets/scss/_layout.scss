@@ -95,11 +95,11 @@ html.lenis {
       + .control-text {
         &:before {
           background: {
-            color: #5754fe;
-            image: url($common-image-url + 'ico-checkbox.png');
-            size: contain;
             position: 50% 50%;
+            color: #5754fe;
+            size: contain;
             repeat: no-repeat;
+            image: url($common-image-url + 'ico-checkbox.png');
           }
         }
       }
@@ -168,15 +168,15 @@ html.lenis {
     @include position(relative, null, null, null, null, 502);
     @include border(all, 1px, solid, hsla(0, 0%, 100%, 0.1), 26px);
     overflow: hidden;
+    flex: none;
     width: max-content;
     padding: 0 12px;
+    backdrop-filter: blur(34px);
+    box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.21);
+    gap: 6px;
     background: {
       color: rgba(33, 33, 33, 0.8);
     }
-    backdrop-filter: blur(34px);
-    box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.21);
-    flex: none;
-    gap: 6px;
     .nav-item {
       @include position(relative);
       @include flex(flex, null, null, center, null, null, center);
@@ -589,8 +589,8 @@ html.lenis {
   }
   .title {
     @include position(relative, null, null, null, null, 3);
-    text-align: center;
     display: none;
+    text-align: center;
     p {
       @include position(relative);
       overflow: hidden;
@@ -755,8 +755,8 @@ html.lenis {
           word-break: keep-all;
           &:before {
             content: "-";
-            margin-right: 5px;
             flex: none;
+            margin-right: 5px;
           }
           + dd {
             margin-top: 5px;
@@ -889,8 +889,8 @@ html.lenis {
         @include font-call(GmarketSans, 32px, 700);
         width: 240px;
         height: 240px;
-        padding-top: 20px;
         color: #fff;
+        padding-top: 20px;
         background: #232526;
         background: -webkit-linear-gradient(to right, #414345, #232526);
         background: linear-gradient(to right, #414345, #232526);
@@ -1035,8 +1035,8 @@ html.lenis {
         @include font-call(GmarketSans, 32px, 700);
         width: 240px;
         height: 240px;
-        padding-top: 20px;
         color: #fff;
+        padding-top: 20px;
         background: #232526;
         background: -webkit-linear-gradient(to right, #414345, #232526);
         background: linear-gradient(to right, #414345, #232526);
@@ -1253,7 +1253,7 @@ html.lenis {
     margin-top: 100px;
     .position-item {
       &-header {
-        @include flex(flex, null, null, flex-start);
+        @include flex(flex, null, null, center);
         @include position(relative);
         cursor: pointer;
         .label {
@@ -1273,8 +1273,8 @@ html.lenis {
         }
         .subject {
           @include font-call(GmarketSans, 18px, 500);
-          line-height: 140%;
           color: var(--text-primary);
+          line-height: 140%;
         }
         .svg-icon {
           flex: none;
@@ -1412,8 +1412,8 @@ html.lenis {
   }
   #map {
     overflow: hidden;
-    margin-top: 40px;
     height: 420px;
+    margin-top: 40px;
     border: {
       radius: 16px;
     }
@@ -1658,11 +1658,11 @@ body {
   &-contents {
     @include position(relative, null, null, null, null, 2001);
     @include border(all, 1px, solid, var(--modal-border), 16px);
-    transform: translateY(500px);
-    transition: transform 1s ease 300ms;
     flex: none;
     width: 100%;
     max-width: 620px;
+    transform: translateY(500px);
+    transition: transform 1s ease 300ms;
     background: {
       color: var(--bg-modal);
     }
@@ -1699,9 +1699,9 @@ body {
   }
   &-body {
     @include scrollbar(6px, #5754FE, 3px, transparent);
-    -webkit-overflow-scrolling: auto;
     flex: 1 1;
     padding: 20px;
+    -webkit-overflow-scrolling: auto;
     overflow-y: auto;
     background: {
       color: var(--bg-modal-contents);
@@ -1721,8 +1721,8 @@ body {
       }
     }
     dt {
-      margin-bottom: 10px;
       color: var(--text-modal);
+      margin-bottom: 10px;
     }
   }
   .btn-apply {
@@ -1749,26 +1749,26 @@ body {
       margin-bottom: 10px;
     }
     .btn-privacy-detail {
-      margin-left: auto;
       color: var(--text-modal);
+      margin-left: auto;
+      text-decoration: underline;
+      text-underline-offset: 5px;
       font: {
         size: 14px;
       }
-      text-decoration: underline;
-      text-underline-offset: 5px;
     }
     .privacy-detail {
       @include border(all, 1px, solid, var(--form-border), 8px);
       @include scrollbar(6px, #5754FE, 3px, transparent);
       max-height: 300px;
-      overflow-y: auto;
-      margin-bottom: 10px;
       padding: 16px;
       color: var(--text-modal);
+      overflow-y: auto;
+      margin-bottom: 10px;
+      line-height: 160%;
       background: {
         color: var(--bg-form);
       }
-      line-height: 160%;
       font: {
         size: 13px;
       }
@@ -1787,8 +1787,8 @@ body {
       }
       &:before {
         content: "※";
-        margin-right: 5px;
         flex: none;
+        margin-right: 5px;
       }
     }
   }
@@ -1840,9 +1840,9 @@ body {
     color: var(--bg-contents);
   }
   .svg-icon {
-    fill: var(--text-primary);
     width: 42px;
     height: 42px;
+    fill: var(--text-primary);
     animation: plug infinite 0.8s ease;
   }
 }
@@ -2295,16 +2295,20 @@ body {
     .recruit-now {
       .position-item {
         &-header {
+          @include flex(flex, column, null, flex-start);
           min-width: 0;
+          padding-right: 20px;
           .label {
             @include font-call(GmarketSans, clamp(12px, 768px, 1.907vw), 500);
             height: max(22px, calc(28 / var(--cal-width-w)));
             padding: 0 max(5px, calc(10 / var(--cal-width-w)));
+            margin-bottom: 5px;
           }
           .subject {
             @include font-call(GmarketSans, clamp(16px, 768px, 2.452vw), 500);
           }
           .svg-icon {
+            @include position(absolute, 50%, 0, null, null, 1, null, -50%);
             width: max(16px, calc(24 / var(--cal-width-w)));
             width: max(16px, calc(24 / var(--cal-width-w)));
           }
@@ -2345,8 +2349,8 @@ body {
       }
     }
     #map {
-      margin-top: calc(40 / var(--cal-width-w));
       height: calc(300 / var(--cal-width-w));
+      margin-top: calc(40 / var(--cal-width-w));
     }
     .map-info {
       li {
@@ -2446,13 +2450,13 @@ body {
       max-width: none;
       &:has(form) {
         form {
-          max-height: none;
           height: 100dvh;
+          max-height: none;
         }
       }
       &:not(:has(form)) {
-        max-height: none;
         height: 100dvh;
+        max-height: none;
       }
     }
     .btn-apply {
