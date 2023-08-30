@@ -19,6 +19,9 @@ html.lenis {
   }
 }
 
+.aos-init {
+  will-change: transform, opacity ;
+}
 
 // * components
 .input {
@@ -2309,7 +2312,6 @@ body {
           }
           .svg-icon {
             @include position(absolute, 50%, 0, null, null, 1, null, -50%);
-            width: max(16px, calc(24 / var(--cal-width-w)));
             width: max(16px, calc(24 / var(--cal-width-w)));
           }
         }

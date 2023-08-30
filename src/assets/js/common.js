@@ -19,33 +19,43 @@ const traport = {
     const visualHeight = document.getElementById("visual").offsetHeight;
     const bgDim = document.querySelector("#visual .dim");
     const bgList = document.querySelector("#visual .visual-list");
+    function setDarkness(darkness) {
+      bgDim.style.backgroundColor = `rgba(0, 0, 0, ${darkness})`;
+    }
+    function setDarkMode() {
+      document.querySelector("#header").classList.add("dark");
+      document.querySelector("#mo-header").classList.add("dark");
+      document.querySelectorAll(".lang-change, .btn-mo-menu, .header-logo").forEach(function (element) {
+        element.classList.add("dark");
+      });
+    }
+    function setLightMode() {
+      document.querySelector("#header").classList.remove("dark");
+      document.querySelector("#mo-header").classList.remove("dark");
+      document.querySelectorAll(".lang-change, .btn-mo-menu, .header-logo").forEach(function (element) {
+        element.classList.remove("dark");
+      });
+    }
     window.addEventListener("scroll", function () {
       const currentScroll = window.pageYOffset;
+      bgDim.style.willChange = 'opacity';
       if (currentScroll <= visualHeight) {
         const darkness = (currentScroll / visualHeight) * (maxDarkness - minDarkness) + minDarkness;
-        bgDim.style.backgroundColor = `rgba(0, 0, 0, ${darkness})`;
+        setDarkness(darkness);
       } else {
-        bgDim.style.backgroundColor = `rgba(0, 0, 0, ${maxDarkness})`;
+        setDarkness(maxDarkness);
       }
       if (currentScroll >= visualHeight) {
         bgDim.style.position = "absolute";
         bgList.style.position = "absolute";
         if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-          document.querySelector("#header").classList.add("dark");
-          document.querySelector("#mo-header").classList.add("dark");
-          document.querySelectorAll(".lang-change, .btn-mo-menu, .header-logo").forEach(function (element) {
-            element.classList.add("dark");
-          });
+          setDarkMode();
         }
       } else {
         bgDim.style.position = "fixed";
         bgList.style.position = "fixed";
         if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-          document.querySelector("#header").classList.remove("dark");
-          document.querySelector("#mo-header").classList.remove("dark");
-          document.querySelectorAll(".lang-change, .btn-mo-menu, .header-logo").forEach(function (element) {
-            element.classList.remove("dark");
-          });
+          setLightMode();
         }
       }
     });
