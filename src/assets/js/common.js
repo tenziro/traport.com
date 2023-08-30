@@ -272,7 +272,7 @@ const traport = {
     var mapContainer = document.getElementById('map'),
       mapOption = {
         center: new kakao.maps.LatLng(37.57209605223843, 126.98538889757558),
-        level: 3,
+        level: 4,
         draggable: false,
         mapTypeId: kakao.maps.MapTypeId.ROADMAP
       };
