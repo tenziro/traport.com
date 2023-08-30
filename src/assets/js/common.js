@@ -425,8 +425,8 @@ const traport = {
     function animateCircle() {
       const diffX = targetX - currentX;
       const diffY = targetY - currentY;
-      currentX += diffX * 0.5;
-      currentY += diffY * 0.5;
+      currentX += diffX * 0.15;
+      currentY += diffY * 0.15;
       circle.style.left = `${currentX}px`;
       circle.style.top = `${currentY}px`;
       requestAnimationFrame(animateCircle);
