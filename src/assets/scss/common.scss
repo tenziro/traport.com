@@ -1,0 +1,253 @@
+@charset "UTF-8";
+
+// * 공통 셋팅
+:root {
+  --cal-width-w: 768 * 100vw;
+}
+// * 라이트 모드 셋팅
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-contents: #fff;
+    --bg-contents2: #fbfbfb;
+    --bg-footer: #f9f9f9;
+    --border-footer: #f1f1f1;
+    --footer-link: #333;
+    --footer-text: #666;
+    --footer-bullet: 136, 136, 136;
+    --bg-mobile-nav: 0, 0, 0;
+    --text-primary: #121212;
+    --text-secondary: #888;
+    --border-primary: #eaeaea;
+    --title-primary: #13315C;
+    --title-secondary: #5754FE;
+    --sub-primary: #121212;
+    --sub-secondary: #121212;
+    --gradient-type1-text: #fff;
+    --gradient-type1-1: #243B55;
+    --gradient-type1-2: #141E30;
+    --detail-text: #121212;
+    --detail-svg-icon: #333;
+    --recruit-svg-icon: #121212;
+    --bg-recruit-item: #f2f2f2;
+    --bg-position: #f2f2f2;
+    --position-text: #121212;
+    --gradient-type2-text: #333;
+    --gradient-type2-1: #13315C;
+    --gradient-type2-2: #757beb;
+    --bg-location-item: #f9f9f9;
+    --location-text: #121212;
+
+    --text-modal: #121212;
+    --bg-modal: #fff;
+    --bg-modal-before: 255, 255, 255;
+    --bg-modal-contents: #fafafa;
+    --modal-border: #e0e0e0;
+    --bg-form: #fff;
+    --form-text: #121212;
+    --form-border: #e0e0e0;
+    --form-placeholder: #ccc;
+    --form-disabled: #f2f2f2;
+    --form-disabled-text: #aaa;
+  }
+}
+// * 다크 모드 셋팅
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-contents: #141414;
+    --bg-contents2: #191919;
+    --bg-footer: #191919;
+    --border-footer: #282828;
+    --footer-link: #fff;
+    --footer-text: #aaa;
+    --footer-bullet: 145, 145, 145;
+    --bg-mobile-nav: 0, 0, 0;
+    --text-primary: #fff;
+    --text-secondary: #aaa;
+    --border-primary: #292929;
+    --title-primary: #5693eb;
+    --title-secondary: #77dffa;
+    --sub-primary: #fff;
+    --sub-secondary: #fff;
+    --gradient-type1-text: #fff;
+    --gradient-type1-1: #212121;
+    --gradient-type1-2: #212121;
+    // --gradient-type1-1: #1c1c1c;
+    // --gradient-type1-2: #040404;
+    --detail-text: #fff;
+    --detail-svg-icon: #999;
+    --bg-recruit-item: #111;
+    --bg-position: #111;
+    --position-text: #fff;
+    --recruit-svg-icon: #fff;
+    --gradient-type2-text: #ddd;
+    --gradient-type2-1: #2b59f8;
+    --gradient-type2-2: #4ac2fe;
+    --bg-location-item: #212121;
+    --location-text: #fff;
+
+    --text-modal: #fff;
+    --bg-modal: #141414;
+    --bg-modal-before: 0, 0, 0;
+    --bg-modal-contents: #191919;
+    --bg-form: #333;
+    --modal-border: #282828;
+    --form-text: #fff;
+    --form-border: #282828;
+    --form-placeholder: #666;
+    --form-disabled: #121212;
+    --form-disabled-text: #333;
+  }
+}
+// * important
+$imp: unquote("!important");
+
+// * location setting
+$base-image-url: "../../assets/images/img/";
+$common-image-url: "../../assets/images/common/";
+$icons-image-url: "../..//assets/images/icons/";
+
+// * mixin
+// * position setting
+@mixin position($pos: absolute,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $z-index: null,
+  $translateX: null,
+  $translateY: null) {
+  @if ($translateX and $translateY) {
+    transform: translateX($translateX) translateY($translateY);
+  }
+  @else if ($translateX) {
+    transform: translateX($translateX);
+  }
+  @else if ($translateY) {
+    transform: translateY($translateY);
+  }
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-index;
+}
+// * font call
+@mixin font-call($name, $size, $weight, $line-height: null) {
+  font: {
+    family: $name, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+      'Apple SD Gothic Neo', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+      sans-serif;
+    size: $size;
+    weight: $weight;
+  }
+  line-height: $line-height;
+}
+// * flex layout
+@mixin flex($flex: flex,
+  $f-direction: null,
+  $f-wrap: null,
+  $a-items: null,
+  $a-content: null,
+  $a-self: null,
+  $j-content: null,
+  $j-self: null) {
+  display: $flex;
+  flex-direction: $f-direction;
+  flex-wrap: $f-wrap;
+  align-items: $a-items;
+  align-content: $a-content;
+  align-self: $a-self;
+  justify-content: $j-content;
+  justify-self: $j-self;
+}
+// * scrollbar
+@mixin scrollbar($width, $thumb-bg, $thumb-radius, $track-bg: null) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-bg;
+    border-radius: $thumb-radius;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $track-bg;
+  }
+  &::-webkit-scrollbar-button {
+    width: $width;
+    height: $width;
+    background-color: transparent;
+  }
+}
+// * border setting
+@mixin border($pos: null, $width: null, $style: null, $color: null, $radius: null) {
+  @if ($pos ==top) {
+    border: {
+      top: $width $style $color;
+    }
+  }
+  @else if ($pos ==right) {
+    border: {
+      right: $width $style $color;
+    }
+  }
+  @else if ($pos ==bottom) {
+    border: {
+      bottom: $width $style $color;
+    }
+  }
+  @else if ($pos ==left) {
+    border: {
+      left: $width $style $color;
+    }
+  }
+  @else if ($pos ==all) {
+    border: {
+      width: $width;
+      color: $color;
+      style: $style;
+    }
+  }
+  border: {
+    radius: $radius;
+  }
+}
+// * ellipsis
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+// * align
+.align {
+  &-l {
+    text-align: left $imp;
+  }
+  &-r {
+    text-align: right $imp;
+  }
+  &-c {
+    text-align: center $imp;
+  }
+  &-m {
+    vertical-align: middle $imp;
+  }
+  &-b {
+    vertical-align: bottom $imp;
+  }
+  &-t {
+    vertical-align: top $imp;
+  }
+}
+// * margin
+.mg {
+  &-t-auto {
+    margin-top: auto $imp;
+  }
+  &-l-auto {
+    margin-left: auto $imp;
+  }
+}
+
+@import "fonts", "reset", "components", "layout";

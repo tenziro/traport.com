@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileColor" content="#13315c">
+  <meta name="msapplication-TileImage" content="../assets/images/common/ms-icon-144x144.png">
+  <meta name="theme-color" content="#13315c">
+  <meta name="title" content="트래포트 - Leading the travel industry with Technology" />
+  <meta name="description" content="트래포트는 여행산업에 필요한 IT 서비스를 고객사에 제공합니다." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.traport.com" />
+  <meta property="og:title" content="트래포트 - Leading the travel industry with Technology" />
+  <meta property="og:description" content="트래포트는 여행산업에 필요한 IT 서비스를 고객사에 제공합니다." />
+  <meta property="og:image" content="https://traport.tenziro.net/assets/images/common/meta-img.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.traport.com" />
+  <meta property="twitter:title" content="트래포트 - Leading the travel industry with Technology" />
+  <meta property="twitter:description" content="트래포트는 여행산업에 필요한 IT 서비스를 고객사에 제공합니다." />
+  <meta property="twitter:image" content="https://traport.tenziro.net/assets/images/common/meta-img.png" />
+  <title>트래포트 - Leading the travel industry with Technology</title>
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dd7920952c2b016162fe01f116274be2"></script>
+  <script src="../assets/js/jquery-3.7.0.min.js"></script>
+  <!-- <script src="../assets/js/gsap.min.js"></script> -->
+  <script src="../assets/js/lenis.min.js"></script>
+  <script src="../assets/js/aos.js"></script>
+  <script src="../assets/js/common.js?2023080801"></script>
+  <link rel="stylesheet" href="../assets/css/common.css?2023080801">
+  <link rel="stylesheet" href="../assets/css/aos.css?2023080801">
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/common/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/common/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/common/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/common/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/common/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/common/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/common/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/common/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/../assets/images/commonapple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/common/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/common/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/images/common/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/common/favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="../assets/images/common/favicon.ico">
+</head>
+
+<body class="ko" data-lenis-prevent>
+  <div id="wrap">
+    <a class="header-logo">TRAPORT</a>
+
+    <!-- ! pc header -->
+    <header id="header">
+      <nav class="main-nav">
+        <div class="nav-item"><a href="#introduce" data-localize="header-menu1">회사소개</a></div>
+        <div class="nav-item"><a href="#service" data-localize="header-menu2">사업소개</a></div>
+        <div class="nav-item"><a href="#recruit" data-localize="header-menu3">채용안내</a></div>
+        <div class="nav-item"><a href="#location" data-localize="header-menu4">오시는길</a></div>
+      </nav>
+    </header>
+
+    <!-- ! mobile header -->
+    <header id="mo-header">
+      <!-- <button type="button" class="btn-mo-menu">
+        <span></span><span></span><span></span>
+      </button> -->
+      <!-- <nav class="main-nav">
+        <div class="nav-item"><a href="#introduce">회사소개</a></div>
+        <div class="nav-item"><a href="#service">사업소개</a></div>
+        <div class="nav-item"><a href="#recruit">채용안내</a></div>
+        <div class="nav-item"><a href="#location">오시는길</a></div>
+      </nav> -->
+    </header>
+    <label class="lang-change">
+      <input type="checkbox" class="control-input" id="languageCheck">
+      <span class="ko">KO</span>
+      <span class="control-text"></span>
+      <span class="en">EN</span>
+    </label>
+    <main id="container">
+      <section id="visual">
+        <div class="title en">
+          <p class="visual-text1">
+            <span>Leading the travel industry</span>
+          </p>
+          <p class="visual-text1">
+            <span>with <strong>Technology</strong></span>
+          </p>
+        </div>
+        <div class="title ko">
+          <p class="visual-text1">
+            <span><strong>트래포트</strong>는</span>
+          </p>
+          <p class="visual-text1">
+            <span>여행산업에 필요한 IT 서비스를</span>
+          </p>
+          <p class="visual-text1">
+            <span>고객사에 제공합니다.</span>
+          </p>
+        </div>
+        <ul class="visual-list">
+          <li class="visual-item"></li>
+          <li class="visual-item"></li>
+          <li class="visual-item"></li>
+          <li class="visual-item"></li>
+          <li class="visual-item"></li>
+          <li class="visual-item"></li>
+        </ul>
+        <div class="dim"></div>
+        <div class="scroll-animation"></div>
+      </section>
+
+      <!-- ! introduce -->
+      <section id="introduce">
+        <div class="inside">
+          <h2 class="section-title1 align-c" data-aos="fade-up" data-localize="intro-title">회사소개</h2>
+          <h3 class="section-subtitle2 align-c" data-aos="fade-up" data-localize="intro-title2">We are different</h3>
+          <div class="intro-service">
+            <h4 class="section-title2" data-aos="fade-up" data-localize="intro-service-title">Since 2008</h4>
+            <h5 class="section-subtitle2" data-aos="fade-up" data-localize="intro-service-title2">여행산업을 변화시키고 있는 Travel Tech Company</h5>
+            <div class="service-detail-info">
+              <div class="item" data-aos="fade-up">
+                <p><span>"</span><span data-localize="intro-service-text1-1">국내 최초 Dynamic Package Service</span><span>"</span></p>
+                <p data-localize="intro-service-text1-2">2010년, 국내 OTA 업계 최초로 Dynamic Package의 개념을 만들었습니다.</p>
+              </div>
+              <div class="item" data-aos="fade-up">
+                <p><span>"</span><span data-localize="intro-service-text2-1">국내 최초 Meta Booking Platform</span><span>"</span></p>
+                <p data-localize="intro-service-text2-2">2015년 처음 선보인 이후, 대부분의 이커머스 여행 메타 서비스의 표준이 되었습니다.</p>
+              </div>
+              <div class="item" data-aos="fade-up">
+                <p><span>"</span><span data-localize="intro-service-text3-1">국내 최초 출장 Platform</span><span>"</span></p>
+                <p data-localize="intro-service-text3-2">삼성, LG 등 그룹사의 출장자들은 트래포트가 만든 출장 플랫폼을 사용하고 있습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="intro-history">
+            <h4 class="section-title2" data-aos="fade-up" data-localize="intro-history-title">History</h4>
+            <h5 class="section-subtitle2" data-aos="fade-up" data-localize="intro-history-title2">바쁘게 달려온 우리의 발자취입니다.</h5>
+            <div class="history-detail-info">
+              <h6 class="title" data-aos="fade-up">2015 ~ 2022</h6>
+              <div class="history-list">
+                <dl data-aos="fade-up">
+                  <dt>2022</dt>
+                  <dd data-localize="intro-history-text1">하나투어 비즈니스 BTMS 시스템 공급</dd>
+                  <dd data-localize="intro-history-text2">오마이호텔 CMS 시스템 공급</dd>
+                </dl>
+                <dl data-aos="fade-up">
+                  <dt>2021</dt>
+                  <dd data-localize="intro-history-text3">노랑풍선 OTA 시스템 공급</dd>
+                </dl>
+                <dl data-aos="fade-up">
+                  <dt>2018</dt>
+                  <dd data-localize="intro-history-text4">BTMS 출장관리자 시스템 오픈</dd>
+                  <dd data-localize="intro-history-text5">레드캡 BTMS 시스템 공급</dd>
+                </dl>
+                <dl data-aos="fade-up">
+                  <dt>2017</dt>
+                  <dd data-localize="intro-history-text6">삼성전자 출장관리시스템 오픈</dd>
+                  <dd data-localize="intro-history-text7">세계 최초 일정표 커머스 서비스 트래블하우 '어디갈까' 오픈</dd>
+                  <dd data-localize="intro-history-text8">트래블하우 '티켓/투어' 카테고리 오픈</dd>
+                </dl>
+                <dl data-aos="fade-up">
+                  <dt>2016</dt>
+                  <dd data-localize="intro-history-text9">트래블하우 해외호텔, 여행자보험 서비스 오픈</dd>
+                  <dd data-localize="intro-history-text10">신한올댓쇼핑에 트래블하우 서비스</dd>
+                </dl>
+                <dl data-aos="fade-up">
+                  <dt>2015</dt>
+                  <dd data-localize="intro-history-text11">이지웰페어 해외항공 및 해외호텔 제휴</dd>
+                  <dd data-localize="intro-history-text12">국내 항공권 메타부킹 플랫폼 '트래블하우' 오픈</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="history-detail-info">
+              <h6 class="title" data-aos="fade-up">2009 ~ 2014</h6>
+              <div class="history-list">
+                <dl data-aos="fade-up">
+                  <dt>2014</dt>
+                  <dd data-localize="intro-history-text13">옥션여행 국내숙박/해외호텔 모바일 오픈</dd>
+                  <dd data-localize="intro-history-text14">아마데우스 항공예약엔진 마이그레이션</dd>
+                  <dd data-localize="intro-history-text15">호텔신라(삼성그룹) 통합 출장관리솔루션 공급(CTM)</dd>
+                </dl>
+                <dl data-aos="fade-up">
+                  <dt>2013</dt>
+                  <dd data-localize="intro-history-text16">국내 최초 랜드팩 예약 및 관리시스템 오픈</dd>
+                  <dd data-localize="intro-history-text17">국내 최초 항공사 에어텔 실시간 예약시스템 오픈</dd>
+                </dl>
+                <dl data-aos="fade-up">
+                  <dt>2012</dt>
+                  <dd data-localize="intro-history-text18">렌터카 예약서비스 오픈 (전세계 40여 개 렌터카 업체 서비스)</dd>
+                  <dd data-localize="intro-history-text19">유레일패스, 유럽철도 구간권, Amtrak, JR패스 실시간 예약시스템 오픈</dd>
+                  <dd data-localize="intro-history-text20">국내 최초 여행사 여행상품 가격비교 및 실시간 예약시스템 오픈</dd>
+                  <dd data-localize="intro-history-text21">옥션 여행 사이트(tour.auction.co.kr) 오픈 및 운영</dd>
+                </dl>
+                <dl data-aos="fade-up">
+                  <dt>2011</dt>
+                  <dd data-localize="intro-history-text22">트래포트 항공, 호텔 실시간 예약 어플 오픈</dd>
+                  <dd data-localize="intro-history-text23">b2b.traport.com 호텔판매 제휴사용 B2B 사이트 오픈</dd>
+                  <dd data-localize="intro-history-text24">국제항공운송협회(IATA)인가 BSP 대리점 등록</dd>
+                </dl>
+                <dl data-aos="fade-up">
+                  <dt>2010</dt>
+                  <dd data-localize="intro-history-text25">BIE항공 / 삼성카드 항공예약시스템 공급</dd>
+                  <dd data-localize="intro-history-text26">토파스여행정보㈜ New Booking Engine(항공, 호텔) 공급</dd>
+                  <dd data-localize="intro-history-text27">자유투어 항공홀세일 예약시스템 공급</dd>
+                  <dd data-localize="intro-history-text28">www.traport.com 오픈 - 국내 최초 Dynamic Package Solution</dd>
+                </dl>
+                <dl data-aos="fade-up">
+                  <dt>2009</dt>
+                  <dd data-localize="intro-history-text29">SK투어비스㈜ BTMS(Business Travel Management System) 공급</dd>
+                  <dd data-localize="intro-history-text30">토파스여행정보㈜ 호텔예약 웹 서비스(Web Service) 공급</dd>
+                  <dd data-localize="intro-history-text31">하나투어㈜ 호텔예약시스템 myhanahotel.com 공급</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ! service -->
+      <section id="service">
+        <div class="inside">
+          <h2 class="section-title1 align-c" data-aos="fade-up" data-localize="service-title">사업소개</h2>
+          <h3 class="section-subtitle1 align-c" data-aos="fade-up" data-localize="service-title2">For the better Future</h3>
+          <!-- * ota -->
+          <div class="ota-info">
+            <h4 class="section-title2" data-aos="fade-up" data-localize="service-ota-title">Rebook Process</h4>
+            <h5 class="section-subtitle2" data-aos="fade-up" data-localize="service-ota-title2">OTA 수익 극대화를 위한 최고의 솔루션</h5>
+            <div class="ota-detail-info">
+              <div class="item" data-aos="flip-down">
+                <p>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.5 17.25H12v-1.5a2.253 2.253 0 0 0-2.25-2.25h-3a2.253 2.253 0 0 0-2.25 2.25v1.5H3v-1.5A3.755 3.755 0 0 1 6.75 12h3a3.755 3.755 0 0 1 3.75 3.75v1.5Z"></path>
+                    <path d="M8.25 4.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm0-1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Z"></path>
+                    <path d="M22.5 19.5h-21V21h21v-1.5Z"></path>
+                    <path d="M16.5 3v1.5h3.44L15 9.44l1.06 1.06L21 5.56V9h1.5V3h-6Z"></path>
+                  </svg>
+                </p>
+                <p data-localize="service-ota-text1">STEP.1</p>
+                <p data-localize="service-ota-text2">고객이 사이트를 통해 호텔 예약 완료</p>
+              </div>
+              <div class="item" data-aos="flip-down">
+                <p>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 19.942 16.058 18 15 19.058l3 3 5.25-5.25-1.058-1.058L18 19.942Z"></path>
+                    <path d="M12.75 17.25h-1.5v1.5h1.5v-1.5Z"></path>
+                    <path d="M8.25 17.25h-1.5v1.5h1.5v-1.5Z"></path>
+                    <path d="M17.25 13.5h-1.5V15h1.5v-1.5Z"></path>
+                    <path d="M12.75 13.5h-1.5V15h1.5v-1.5Z"></path>
+                    <path d="M8.25 13.5h-1.5V15h1.5v-1.5Z"></path>
+                    <path d="M17.25 9.75h-1.5v1.5h1.5v-1.5Z"></path>
+                    <path d="M12.75 9.75h-1.5v1.5h1.5v-1.5Z"></path>
+                    <path d="M8.25 9.75h-1.5v1.5h1.5v-1.5Z"></path>
+                    <path d="M17.25 5.25H6.75V7.5h10.5V5.25Z"></path>
+                    <path d="M12.75 22.5H4.503A1.505 1.505 0 0 1 3 20.996V2.997A1.499 1.499 0 0 1 4.497 1.5h15.006A1.499 1.499 0 0 1 21 2.997V13.5h-1.5V3h-15v18h8.25v1.5Z"></path>
+                  </svg>
+                </p>
+                <p data-localize="service-ota-text3">STEP.2</p>
+                <p data-localize="service-ota-text4">예약된 호텔공급사 취소마감시한까지 같은 조건에 더 저렴한 요금을 제공하는 공급자를 트래포트의 기술을 통해 찾음</p>
+              </div>
+              <div class="item" data-aos="flip-down">
+                <p>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 18v1.5h1.844A4.456 4.456 0 0 1 16.5 21a4.504 4.504 0 0 1-4.5-4.5h-1.5A5.988 5.988 0 0 0 21 20.449V22.5h1.5V18H18Z"></path>
+                    <path d="M16.5 10.5a6.032 6.032 0 0 0-4.5 2.051V10.5h-1.5V15H15v-1.5h-1.844A4.456 4.456 0 0 1 16.5 12a4.504 4.504 0 0 1 4.5 4.5h1.5a6.007 6.007 0 0 0-6-6Z"></path>
+                    <path d="M9 21H4.5v-3H6v-1.5H4.5v-3.75H6v-1.5H4.5V7.5H6V6H4.5V3H18v6h1.5V3A1.5 1.5 0 0 0 18 1.5H4.5A1.5 1.5 0 0 0 3 3v3H1.5v1.5H3v3.75H1.5v1.5H3v3.75H1.5V18H3v3a1.5 1.5 0 0 0 1.5 1.5H9V21Z"></path>
+                  </svg>
+                </p>
+                <p data-localize="service-ota-text5">STEP.3</p>
+                <p data-localize="service-ota-text6">새로 찾은 호텔 공급사로 신규예약을 만들고 기존 고객 예약은 취소</p>
+              </div>
+              <div class="item" data-aos="flip-down">
+                <p>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.75 11.25c1.114 0 1.916 1.123 2.765 2.31.984 1.378 2.099 2.94 3.985 2.94 4.253 0 5.835-8.092 6-9l-1.476-.269C20.663 9.212 19.045 15 16.5 15c-1.114 0-1.916-1.123-2.765-2.31-.984-1.378-2.099-2.94-3.985-2.94-3.14 0-5.584 5.553-6.75 8.821V1.5H1.5V21A1.502 1.502 0 0 0 3 22.5h19.5V21H3.783c1.133-3.857 3.69-9.75 5.967-9.75Z"></path>
+                  </svg>
+                </p>
+                <p data-localize="service-ota-text7">RESULT</p>
+                <p data-localize="service-ota-text8">고객의 예약보다 더 저렴한 공급사를 찾아 OTA 수익을 극대화 시킴</p>
+              </div>
+            </div>
+            <ul class="detail-text">
+              <li data-aos="fade-up">
+                <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.75 17.998 3 11.248l1.06-1.06 5.69 5.688L19.94 5.688 21 6.748 9.75 17.998Z"></path>
+                </svg>
+                <span data-localize="service-ota-text9">Rebooking에 필요한 핵심 기술인 호텔 코드 매핑과 객실 매핑을 3년 동안의 연구개발과 시행착오를 거쳐 머신 러닝을 통해 개발하였습니다.</span>
+              </li>
+              <li data-aos="fade-up">
+                <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.75 17.998 3 11.248l1.06-1.06 5.69 5.688L19.94 5.688 21 6.748 9.75 17.998Z"></path>
+                </svg>
+                <span data-localize="service-ota-text10">OTA는 신규로 개발하거나, 재무적 투자를 할 필요가 없습니다.</span>
+              </li>
+              <li data-aos="fade-up">
+                <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.75 17.998 3 11.248l1.06-1.06 5.69 5.688L19.94 5.688 21 6.748 9.75 17.998Z"></path>
+                </svg>
+                <span data-localize="service-ota-text11">수익쉐어 방식으로 진행되며 트래포트가 더 싼 요금을 찾지 못하면 지불을 비용할 필요가 없습니다.</span>
+              </li>
+            </ul>
+          </div>
+          <!-- * single api -->
+          <div class="api-info">
+            <h4 class="section-title2" data-aos="fade-up" data-localize="service-api-title">Single API</h4>
+            <h5 class="section-subtitle2" data-aos="fade-up" data-localize="service-api-title2">OTA를 위한 모든 호텔 서비스 제공</h5>
+            <div class="api-detail-info">
+              <div class="api-company">
+                <div class="circle" data-aos="flip-up" data-localize="service-api-text1">Third-Party<br>Supplier</div>
+                <div class="circle" data-aos="flip-up" data-localize="service-api-text2">PMS</div>
+                <div class="circle" data-aos="flip-up" data-localize="service-api-text3">CMS</div>
+              </div>
+              <div class="arrow-list">
+                <div class="arrow a1" data-aos="fade-down-right"></div>
+                <div class="arrow a2" data-aos="fade-right"></div>
+                <div class="arrow a3" data-aos="fade-up-right"></div>
+              </div>
+              <div class="my">
+                <div class="circle" data-aos="zoom-in-up" data-localize="service-api-text4">트래포트<br><span>호텔 컨텐츠<br>호텔 맵핑<br>VCC</span></div>
+              </div>
+              <div class="transfer" data-aos="fade-up">
+                <div class="arrow a1"></div>
+                <div class="text" data-localize="service-api-text5">Single API</div>
+                <div class="arrow a2"></div>
+              </div>
+              <div class="customer">
+                <div class="circle" data-aos="zoom-in-up" data-localize="service-api-text6">고객사</div>
+              </div>
+            </div>
+            <div class="api-detail-info2">
+              <div class="api-company">
+                <div class="circle" data-aos="flip-up" data-localize="service-api-text1">Third-Party<br>Supplier</div>
+                <div class="circle" data-aos="flip-up" data-localize="service-api-text2">PMS</div>
+                <div class="circle" data-aos="flip-up" data-localize="service-api-text3">CMS</div>
+              </div>
+              <div class="arrow-list">
+                <div class="arrow a1" data-aos="fade-up"></div>
+                <div class="arrow a2" data-aos="fade-up"></div>
+                <div class="arrow a3" data-aos="fade-up"></div>
+              </div>
+              <div class="my">
+                <div class="circle" data-aos="zoom-in-up" data-localize="service-api-text4">트래포트<br><span>호텔 컨텐츠<br>호텔 맵핑<br>VCC</span></div>
+              </div>
+              <div class="transfer" data-aos="fade-up">
+                <div class="arrow a1"></div>
+                <div class="text" data-localize="service-api-text5">Single API</div>
+                <div class="arrow a2"></div>
+              </div>
+              <div class="customer">
+                <div class="circle" data-aos="zoom-in-up" data-localize="service-api-text6">고객사</div>
+              </div>
+            </div>
+            <ul class="detail-text">
+              <li data-aos="fade-up">
+                <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.75 17.998 3 11.248l1.06-1.06 5.69 5.688L19.94 5.688 21 6.748 9.75 17.998Z"></path>
+                </svg>
+                <span data-localize="service-api-text7">공급자 Interface, CMS 도입, Local DMC Extranet 운영 등 복잡한 OTA 작업을 1개의 표준 API 로 제공합니다.</span>
+              </li>
+              <li data-aos="fade-up">
+                <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.75 17.998 3 11.248l1.06-1.06 5.69 5.688L19.94 5.688 21 6.748 9.75 17.998Z"></path>
+                </svg>
+                <span data-localize="service-api-text8">개발 및 유지보수에 들어가는 비용을 줄일 수 있습니다.</span>
+              </li>
+              <li data-aos="fade-up">
+                <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.75 17.998 3 11.248l1.06-1.06 5.69 5.688L19.94 5.688 21 6.748 9.75 17.998Z"></path>
+                </svg>
+                <span data-localize="service-api-text9">호텔 컨텐츠, 호텔 맵핑, VCC 기능을 제공합니다.</span>
+              </li>
+            </ul>
+          </div>
+          <!-- * ctm -->
+          <div class="ctm-info">
+            <h4 class="section-title2" data-aos="fade-up" data-localize="service-ctm-title">CTM</h4>
+            <h5 class="section-subtitle2" data-aos="fade-up" data-localize="service-ctm-title2">기업 출장 경비 절감에 효과적인 출장플랫폼</h5>
+            <div class="ctm-detail-info">
+              <div class="item" data-aos="flip-down">
+                <p>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21c-.168 0-.337-.011-.504-.033a16.339 16.339 0 0 1-2.471-8.217h13.437c.018-.249.038-.497.038-.75A10.5 10.5 0 1 0 12 22.5V21Zm8.962-9.75h-4.49a18.244 18.244 0 0 0-2.065-7.913 9.01 9.01 0 0 1 6.555 7.913Zm-8.458-8.217a16.34 16.34 0 0 1 2.471 8.217h-5.95a16.34 16.34 0 0 1 2.471-8.217 3.869 3.869 0 0 1 1.008 0Zm-2.912.304a18.246 18.246 0 0 0-2.064 7.913h-4.49a9.01 9.01 0 0 1 6.554-7.913ZM3.038 12.75h4.49c.08 2.76.786 5.466 2.064 7.913a9.01 9.01 0 0 1-6.554-7.913Z"></path>
+                    <path fill-rule="evenodd" d="m18.75 18.75 3.75 1.5v-1.5l-3.75-1.875V15a.75.75 0 1 0-1.5 0v1.875L13.5 18.75v1.5l3.75-1.5v2.625l-1.5 1.125v.75L18 22.5l2.25.75v-.75l-1.5-1.125V18.75Z" clip-rule="evenodd"></path>
+                  </svg>
+                </p>
+                <p data-localize="service-ctm-text1">700여개 항공사 실시간 예약</p>
+                <p>전세계 700여개 항공사 실시간 예약 가능</p>
+              </div>
+              <div class="item" data-aos="flip-down">
+                <p>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.125 11.25a1.125 1.125 0 1 1 0 2.25 1.125 1.125 0 0 1 0-2.25Zm0-1.5a2.625 2.625 0 1 0 0 5.25 2.625 2.625 0 0 0 0-5.25Z"></path>
+                    <path d="M18.75 10.498h-6a1.5 1.5 0 0 0-1.5 1.5v4.5H3v-8.55l9-4.845 9.398 5.055.704-1.32-9.75-5.25a.75.75 0 0 0-.704 0l-9.75 5.25a.75.75 0 0 0-.398.66v15H3v-4.5h18v4.5h1.5v-8.25a3.75 3.75 0 0 0-3.75-3.75Zm-6 6v-4.5h6a2.25 2.25 0 0 1 2.25 2.25v2.25h-8.25Z"></path>
+                  </svg>
+                </p>
+                <p data-localize="service-ctm-text2">30만개 호텔 실시간 예약</p>
+                <p>전세계 30만개 호텔 실시간 예약 가능</p>
+              </div>
+              <div class="item" data-aos="flip-down">
+                <p>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.25 14.25h-4.5v1.5h4.5v-1.5Z"></path>
+                    <path d="m19.08 10.5-.953-3.412A1.507 1.507 0 0 0 16.683 6H7.316a1.507 1.507 0 0 0-1.443 1.088L4.9 10.5H3V12h1.5v5.25a1.502 1.502 0 0 0 1.5 1.5V21h1.5v-2.25h9V21H18v-2.25a1.502 1.502 0 0 0 1.5-1.5V12H21v-1.5h-1.92Zm-11.764-3h9.368l1.072 3.75H6.244L7.316 7.5ZM18 15.75v1.5H6v-1.5h1.5v-1.5H6v-1.5h12v1.5h-1.5v1.5H18Z"></path>
+                  </svg>
+                </p>
+                <p data-localize="service-ctm-text3">40만개 렌터카 실시간 예약</p>
+                <p>전세계 40만개 렌터카 실시간 예약 가능</p>
+              </div>
+              <div class="item" data-aos="flip-down">
+                <p>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 6V3.75a.75.75 0 0 0-.75-.75h-4.5a.75.75 0 0 0-.75.75V6a1.5 1.5 0 0 0-1.5 1.5V9h-3V7.5A1.5 1.5 0 0 0 9 6V3.75A.75.75 0 0 0 8.25 3h-4.5a.75.75 0 0 0-.75.75V6a1.5 1.5 0 0 0-1.5 1.5v9a1.5 1.5 0 0 0 .75 1.29v2.46A.75.75 0 0 0 3 21h6a.75.75 0 0 0 .75-.75v-2.46a1.5 1.5 0 0 0 .75-1.29V15h3v1.5a1.5 1.5 0 0 0 .75 1.29v2.46A.75.75 0 0 0 15 21h6a.75.75 0 0 0 .75-.75v-2.46a1.5 1.5 0 0 0 .75-1.29v-9A1.5 1.5 0 0 0 21 6ZM8.25 19.5h-4.5V18h4.5v1.5Zm.75-3H3v-9h1.5v-3h3v3H9v9Zm1.5-3v-3h3v3h-3Zm9.75 6h-4.5V18h4.5v1.5Zm.75-3h-6v-9h1.5v-3h3v3H21v9Z"></path>
+                  </svg>
+                </p>
+                <p data-localize="service-ctm-text4">출장규정 모니터링</p>
+                <p>부서, 직급, 지역 등에 따른 출장규정 설정</p>
+              </div>
+              <div class="item" data-aos="flip-down">
+                <p>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 15.75H9a1.5 1.5 0 0 1-1.5-1.5v-1.5a1.5 1.5 0 0 1 1.5-1.5h6a1.5 1.5 0 0 1 1.5 1.5v1.5a1.5 1.5 0 0 1-1.5 1.5Zm-6-3v1.5h6v-1.5H9Z"></path>
+                    <path d="M21 3H3a1.5 1.5 0 0 0-1.5 1.5v3A1.5 1.5 0 0 0 3 9v12a1.5 1.5 0 0 0 1.5 1.5h15A1.5 1.5 0 0 0 21 21V9a1.5 1.5 0 0 0 1.5-1.5v-3A1.5 1.5 0 0 0 21 3Zm-1.5 18h-15V9h15v12ZM21 7.5H3v-3h18v3Z"></path>
+                  </svg>
+                </p>
+                <p data-localize="service-ctm-text5">출장규정 초과사유 수집</p>
+                <p>초과 경비 수집 및 리포트</p>
+              </div>
+              <div class="item" data-aos="flip-down">
+                <p>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.25 12h-1.5v1.5h1.5V12Z"></path>
+                    <path d="M12.75 12h-6v1.5h6V12Z"></path>
+                    <path d="M17.25 9h-1.5v1.5h1.5V9Z"></path>
+                    <path d="M12.75 9h-6v1.5h6V9Z"></path>
+                    <path d="M17.25 6H6.75v1.5h10.5V6Z"></path>
+                    <path d="M18.75 1.5H5.25A1.502 1.502 0 0 0 3.75 3v18.75a.75.75 0 0 0 .75.75h.75a.748.748 0 0 0 .6-.3L7.5 20l1.65 2.2a.776.776 0 0 0 1.2 0L12 20l1.65 2.2a.775.775 0 0 0 1.2 0L16.5 20l1.65 2.2a.749.749 0 0 0 .6.3h.75a.75.75 0 0 0 .75-.75V3a1.502 1.502 0 0 0-1.5-1.5Zm0 19-1.65-2.2a.775.775 0 0 0-1.2 0l-1.65 2.2-1.65-2.2a.775.775 0 0 0-1.2 0l-1.65 2.2-1.65-2.2a.776.776 0 0 0-1.2 0l-1.65 2.2V3h13.5v17.5Z"></path>
+                  </svg>
+                </p>
+                <p data-localize="service-ctm-text6">출장관리자 리포팅</p>
+                <p>상세한 출장 경비 리포팅 제공</p>
+              </div>
+            </div>
+            <ul class="detail-text">
+              <li data-aos="fade-up">
+                <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.75 17.998 3 11.248l1.06-1.06 5.69 5.688L19.94 5.688 21 6.748 9.75 17.998Z"></path>
+                </svg>
+                <span data-localize="service-ctm-text7"><strong>Compliance Monitoring</strong> - 출장 규정 적합/위반여부를 모니터링하여 적합 규정 상품 예약 유도합니다.</span>
+              </li>
+              <li data-aos="fade-up">
+                <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.75 17.998 3 11.248l1.06-1.06 5.69 5.688L19.94 5.688 21 6.748 9.75 17.998Z"></path>
+                </svg>
+                <span data-localize="service-ctm-text8"><strong>Missed Saving</strong> - 출장 규정 적합/위반여부를 모니터링하여 적합 규정 상품 예약 유도합니다.</span>
+              </li>
+              <li data-aos="fade-up">
+                <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.75 17.998 3 11.248l1.06-1.06 5.69 5.688L19.94 5.688 21 6.748 9.75 17.998Z"></path>
+                </svg>
+                <span data-localize="service-ctm-text9"><strong>출장관리자 데이터 분석</strong> - 각종 리포트 및 Excel 통계 자료를 제공하여 기업에서 다양한 자료로 활용 가능합니다.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ! recruit -->
+      <section id="recruit">
+        <div class="inside">
+          <h2 class="section-title1 align-c" data-aos="fade-in" data-localize="recruit-title">채용안내</h2>
+          <h3 class="section-subtitle1 align-c" data-aos="fade-in" data-localize="recruit-title2">우리의 성장과 미래를 함께할 인재를 모집합니다.</h3>
+          <div class="recruit-info">
+            <div class="item" data-aos="flip-down">
+              <p>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                  <path d="M12 16.5a3 3 0 1 0 0-5.999 3 3 0 0 0 0 5.999Zm0-4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"></path>
+                  <path d="M13.5 4.5h-3V6h3V4.5Z"></path>
+                  <path d="M18 1.5H6A1.502 1.502 0 0 0 4.5 3v18A1.502 1.502 0 0 0 6 22.5h12a1.502 1.502 0 0 0 1.5-1.5V3A1.502 1.502 0 0 0 18 1.5ZM15 21H9v-1.5a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75V21Zm1.5 0v-1.5a2.25 2.25 0 0 0-2.25-2.25h-4.5A2.25 2.25 0 0 0 7.5 19.5V21H6V3h12v18h-1.5Z"></path>
+                </svg>
+              </p>
+              <p data-localize="recruit-text1">Human Relationship</p>
+              <p data-localize="recruit-text2">구성원과 협동&amp;관계를 중요시하는 사람</p>
+            </div>
+            <div class="item" data-aos="flip-down">
+              <p>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                  <path d="M18.624 12.727c-.204-.485-.436-1.035-.662-1.714-.593-1.776 1.3-3.714 1.318-3.733l-1.06-1.06c-.106.105-2.568 2.608-1.681 5.267.244.734.488 1.312.703 1.823.5.989.76 2.082.758 3.19a4.681 4.681 0 0 1-3.142 3.97 6.389 6.389 0 0 0-1.578-6l-.783-.784-.436 1.018c-1.377 3.213-3.016 4.616-3.98 5.201A4.383 4.383 0 0 1 6 16.5a7.218 7.218 0 0 1 .697-2.722A8.5 8.5 0 0 0 7.5 10.5V9.166c.655.27 1.5.978 1.5 2.834v1.953l1.307-1.451c2.334-2.59 1.847-5.676.905-7.731A3.364 3.364 0 0 1 13.5 8.25H15C15 4.097 11.566 3 9.75 3h-1.5l.9 1.199c.103.14 2.146 2.946 1.014 5.766A3.707 3.707 0 0 0 6.75 7.5H6v3a7.218 7.218 0 0 1-.697 2.722A8.5 8.5 0 0 0 4.5 16.5c0 2.886 2.867 6 7.5 6s7.5-3.114 7.5-6a8.534 8.534 0 0 0-.876-3.773Zm-8.998 7.918a12.375 12.375 0 0 0 3.275-4.2 4.578 4.578 0 0 1 .193 4.48A8.486 8.486 0 0 1 12 21a7.747 7.747 0 0 1-2.374-.355Z"></path>
+                </svg>
+              </p>
+              <p data-localize="recruit-text3">Passion</p>
+              <p data-localize="recruit-text4">업무에 대한 호기심과 열정을 가진 사람</p>
+            </div>
+            <div class="item" data-aos="flip-down">
+              <p>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+                  <path d="M19.5 22.5H18v-2.25a3.755 3.755 0 0 0-3.75-3.75h-4.5A3.755 3.755 0 0 0 6 20.25v2.25H4.5v-2.25A5.256 5.256 0 0 1 9.75 15h4.5a5.256 5.256 0 0 1 5.25 5.25v2.25Z"></path>
+                  <path d="M3.75 4.5a.75.75 0 0 0-.75.75V12h1.5V5.25a.75.75 0 0 0-.75-.75Z"></path>
+                  <path d="M3 1.5V3h3.75v5.25a5.25 5.25 0 0 0 10.5 0V3H21V1.5H3ZM8.25 3h7.5v2.25h-7.5V3ZM12 12a3.75 3.75 0 0 1-3.75-3.75v-1.5h7.5v1.5A3.75 3.75 0 0 1 12 12Z"></path>
+                </svg>
+              </p>
+              <p data-localize="recruit-text5">Self Improvement</p>
+              <p data-localize="recruit-text6">분야에 대한 전문지식을 쌓아 최고가 되고자 노력하는 사람</p>
+            </div>
+          </div>
+          <div class="life">
+            <h4 class="section-title2" data-aos="fade-up" data-localize="recruit-life-title">Our Life</h4>
+            <h5 class="section-subtitle2" data-aos="fade-up" data-localize="recruit-life-title2">우리는 이렇게 일해요!</h5>
+            <div class="life-info">
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22.5a10.5 10.5 0 1 1 0-21 10.5 10.5 0 0 1 0 21ZM12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"></path>
+                    <path d="m15.443 16.5-4.193-4.193V5.25h1.5v6.435l3.75 3.758-1.057 1.057Z"></path>
+                  </svg>
+                  <span data-localize="recruit-life-text1">탄력 근무제</span>
+                </dt>
+                <dd data-localize="recruit-life-text2">주중 오전 8시 30분 ~ 9시 30분 사이 자유롭게 출근,<br>하루 8시간만 근무하면 칼퇴근 가능!</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.5 18h-15A1.502 1.502 0 0 1 3 16.5V6a1.502 1.502 0 0 1 1.5-1.5h15A1.502 1.502 0 0 1 21 6v10.5a1.502 1.502 0 0 1-1.5 1.5ZM4.5 6v10.5h15V6h-15Z"></path>
+                    <path d="M22.5 19.5h-21V21h21v-1.5Z"></path>
+                  </svg>
+                  <span data-localize="recruit-life-text3">최신 개발 장비 지원</span>
+                </dt>
+                <dd data-localize="recruit-life-text4">개발하는데 불편하지 않도록,<br>애플 iMac + 듀얼 모니터를 사용해요!</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 4.5A1.5 1.5 0 0 0 19.5 3h-3V1.5H15V3H9V1.5H7.5V3h-3A1.5 1.5 0 0 0 3 4.5v15A1.5 1.5 0 0 0 4.5 21h3v-1.5h-3v-15h3V6H9V4.5h6V6h1.5V4.5h3V9H21V4.5Z"></path>
+                    <path d="m15.75 11.25 1.912 3.704 4.088.593-3 2.883.75 4.07-3.75-1.922L12 22.5l.75-4.07-3-2.883 4.2-.594 1.8-3.703Z"></path>
+                  </svg>
+                  <span data-localize="recruit-life-text5">자유로운 연차 사용</span>
+                </dt>
+                <dd data-localize="recruit-life-text6">급한일이 있을때, 어디론가 떠나고 싶을때,<br>조퇴/반차/연차, 모두 자유롭게 사용해요.</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.25 1.5h-1.5V9h1.5V1.5Z"></path>
+                    <path d="M10.5 8.25a3 3 0 0 1-6 0V1.5H3v6.75a4.5 4.5 0 0 0 3.75 4.432V22.5h1.5v-9.818A4.5 4.5 0 0 0 12 8.25V1.5h-1.5v6.75Z"></path>
+                    <path d="M16.5 1.503h-.75v21h1.5v-7.5h2.25a1.5 1.5 0 0 0 1.5-1.5v-7.5a4.334 4.334 0 0 0-4.5-4.5Zm3 12h-2.25V3.071c2.16.42 2.25 2.655 2.25 2.932v7.5Z"></path>
+                  </svg>
+                  <span data-localize="recruit-life-text7">불필요한 회식은 그만</span>
+                </dt>
+                <dd data-localize="recruit-life-text8">구성원들이 원할때 회식을 해요.<br>누구도 음주를 강요하지 않아요!</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 18.003a6 6 0 0 0 5.137-2.917l-1.282-.75a4.499 4.499 0 0 1-7.71 0l-1.283.75A6 6 0 0 0 12 18.003Z"></path>
+                    <path d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21ZM12 3a9 9 0 0 1 8.168 5.25H18.75A.75.75 0 0 0 18 7.5H6a.75.75 0 0 0-.75.75H3.833A9 9 0 0 1 12 3Zm0 18a9 9 0 0 1-9-9 8.9 8.9 0 0 1 .3-2.25h1.95v1.5a1.5 1.5 0 0 0 1.5 1.5h2.483a1.5 1.5 0 0 0 1.5-1.252L11.123 9h1.755l.412 2.498a1.5 1.5 0 0 0 1.5 1.252h2.46a1.5 1.5 0 0 0 1.5-1.5v-1.5h1.95c.196.734.297 1.49.3 2.25a9 9 0 0 1-9 9Z"></path>
+                  </svg>
+                  <span data-localize="recruit-life-text9">자유로운 출근 복장</span>
+                </dt>
+                <dd data-localize="recruit-life-text10">출근 복장에 제한없이 자유롭게 입어요.<br>비올때 슬리퍼, 더울때 반바지도 상관없어요!</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="benefit">
+            <h4 class="section-title2" data-aos="fade-up" data-localize="recruit-benefit-title">Benefit</h4>
+            <h5 class="section-subtitle2" data-aos="fade-up" data-localize="recruit-benefit-title2">구성원들의 성장을 위해 함께 합니다.</h5>
+            <div class="benefit-info">
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m20.48 4.58 2.02-2.02-1.06-1.06-2.02 2.02-.82-.82a1.45 1.45 0 0 0-2.1 0L3 16.2V21h4.8L21.3 7.5a1.45 1.45 0 0 0 0-2.1l-.82-.82ZM7.2 19.5H4.5v-2.7L17.55 3.75l2.7 2.7L7.2 19.5Z"></path>
+                    <path d="m12.44 2.998-5.69 5.69 1.06 1.06 5.69-5.69-1.06-1.06Z"></path>
+                  </svg>
+                  <span data-localize="recruit-benefit-text1">도서, 교육, 세미나 비용 지원</span>
+                </dt>
+                <dd>자기 계발을 위한 도서 구매 비용을 무제한 지원!!<br>온/오프라인 교육, 세미나 비용 지원도 OK!!</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.127 4.06a11.306 11.306 0 0 0 8.695 13.646 8.335 8.335 0 0 1-5.981 2.542c-.104 0-.209.004-.313 0a8.32 8.32 0 0 1-2.4-16.188Zm1.108-1.81a.753.753 0 0 0-.13.012 9.822 9.822 0 0 0 1.368 19.486c.123.005.246 0 .368 0a9.805 9.805 0 0 0 8.026-4.167.757.757 0 0 0-.587-1.173 9.81 9.81 0 0 1-8.363-13.123.76.76 0 0 0-.682-1.035Z"></path>
+                  </svg>
+                  <span data-localize="recruit-benefit-text2">야근 수당/심야 택시비 지원</span>
+                </dt>
+                <dd>야근은 별로 없지만 야근 시 야근수당을 드려요.<br>밤 11시 이후 퇴근 시 택시비를 지원해요!</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.46 1.66a.757.757 0 0 0-.933 0L.75 10.065l.932 1.178L3 10.216V19.5A1.503 1.503 0 0 0 4.5 21h15a1.503 1.503 0 0 0 1.5-1.5v-9.277l1.318 1.027.932-1.179-10.79-8.41ZM13.5 19.5h-3v-6h3v6Zm1.5 0v-6a1.502 1.502 0 0 0-1.5-1.5h-3A1.502 1.502 0 0 0 9 13.5v6H4.5V9.046L12 3.204l7.5 5.85V19.5H15Z"></path>
+                  </svg>
+                  <span data-localize="recruit-benefit-text3">재택 근무 지원</span>
+                </dt>
+                <dd>사고, 질병 등으로 출퇴근이 불가능 할때,<br>재택 근무가 가능해요!</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.5 7.5h-2.071A3.365 3.365 0 0 0 12 3.53 3.365 3.365 0 0 0 6.571 7.5H4.5A1.502 1.502 0 0 0 3 9v3a1.502 1.502 0 0 0 1.5 1.5V21A1.502 1.502 0 0 0 6 22.5h12a1.502 1.502 0 0 0 1.5-1.5v-7.5A1.502 1.502 0 0 0 21 12V9a1.502 1.502 0 0 0-1.5-1.5Zm-6.75-1.874A1.875 1.875 0 1 1 14.625 7.5H12.75V5.626ZM9.375 3.75a1.877 1.877 0 0 1 1.875 1.875V7.5H9.375a1.875 1.875 0 0 1 0-3.75ZM4.5 9h6.75v3H4.5V9ZM6 13.5h5.25V21H6v-7.5ZM18 21h-5.25v-7.5H18V21Zm-5.25-9V9h6.75v3h-6.75Z"></path>
+                  </svg>
+                  <span data-localize="recruit-benefit-text4">생일 축하금 + 조기 퇴근</span>
+                </dt>
+                <dd>1년에 한번뿐인 생일을 기념하기 위해,<br>백화점 상품권을 드려요. 조기 퇴근은 덤!</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.5 7.5h-2.071A3.365 3.365 0 0 0 12 3.53 3.365 3.365 0 0 0 6.571 7.5H4.5A1.502 1.502 0 0 0 3 9v3a1.502 1.502 0 0 0 1.5 1.5V21A1.502 1.502 0 0 0 6 22.5h12a1.502 1.502 0 0 0 1.5-1.5v-7.5A1.502 1.502 0 0 0 21 12V9a1.502 1.502 0 0 0-1.5-1.5Zm-6.75-1.874A1.875 1.875 0 1 1 14.625 7.5H12.75V5.626ZM9.375 3.75a1.877 1.877 0 0 1 1.875 1.875V7.5H9.375a1.875 1.875 0 0 1 0-3.75ZM4.5 9h6.75v3H4.5V9ZM6 13.5h5.25V21H6v-7.5ZM18 21h-5.25v-7.5H18V21Zm-5.25-9V9h6.75v3h-6.75Z"></path>
+                  </svg>
+                  <span data-localize="recruit-benefit-text5">명절 선물 제공</span>
+                </dt>
+                <dd>가족과 함께하는 즐거운 명절,<br>설, 추석에는 백화점 상품권을 드려요!</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 23.25h-3a1.504 1.504 0 0 1-1.5-1.5V16.5A1.504 1.504 0 0 1 1.5 15v-4.5a2.21 2.21 0 0 1 2.25-2.25h4.5a2.21 2.21 0 0 1 2.25 2.25V15A1.504 1.504 0 0 1 9 16.5v5.25a1.504 1.504 0 0 1-1.5 1.5ZM3.75 9.75a.708.708 0 0 0-.75.75V15h1.5v6.75h3V15H9v-4.5a.708.708 0 0 0-.75-.75h-4.5Z"></path>
+                    <path d="M6 7.5a3 3 0 1 1 0-6 3 3 0 0 1 0 6ZM6 3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"></path>
+                    <path d="M21.575 3.193a3.159 3.159 0 0 0-4.325-.168 3.159 3.159 0 0 0-4.325.168 3.24 3.24 0 0 0 0 4.534l4.323 4.38.002-.002.002.001 4.323-4.38a3.24 3.24 0 0 0 0-4.533Zm-1.069 3.48L17.252 9.97l-.001-.001-.002.001-3.255-3.298a1.731 1.731 0 0 1 0-2.425 1.698 1.698 0 0 1 2.368 0l.885.906.004-.004.004.004.885-.906a1.698 1.698 0 0 1 2.367 0 1.731 1.731 0 0 1 0 2.425Z"></path>
+                  </svg>
+                  <span data-localize="recruit-benefit-text6">비혼선언 축하금 지원</span>
+                </dt>
+                <dd>비혼을 선언한 구성원에게도 결혼하는 직원과<br>동일하게 경조금과 경조휴가를 드려요!</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 6.75a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm0-4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"></path>
+                    <path d="M18 6.75a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm0-4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"></path>
+                    <path d="M19.5 22.5h-3A1.5 1.5 0 0 1 15 21v-5.25h1.5V21h3v-6.75H21v-4.5a.75.75 0 0 0-.75-.75h-4.815L12 15 8.565 9H3.75a.75.75 0 0 0-.75.75v4.5h1.5V21h3v-5.25H9V21a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 3 21v-5.25a1.5 1.5 0 0 1-1.5-1.5v-4.5A2.25 2.25 0 0 1 3.75 7.5h5.685L12 12l2.565-4.5h5.685a2.25 2.25 0 0 1 2.25 2.25v4.5a1.5 1.5 0 0 1-1.5 1.5V21a1.5 1.5 0 0 1-1.5 1.5Z"></path>
+                  </svg>
+                  <span data-localize="recruit-benefit-text7">경조사 지원</span>
+                </dt>
+                <dd>기쁜 일, 슬픈 일 모두 챙겨드려요.<br>경조사비, 화환 또는 근조화환을 지원해요.</dd>
+              </dl>
+              <dl data-aos="fade-up">
+                <dt>
+                  <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.928 21C13.422 20.044 12 16.67 12 9v-.098l.838.558A4.845 4.845 0 0 1 15 13.5h1.5a6.343 6.343 0 0 0-2.83-5.288L12.602 7.5h1.148a5.28 5.28 0 0 1 3.15 1.05l1.4 1.05.9-1.2-1.4-1.05A6.795 6.795 0 0 0 13.75 6h-.912A5.273 5.273 0 0 1 16.5 4.5H18V3h-1.5a6.777 6.777 0 0 0-5.25 2.523A6.776 6.776 0 0 0 6 3H4.5v1.5H6A5.273 5.273 0 0 1 9.662 6H8.75A6.795 6.795 0 0 0 4.7 7.35L3.3 8.4l.9 1.2 1.4-1.05A5.28 5.28 0 0 1 8.75 7.5h1.148l-1.068.712A6.343 6.343 0 0 0 6 13.5h1.5a4.846 4.846 0 0 1 2.162-4.04l.838-.558V9c0 6.708 1.059 10.323 1.77 12H1.5v1.5h21V21h-8.572Z"></path>
+                  </svg>
+                  <span data-localize="recruit-benefit-text8">해외 워크샵</span>
+                </dt>
+                <dd>열심히 일한 우리 모두에게 주는 선물!<br>1년 동안 고생한 구성원들과 함께 해외 워크샵을 가요!</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="recruit-now">
+          <div class="inside">
+            <h4 class="section-title2" data-aos="fade-up" data-localize="recruit-position-title">현재 채용중인 포지션</h4>
+            <h5 class="section-subtitle2" data-aos="fade-up" data-localize="recruit-position-title2">트래포트에서 여러분을 기다려요!</h5>
+            <details class="position-item" data-aos="fade-up">
+              <summary class="position-item-header">
+                <span class="label type1" data-localize="recruit-position-label">채용중</span>
+                <span class="subject" data-localize="recruit-position-text1">프론트엔드 개발자 - Software Developer(Frontend) - 2명</span>
+                <svg class="svg-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="m18 9-6 7.5L6 9h12Z"></path>
+                </svg>
+              </summary>
+              <div class="position-item-body">
+                <ul>
+                  <li data-localize="recruit-position-text2">HTML/CSS/JavaScript(TypeScript)를 사용한 개발에 능숙한 사람</li>
+                  <li data-localize="recruit-position-text3">Angular Framework으로 SPA, SSR 개발 경험이 있는 사람, React 경험자</li>
+                  <li data-localize="recruit-position-text4">REST API를 이용한 클라이언트 개발 경험이 있는 사람</li>
+                  <li data-localize="recruit-position-text5">분산 버전 관리 시스템(Git) 이용에 능숙한 사람</li>
+                </ul>
+              </div>
+            </details>
+            <details class="position-item" data-aos="fade-up">
+              <summary class="position-item-header">
+                <span class="label type1" data-localize="recruit-position-label">채용중</span>
+                <span class="subject" data-localize="recruit-position-text6">서버 개발자 - Software Developer(Backend) - 2명</span>
+                <svg class="svg-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="m18 9-6 7.5L6 9h12Z"></path>
+                </svg>
+              </summary>
+              <div class="position-item-body">
+                <ul>
+                  <li data-localize="recruit-position-text7">Spring Boot 개발 또는 구축 경험이 있는 사람</li>
+                  <li data-localize="recruit-position-text8">Spring Webflux + Java, Kotlin을 이용한 백엔드 구축 경험이 있는 사람</li>
+                  <li data-localize="recruit-position-text9">Python + Django Web Framework 구축 경험이 있는 사람</li>
+                  <li data-localize="recruit-position-text10">AWS/DevOps 구축 경험이 있는 사람</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="recruit-apply" data-aos="fade-in">
+          <div class="inside">
+            <p class="title" data-localize="recruit-position-apply-title">트래포트와 함께 할 여러분을 기다립니다.</p>
+            <button class="btn-recruit-apply" type="button" data-localize="recruit-position-apply-btn">트래포트 입사 지원하기</button>
+          </div>
+          <div class="bg"></div>
+        </div>
+      </section>
+
+      <!-- ! location -->
+      <section id="location">
+        <div class="inside">
+          <h2 class="section-title1 align-c" data-aos="fade-up" data-localize="location-title">오시는 길</h2>
+          <h3 class="section-subtitle1 align-c" data-aos="fade-up" data-localize="location-title2">여러분의 방문을 환영합니다.</h3>
+          <div class="contact-info">
+            <div class="item" data-aos="fade-up">
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.5 21.75h-.127C4.635 20.902 2.543 8.467 2.25 4.672A2.25 2.25 0 0 1 4.32 2.25h4.133a1.5 1.5 0 0 1 1.395.945L10.988 6a1.5 1.5 0 0 1-.33 1.62L9.06 9.232a7.027 7.027 0 0 0 5.685 5.7l1.628-1.612A1.499 1.499 0 0 1 18 13.012l2.828 1.133a1.5 1.5 0 0 1 .922 1.395v3.96a2.25 2.25 0 0 1-2.25 2.25Zm-15-18a.75.75 0 0 0-.75.75v.06C4.095 9 6.308 19.5 19.455 20.25a.749.749 0 0 0 .795-.705V15.54l-2.827-1.132-2.153 2.137-.36-.045C8.385 15.682 7.5 9.158 7.5 9.09l-.045-.36 2.13-2.153L8.46 3.75H4.5Z"></path>
+              </svg>
+              <p><a href="tel:02-6967-9900">02-6967-9900</a></p>
+            </div>
+            <div class="item" data-aos="fade-up">
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 6.75h-2.25v-4.5H5.25v4.5H3a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h2.25v4.5h13.5v-4.5H21a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5Zm-14.25-3h10.5v3H6.75v-3Zm10.5 16.5H6.75v-7.5h10.5v7.5Zm3.75-4.5h-2.25v-4.5H5.25v4.5H3v-7.5h18v7.5Z"></path>
+              </svg>
+              <p>02-2178-9393</p>
+            </div>
+            <div class="item" data-aos="fade-up">
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 4.5H3A1.5 1.5 0 0 0 1.5 6v12A1.5 1.5 0 0 0 3 19.5h18a1.5 1.5 0 0 0 1.5-1.5V6A1.5 1.5 0 0 0 21 4.5ZM19.35 6 12 11.085 4.65 6h14.7ZM3 18V6.683l8.572 5.932a.75.75 0 0 0 .856 0L21 6.682V18H3Z"></path>
+              </svg>
+              <p><a href="mailto:service@traport.com">service@traport.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="inside">
+          <div id="map" data-aos="fade-up"></div>
+          <ul class="map-info">
+            <li data-aos="fade-up">
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 1.5h-9A1.501 1.501 0 0 0 10.5 3v7.5H3A1.502 1.502 0 0 0 1.5 12v10.5h21V3A1.502 1.502 0 0 0 21 1.5ZM6.75 21v-5.25h3V21h-3ZM21 21h-9.75v-6a.75.75 0 0 0-.75-.75H6a.75.75 0 0 0-.75.75v6H3v-9h9V3h9v18Z"></path>
+                <path d="M15 6h-1.5v1.5H15V6Z"></path>
+                <path d="M19.5 6H18v1.5h1.5V6Z"></path>
+                <path d="M15 10.5h-1.5V12H15v-1.5Z"></path>
+                <path d="M19.5 10.5H18V12h1.5v-1.5Z"></path>
+                <path d="M15 15h-1.5v1.5H15V15Z"></path>
+                <path d="M19.5 15H18v1.5h1.5V15Z"></path>
+              </svg>
+              <span data-localize="location-text1">서울 종로구 인사동5길 25 하나로빌딩 809호</span>
+            </li>
+            <li data-aos="fade-up">
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.75 2.25h-7.5A3.754 3.754 0 0 0 4.5 6v9a3.743 3.743 0 0 0 2.686 3.578L5.827 21.75h1.632l1.286-3h6.51l1.286 3h1.632l-1.36-3.172A3.743 3.743 0 0 0 19.5 15V6a3.754 3.754 0 0 0-3.75-3.75Zm-7.5 1.5h7.5a2.246 2.246 0 0 1 2.112 1.5H6.138a2.246 2.246 0 0 1 2.112-1.5ZM18 14.25h-2.25v1.5h2.112a2.246 2.246 0 0 1-2.112 1.5h-7.5a2.246 2.246 0 0 1-2.112-1.5H8.25v-1.5H6v-1.5h12v1.5Zm0-3H6v-4.5h12v4.5Z"></path>
+              </svg>
+              <span data-localize="location-text2">서울 지하철 1호선 종각역 8번 출구에서 도보 5분</span>
+            </li>
+            <li data-aos="fade-up">
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.75 8.25h-1.5v3h1.5v-3Z"></path>
+                <path d="M3.75 8.25h-1.5v3h1.5v-3Z"></path>
+                <path d="M16.5 15H15v1.5h1.5V15Z"></path>
+                <path d="M9 15H7.5v1.5H9V15Z"></path>
+                <path d="M15.75 3h-7.5A3.754 3.754 0 0 0 4.5 6.75v10.5a1.502 1.502 0 0 0 1.5 1.5V21h1.5v-2.25h9V21H18v-2.25a1.502 1.502 0 0 0 1.5-1.5V6.75A3.755 3.755 0 0 0 15.75 3ZM18 7.5V12H6V7.5h12Zm-9.75-3h7.5A2.246 2.246 0 0 1 17.862 6H6.138A2.246 2.246 0 0 1 8.25 4.5ZM6 17.25V13.5h12l.002 3.75H6Z"></path>
+              </svg>
+              <span data-localize="location-text3">101, 103, 143 등 "종로2가(중)" 정류장 하차 후 도보 5분</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- <section id="cert">
+        <div class="cert-list">
+          <div class="group">
+            <span>한국산업기술진흥협회 기업부설연구소 인증</span>
+            <span>벤처기업확인기관 벤처기업확인 인증</span>
+            <span>이노비즈</span>
+            <span>중소벤처기업부 경영혁신형 중소기업(메인비즈) 인증</span>
+          </div>
+          <div class="group">
+            <span>한국산업기술진흥협회 기업부설연구소 인증</span>
+            <span>벤처기업확인기관 벤처기업확인 인증</span>
+            <span>이노비즈</span>
+            <span>중소벤처기업부 경영혁신형 중소기업(메인비즈) 인증</span>
+          </div>
+        </div>
+        <div class="cert-list">
+          <div class="group">
+            <span>한국산업기술진흥협회 기업부설연구소 인증</span>
+            <span>벤처기업확인기관 벤처기업확인 인증</span>
+            <span>이노비즈</span>
+            <span>중소벤처기업부 경영혁신형 중소기업(메인비즈) 인증</span>
+          </div>
+          <div class="group">
+            <span>한국산업기술진흥협회 기업부설연구소 인증</span>
+            <span>벤처기업확인기관 벤처기업확인 인증</span>
+            <span>이노비즈</span>
+            <span>중소벤처기업부 경영혁신형 중소기업(메인비즈) 인증</span>
+          </div>
+        </div>
+      </section> -->
+    </main>
+
+    <!-- ! footer -->
+    <footer id="footer">
+      <div class="inside">
+        <ul class="company-info">
+          <li>
+            <span class="footer-logo">TRAPORT</span>
+          </li>
+          <li>
+            <span data-localize="footer-text1">트래포트(주)</span>
+            <span data-localize="footer-text2">대표자명 : 안경열</span>
+            <span data-localize="footer-text3">사업자등록번호 : 211-88-19164</span>
+            <span><a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2118819164" target="_blank" class="link" data-localize="footer-text4">사업자정보확인</a></span>
+          </li>
+          <li>
+            <span data-localize="footer-text5">개인정보관리책임자 : 김영권</span>
+          </li>
+          <li>
+            <span data-localize="footer-text6">주소&nbsp;:&nbsp;<address>서울 종로구 인사동5길 25 하나로빌딩 809호</address></span>
+            <span data-localize="footer-text7">전화&nbsp;:&nbsp;<a href="tel:02-6967-9900">02-6967-9900</a></span>
+          </li>
+          <li><span class="copyright">Copyright © TRAPORT, All Rights Reserved</span></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <div class="modal">
+    <div class="modal-contents">
+      <form action="">
+        <div class="modal-header">
+          <h1 data-localize="recruit-apply-form-title">입사 지원하기</h1>
+          <button type="button" class="btn-modal-close">
+            <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 7.05 16.95 6 12 10.95 7.05 6 6 7.05 10.95 12 6 16.95 7.05 18 12 13.05 16.95 18 18 16.95 13.05 12 18 7.05Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="apply-form">
+            <li>
+              <dl>
+                <dt><sup data-localize="recruit-apply-form-label1">이름</sup></dt>
+                <dd>
+                  <div class="input">
+                    <input type="text" data-localize="recruit-apply-form-input1" placeholder="한글 이름 입력">
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup data-localize="recruit-apply-form-label2">생년월일</sup></dt>
+                <dd>
+                  <div class="input">
+                    <input type="number" data-localize="recruit-apply-form-input2" placeholder="생년월일 8자리 입력(숫자만 입력)" maxlength="8">
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup data-localize="recruit-apply-form-label3">성별</sup></dt>
+                <dd>
+                  <div class="select">
+                    <select name="" id="" required>
+                      <option value="" disabled selected data-localize="recruit-apply-form-select1-1">성별 선택</option>
+                      <option value="" data-localize="recruit-apply-form-select1-2">남자</option>
+                      <option value="" data-localize="recruit-apply-form-select1-3">여자</option>
+                    </select>
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup data-localize="recruit-apply-form-label4">연락처</sup></dt>
+                <dd>
+                  <div class="input">
+                    <input type="tel" data-localize="recruit-apply-form-input3" placeholder="휴대폰 번호 입력(숫자만 입력)" maxlength="11">
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup data-localize="recruit-apply-form-label5">이메일 주소</sup></dt>
+                <dd>
+                  <div class="input">
+                    <input type="email" data-localize="recruit-apply-form-input4" placeholder="이메일 주소 입력">
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup data-localize="recruit-apply-form-label6">포트폴리오</sup></dt>
+                <dd>
+                  <div class="input">
+                    <input type="url" data-localize="recruit-apply-form-input5" placeholder="포트폴리오 주소 입력">
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup data-localize="recruit-apply-form-label7">최종 학력</sup></dt>
+                <dd>
+                  <div class="select">
+                    <select name="" id="" required>
+                      <option value="" disabled selected data-localize="recruit-apply-form-select2-1">최종 학력 선택</option>
+                      <option value="" data-localize="recruit-apply-form-select2-2">고등학교 졸업</option>
+                      <option value="" data-localize="recruit-apply-form-select2-3">대학교 재학중</option>
+                      <option value="" data-localize="recruit-apply-form-select2-4">대학교 졸업(전문 학사)</option>
+                      <option value="" data-localize="recruit-apply-form-select2-5">대학교 졸업(학사 이상)</option>
+                    </select>
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup data-localize="recruit-apply-form-label8">경력 기간</sup></dt>
+                <dd>
+                  <div class="select">
+                    <select name="" id="" required>
+                      <option value="" disabled selected data-localize="recruit-apply-form-select3-1">경력 기간 선택</option>
+                      <option value="" data-localize="recruit-apply-form-select3-2">1년 미만</option>
+                      <option value="" data-localize="recruit-apply-form-select3-3">1년 이상 3년 미만</option>
+                      <option value="" data-localize="recruit-apply-form-select3-4">3년 이상 5년 미만</option>
+                      <option value="" data-localize="recruit-apply-form-select3-5">5년 이상 8년 미만</option>
+                      <option value="" data-localize="recruit-apply-form-select3-6">8년 이상</option>
+                    </select>
+                  </div>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt><sup data-localize="recruit-apply-form-label9">지원 포지션</sup></dt>
+                <dd>
+                  <div class="select">
+                    <select name="" id="" required>
+                      <option value="" disabled selected data-localize="recruit-apply-form-select4-1">지원 포지션 선택</option>
+                      <option value="" data-localize="recruit-apply-form-select4-2">프론트엔드(Frontend)</option>
+                      <option value="" data-localize="recruit-apply-form-select4-3">백엔드(Backend)</option>
+                    </select>
+                  </div>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+          <dl class="recruit-agree">
+            <dt>
+              <label class="checkbox">
+                <input type="checkbox" class="control-input">
+                <span class="control-text" data-localize="recruit-apply-form-check">[필수] <span>개인 정보 수집/이용</span>에 동의합니다.</span>
+              </label>
+            </dt>
+            <dd class="privacy-detail" data-localize="recruit-apply-form-text">
+              1. 수집 목적<br>
+              - 채용 접수<br>
+              2. 수집 항목<br>
+              - 이름, 생년월일, 성별, 이메일 주소, 연락처, 포트폴리오, 최종 학력, 경력 기간, 지원 포지션<br>
+              3. 보유 기간<br>
+              - 채용 종료 시까지
+            </dd>
+            <dd class="noti" data-localize="recruit-apply-form-text2">접수된 내용은 채용 절차 진행 외의 용도로 사용되지 않습니다.</dd>
+          </dl>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn-apply" data-localize="recruit-apply-form-apply-btn">입사 지원 접수하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="mouse-circle"></div>
+</body>
+
+</html>
