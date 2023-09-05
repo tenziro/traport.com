@@ -567,7 +567,7 @@ html.lenis {
   overflow: hidden;
   min-height: 100dvh;
   clip: rect(0, auto, auto, 0);
-  #visual-list {
+  .visual-list {
     @include position(fixed, 0, 0, 0, 0, 0);
     .visual-item {
       @include position(absolute, 0, 0, 0, 0, 0);
@@ -1886,7 +1886,7 @@ body {
         size: 18px;
       }
     }
-    #visual-list {
+    .visual-list {
       @include position(absolute, 0, 0, 0, 0, 0);
       .visual-item {
         background: {
