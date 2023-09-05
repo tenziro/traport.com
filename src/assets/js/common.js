@@ -62,50 +62,46 @@ const traport = {
   },
   motionImage: function () {
     const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const backgrounds = [
-      '../assets/images/img/bg-visual1.jpg',
-      '../assets/images/img/bg-visual2.jpg',
-      '../assets/images/img/bg-visual3.jpg',
-      '../assets/images/img/bg-visual4.jpg',
-      '../assets/images/img/bg-visual5.jpg',
-      '../assets/images/img/bg-visual6.jpg'
-    ];
-    const backgroundItems = document.querySelectorAll('.visual-item');
-    let currentIndex = 0;
-    for (let i = 0; i < backgrounds.length; i++) {
-      backgroundItems[i].style.backgroundImage = `url(${backgrounds[i]})`;
+    const imageCount = 6;
+    const backgrounds = Array.from({ length: imageCount }, (_, index) => `../assets/images/img/bg-visual${index + 1}.jpg`);
+    const container = document.getElementById('visual-list');
+    function createVisualItem(backgroundUrl) {
+      const visualItem = document.createElement('li');
+      visualItem.classList.add('visual-item');
+      visualItem.style.backgroundImage = `url(${backgroundUrl})`;
+      container.appendChild(visualItem);
     }
+    backgrounds.forEach(backgroundUrl => {
+      createVisualItem(backgroundUrl);
+    });
+    const backgroundItems = document.querySelectorAll('.visual-item');
     function handleScaleClass() {
       if (!isMobileDevice && window.innerWidth > 768) {
-        backgroundItems[currentIndex].classList.add('scale');
+        backgroundItems.forEach(item => item.classList.add('scale'));
       } else {
-        backgroundItems[currentIndex].classList.remove('scale');
+        backgroundItems.forEach(item => item.classList.remove('scale'));
       }
     }
-    function showNextBackground() {
-      Array.from(backgroundItems).forEach(function (item) {
+    function showRandomBackground() {
+      const randomIndex = getRandomIndex(0, imageCount);
+      Array.from(backgroundItems).forEach(item => {
         item.style.opacity = 0;
         item.classList.remove('scale');
       });
-      currentIndex = getRandomIndex(currentIndex, backgrounds.length);
-      backgroundItems[currentIndex].style.opacity = 1;
+      backgroundItems[randomIndex].style.opacity = 1;
       if (!isMobileDevice && window.innerWidth > 768) {
-        backgroundItems[currentIndex].classList.add('scale');
+        backgroundItems[randomIndex].classList.add('scale');
       }
-      setTimeout(showNextBackground, 10000);
+      setTimeout(showRandomBackground, 10000);
     }
-    function getRandomIndex(currentIndex, maxIndex) {
-      let randomIndex = currentIndex;
-      while (randomIndex === currentIndex) {
-        randomIndex = Math.floor(Math.random() * maxIndex);
-      }
-      return randomIndex;
+    function getRandomIndex(min, max) {
+      return Math.floor(Math.random() * (max - min));
     }
-    window.addEventListener('resize', function () {
+    window.addEventListener('resize', () => {
       handleScaleClass();
     });
     handleScaleClass();
-    showNextBackground();
+    showRandomBackground();
   },
   toggleDarkMode: function () {
     const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
