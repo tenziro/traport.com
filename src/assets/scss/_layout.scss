@@ -20,7 +20,7 @@ html.lenis {
 }
 
 .aos-init {
-  will-change: transform, opacity ;
+  will-change: transform, opacity;
 }
 
 // * components
@@ -155,7 +155,7 @@ html.lenis {
 
 // * header
 #header {
-  @include position(fixed, 0, 0, null, 0, 500);
+  @include position(fixed, 0, 0, null, 0, 400);
   padding-top: 14px;
   &.is-active {
     @include flex(flex, null, null, center, null, null, center);
@@ -187,7 +187,7 @@ html.lenis {
     }
     a {
       @include position(relative, null, null, null, null, 1);
-      @include font-call(Pretendard, 14px, 600);
+      @include font-call(NanumSquareNeo, 14px, 600);
       padding: 6px 12px;
       transition: opacity 200ms ease, color 350ms ease;
       &:not(.focus) {
@@ -244,7 +244,7 @@ html.lenis {
 
 // * mobile header
 #mo-header {
-  @include position(fixed, null, null, null, null, 500);
+  @include position(fixed, null, null, null, null, 400);
   &:before {
     @include position(fixed, 0, 0, 0, 0, 501);
     height: 80px;
@@ -677,7 +677,7 @@ html.lenis {
     }
   }
   .visual-text1 {
-    @include font-call(GmarketSans, 64px, 500, 140%);
+    @include font-call(NanumSquareNeo, 64px, 400, 140%);
     + .visual-text1 {
       margin-top: 10px;
     }
@@ -716,12 +716,12 @@ html.lenis {
       p {
         text-align: center;
         &:nth-child(1) {
-          @include font-call(GmarketSans, 28px, 700);
+          @include font-call(NanumSquareNeo, 28px, 900);
           color: var(--text-primary);
           margin-bottom: 10px;
         }
         &:nth-child(2) {
-          @include font-call(GmarketSans, 18px, 500, 140%);
+          @include font-call(NanumSquareNeo, 18px, 400, 140%);
           color: var(--text-secondary);
           word-break: keep-all;
         }
@@ -737,23 +737,23 @@ html.lenis {
   .history-detail-info {
     @include flex(flex, null, null, flex-start);
     .title {
-      @include font-call(GmarketSans, 60px, 700);
+      @include font-call(NanumSquareNeo, 60px, 900);
       @include position(sticky, 40px);
       flex: none;
       color: var(--sub-primary);
-      margin-right: 100px;
     }
     .history-list {
-      flex: 1 1 auto;
+      flex: 0 0 560px;
+      margin-left: auto;
       dl {
         dt {
-          @include font-call(GmarketSans, 28px, 700);
+          @include font-call(NanumSquareNeo, 28px, 900);
           color: var(--sub-primary);
           margin-bottom: 20px;
         }
         dd {
           @include flex(flex, null, null, flex-start);
-          @include font-call(GmarketSans, 18px, 500, 140%);
+          @include font-call(NanumSquareNeo, 18px, 400, 140%);
           color: var(--text-secondary);
           word-break: keep-all;
           &:before {
@@ -804,12 +804,12 @@ html.lenis {
           margin-bottom: 20px;
         }
         &:nth-child(2) {
-          @include font-call(GmarketSans, 22px, 700);
+          @include font-call(NanumSquareNeo, 22px, 900);
           color: var(--gradient-type1-text);
           margin-bottom: 10px;
         }
         &:nth-child(3) {
-          @include font-call(GmarketSans, 16px, 500, 140%);
+          @include font-call(NanumSquareNeo, 16px, 400, 140%);
           color: var(--gradient-type1-text);
           word-break: keep-all;
         }
@@ -834,7 +834,7 @@ html.lenis {
       transform: translate3d(0, 0, 0);
       gap: 20px;
       .circle {
-        @include font-call(GmarketSans, 20px, 700);
+        @include font-call(NanumSquareNeo, 20px, 900);
         width: 160px;
         height: 160px;
         color: #333;
@@ -889,7 +889,7 @@ html.lenis {
       transform: translate3d(0, 0, 0);
       margin-left: 180px;
       .circle {
-        @include font-call(GmarketSans, 32px, 700);
+        @include font-call(NanumSquareNeo, 32px, 900);
         width: 240px;
         height: 240px;
         color: #fff;
@@ -898,7 +898,7 @@ html.lenis {
         background: -webkit-linear-gradient(to right, #414345, #232526);
         background: linear-gradient(to right, #414345, #232526);
         span {
-          @include font-call(GmarketSans, 16px, 700, 140%);
+          @include font-call(NanumSquareNeo, 16px, 900, 140%);
           margin-top: 10px;
         }
       }
@@ -910,7 +910,7 @@ html.lenis {
       margin-left: 80px;
       .text {
         @include flex(inline-flex, null, null, center, null, null, center);
-        @include font-call(GmarketSans, 18px, 700);
+        @include font-call(NanumSquareNeo, 18px, 900);
         height: 52px;
         padding: 20px;
         color: #fff;
@@ -957,7 +957,7 @@ html.lenis {
       transform: translate3d(0, 0, 0);
       margin-left: auto;
       .circle {
-        @include font-call(GmarketSans, 22px, 700);
+        @include font-call(NanumSquareNeo, 22px, 900);
         width: 180px;
         height: 180px;
         color: #333;
@@ -981,7 +981,7 @@ html.lenis {
       transform: translate3d(0, 0, 0);
       gap: 80px;
       .circle {
-        @include font-call(GmarketSans, 22px, 700);
+        @include font-call(NanumSquareNeo, 22px, 900);
         flex: none;
         width: 180px;
         height: 180px;
@@ -1035,7 +1035,7 @@ html.lenis {
       transform: translate3d(0, 0, 0);
       margin-top: 120px;
       .circle {
-        @include font-call(GmarketSans, 32px, 700);
+        @include font-call(NanumSquareNeo, 32px, 900);
         width: 240px;
         height: 240px;
         color: #fff;
@@ -1044,7 +1044,7 @@ html.lenis {
         background: -webkit-linear-gradient(to right, #414345, #232526);
         background: linear-gradient(to right, #414345, #232526);
         span {
-          @include font-call(GmarketSans, 16px, 700, 140%);
+          @include font-call(NanumSquareNeo, 16px, 900, 140%);
           margin-top: 10px;
         }
       }
@@ -1056,7 +1056,7 @@ html.lenis {
       margin-top: 20px;
       .text {
         @include flex(inline-flex, null, null, center, null, null, center);
-        @include font-call(GmarketSans, 20px, 700);
+        @include font-call(NanumSquareNeo, 20px, 900);
         height: 52px;
         padding: 20px;
         color: #fff;
@@ -1101,7 +1101,7 @@ html.lenis {
       margin-top: 20px;
       transform: translate3d(0, 0, 0);
       .circle {
-        @include font-call(GmarketSans, 22px, 700);
+        @include font-call(NanumSquareNeo, 22px, 900);
         width: 180px;
         height: 180px;
         color: #333;
@@ -1136,11 +1136,11 @@ html.lenis {
           margin-bottom: 20px;
         }
         &:nth-child(2) {
-          @include font-call(GmarketSans, 22px, 700);
+          @include font-call(NanumSquareNeo, 22px, 900);
           color: #fff;
         }
         &:nth-child(3) {
-          @include font-call(GmarketSans, 16px, 500, 140%);
+          @include font-call(NanumSquareNeo, 16px, 400, 140%);
           color: #ccc;
           margin-top: 10px;
         }
@@ -1168,7 +1168,7 @@ html.lenis {
       fill: var(--detail-svg-icon);
     }
     span {
-      @include font-call(GmarketSans, 16px, 500, 140%);
+      @include font-call(NanumSquareNeo, 16px, 400, 140%);
       color: var(--detail-text);
     }
   }
@@ -1198,7 +1198,7 @@ html.lenis {
           margin-bottom: 20px;
         }
         &:nth-child(2) {
-          @include font-call(GmarketSans, 22px, 700);
+          @include font-call(NanumSquareNeo, 22px, 900);
           color: var(--gradient-type2-1);
           background-image: -webkit-linear-gradient(45deg, var(--gradient-type2-1) 20%, var(--gradient-type2-2) 50%);
           background-clip: text;
@@ -1208,7 +1208,7 @@ html.lenis {
           margin-bottom: 10px;
         }
         &:nth-child(3) {
-          @include font-call(GmarketSans, 16px, 500, 140%);
+          @include font-call(NanumSquareNeo, 16px, 400, 140%);
           color: var(--gradient-type2-text);
           word-break: break-word;
         }
@@ -1243,11 +1243,11 @@ html.lenis {
         color: var(--detail-text);
         margin-bottom: 10px;
         span {
-          @include font-call(GmarketSans, 18px, 500);
+          @include font-call(NanumSquareNeo, 18px, 500);
         }
       }
       dd {
-        @include font-call(GmarketSans, 14px, 500, 160%);
+        @include font-call(NanumSquareNeo, 14px, 500, 160%);
         color: var(--text-secondary);
       }
     }
@@ -1261,7 +1261,7 @@ html.lenis {
         cursor: pointer;
         .label {
           @include flex(inline-flex, null, null, center);
-          @include font-call(GmarketSans, 14px, 500);
+          @include font-call(NanumSquareNeo, 14px, 500);
           flex: none;
           height: 28px;
           padding: 0 10px;
@@ -1275,7 +1275,7 @@ html.lenis {
           }
         }
         .subject {
-          @include font-call(GmarketSans, 18px, 500);
+          @include font-call(NanumSquareNeo, 18px, 500);
           color: var(--text-primary);
           line-height: 140%;
         }
@@ -1289,7 +1289,7 @@ html.lenis {
         }
       }
       &-body {
-        @include font-call(GmarketSans, 16px, 500, 145%);
+        @include font-call(NanumSquareNeo, 16px, 500, 145%);
         padding: 30px;
         margin-top: 20px;
         border: {
@@ -1352,7 +1352,7 @@ html.lenis {
       @include position(relative, 0, 0, 0, 0, 1);
     }
     .title {
-      @include font-call(GmarketSans, 42px, 700, 120%);
+      @include font-call(NanumSquareNeo, 42px, 700, 120%);
       color: #fff;
       text-shadow: 0px 0px 5px rgba(#000, 0.5);
       margin-bottom: 30px;
@@ -1366,7 +1366,7 @@ html.lenis {
 // * buttons
 .btn-recruit-apply {
   @include flex(flex, null, null, center, null, null, center);
-  @include font-call(GmarketSans, 18px, 500);
+  @include font-call(NanumSquareNeo, 18px, 400);
   width: 100%;
   max-width: 320px;
   height: 52px;
@@ -1407,7 +1407,7 @@ html.lenis {
         radius: 16px;
       }
       p {
-        @include font-call(GmarketSans, 22px, 700);
+        @include font-call(NanumSquareNeo, 22px, 900);
         color: var(--location-text);
         margin-top: 20px;
       }
@@ -1438,7 +1438,7 @@ html.lenis {
       fill: var(--detail-svg-icon);
     }
     span {
-      @include font-call(GmarketSans, 16px, 500, 140%);
+      @include font-call(NanumSquareNeo, 16px, 400, 140%);
     }
   }
 }
@@ -1683,7 +1683,7 @@ body {
   &-header {
     @include flex(flex, null, null, center);
     @include border(bottom, 1px, solid, var(--modal-border));
-    @include font-call(GmarketSans, 20px, 500);
+    @include font-call(NanumSquareNeo, 20px, 400);
     @include position(relative);
     flex: none;
     height: 72px;
@@ -1730,7 +1730,7 @@ body {
   }
   .btn-apply {
     @include flex(flex, null, null, center, null, null, center);
-    @include font-call(GmarketSans, 18px, 500);
+    @include font-call(NanumSquareNeo, 18px, 400);
     width: 100%;
     max-width: 320px;
     height: 52px;
@@ -1814,20 +1814,20 @@ body {
 
 // ! common
 .section-title1 {
-  @include font-call(GmarketSans, 42px, 700);
+  @include font-call(NanumSquareNeo, 42px, 900);
   color: var(--title-primary);
 }
 .section-title2 {
-  @include font-call(GmarketSans, 32px, 700);
+  @include font-call(NanumSquareNeo, 32px, 900);
   color: var(--title-secondary);
 }
 .section-subtitle1 {
-  @include font-call(GmarketSans, 26px, 500);
+  @include font-call(NanumSquareNeo, 26px, 400);
   color: var(--sub-primary);
   margin-top: 10px;
 }
 .section-subtitle2 {
-  @include font-call(GmarketSans, 22px, 500);
+  @include font-call(NanumSquareNeo, 22px, 400);
   color: var(--sub-secondary);
   margin: {
     top: 10px;
@@ -1947,7 +1947,7 @@ body {
     }
     .recruit-apply {
       .title {
-        @include font-call(GmarketSans, 32px, 700, 120%);
+        @include font-call(NanumSquareNeo, 32px, 700, 120%);
       }
       .bg {
         background: {
@@ -1957,7 +1957,7 @@ body {
     }
   }
   .btn-recruit-apply {
-    @include font-call(GmarketSans, 16px, 500);
+    @include font-call(NanumSquareNeo, 16px, 400);
     height: 46px;
   }
   #location {
@@ -2075,10 +2075,10 @@ body {
         p {
           text-align: left;
           &:nth-child(1) {
-            @include font-call(GmarketSans, clamp(24px, 768px, 2.997vw), 700, 140%);
+            @include font-call(NanumSquareNeo, clamp(24px, 768px, 2.997vw), 900, 140%);
           }
           &:nth-child(2) {
-            @include font-call(GmarketSans, clamp(14px, 768px, 2.452vw), 500, 140%);
+            @include font-call(NanumSquareNeo, clamp(14px, 768px, 2.452vw), 400, 140%);
           }
         }
       }
@@ -2090,16 +2090,18 @@ body {
     }
     .history-detail-info {
       .title {
-        @include font-call(GmarketSans, clamp(24px, 768px, 2.997vw), 700, 140%);
+        @include font-call(NanumSquareNeo, clamp(24px, 768px, 2.997vw), 900, 140%);
       }
       .history-list {
+        flex: 0 0 100%;
+        margin-left: 0;
         dl {
           dt {
-            @include font-call(GmarketSans, clamp(18px, 768px, 2.452vw), 700, 140%);
+            @include font-call(NanumSquareNeo, clamp(18px, 768px, 2.452vw), 900, 140%);
             margin-bottom: 10px;
           }
           dd {
-            @include font-call(GmarketSans, clamp(14px, 768px, 2.452vw), 500, 140%);
+            @include font-call(NanumSquareNeo, clamp(14px, 768px, 2.452vw), 400, 140%);
           }
           + dl {
             margin-top: 20px;
@@ -2122,10 +2124,10 @@ body {
       }
       p {
         &:nth-child(2) {
-          @include font-call(GmarketSans, clamp(18px, 768px, 2.997vw), 700, 140%);
+          @include font-call(NanumSquareNeo, clamp(18px, 768px, 2.997vw), 900, 140%);
         }
         &:nth-child(3) {
-          @include font-call(GmarketSans, clamp(14px, 768px, 2.452vw), 700, 140%);
+          @include font-call(NanumSquareNeo, clamp(14px, 768px, 2.452vw), 900, 140%);
         }
       }
     }
@@ -2134,7 +2136,7 @@ body {
         gap: 15px 0;
         flex-direction: column;
         .circle {
-          @include font-call(GmarketSans, clamp(16px, 768px, 2.997vw), 700);
+          @include font-call(NanumSquareNeo, clamp(16px, 768px, 2.997vw), 900);
           flex: none;
           width: 100%;
           height: auto;
@@ -2177,12 +2179,12 @@ body {
       .my {
         margin-top: 110px;
         .circle {
-          @include font-call(GmarketSans, clamp(20px, 768px, 4.360vw), 700);
+          @include font-call(NanumSquareNeo, clamp(20px, 768px, 4.360vw), 900);
           width: max(180px, calc(240 / var(--cal-width-w)));
           height: max(180px, calc(240 / var(--cal-width-w)));
           padding-top: max(20px, calc(20 / var(--cal-width-w)));
           span {
-            @include font-call(GmarketSans, clamp(16px, 768px, 2.180vw), 700, 140%);
+            @include font-call(NanumSquareNeo, clamp(16px, 768px, 2.180vw), 900, 140%);
             margin-top: 10px;
           }
         }
@@ -2190,7 +2192,7 @@ body {
       .transfer {
         margin-top: 20px;
         .text {
-          @include font-call(GmarketSans, clamp(16px, 768px, 2.725vw), 700);
+          @include font-call(NanumSquareNeo, clamp(16px, 768px, 2.725vw), 900);
           height: max(32px, calc(52 / var(--cal-width-w)));
           padding: 20px;
           border: {
@@ -2223,7 +2225,7 @@ body {
       }
       .customer {
         .circle {
-          @include font-call(GmarketSans, clamp(16px, 768px, 2.725vw), 700);
+          @include font-call(NanumSquareNeo, clamp(16px, 768px, 2.725vw), 900);
           width: 100%;
           height: auto;
           padding: 20px;
@@ -2246,7 +2248,7 @@ body {
         margin-right: max(5px, calc(8 / var(--cal-width-w)));
       }
       span {
-        @include font-call(GmarketSans, clamp(13px, 768px, 2.180vw), 500, 140%);
+        @include font-call(NanumSquareNeo, clamp(13px, 768px, 2.180vw), 400, 140%);
       }
     }
   }
@@ -2264,10 +2266,10 @@ body {
       }
       p {
         &:nth-child(2) {
-          @include font-call(GmarketSans, clamp(18px, 768px, 2.997vw), 700, 140%);
+          @include font-call(NanumSquareNeo, clamp(18px, 768px, 2.997vw), 900, 140%);
         }
         &:nth-child(3) {
-          @include font-call(GmarketSans, clamp(14px, 768px, 2.452vw), 700, 140%);
+          @include font-call(NanumSquareNeo, clamp(14px, 768px, 2.452vw), 900, 140%);
         }
       }
     }
@@ -2280,12 +2282,12 @@ body {
         }
         dt {
           span {
-            @include font-call(GmarketSans, clamp(16px, 768px, 2.452vw), 500);
+            @include font-call(NanumSquareNeo, clamp(16px, 768px, 2.452vw), 500);
           }
         }
         dd {
           span {
-            @include font-call(GmarketSans, clamp(12px, 768px, 1.907vw), 500);
+            @include font-call(NanumSquareNeo, clamp(12px, 768px, 1.907vw), 400);
           }
         }
       }
@@ -2302,13 +2304,13 @@ body {
           min-width: 0;
           padding-right: 20px;
           .label {
-            @include font-call(GmarketSans, clamp(12px, 768px, 1.907vw), 500);
+            @include font-call(NanumSquareNeo, clamp(12px, 768px, 1.907vw), 500);
             height: max(22px, calc(28 / var(--cal-width-w)));
             padding: 0 max(5px, calc(10 / var(--cal-width-w)));
             margin-bottom: 5px;
           }
           .subject {
-            @include font-call(GmarketSans, clamp(16px, 768px, 2.452vw), 500);
+            @include font-call(NanumSquareNeo, clamp(16px, 768px, 2.452vw), 500);
           }
           .svg-icon {
             @include position(absolute, 50%, 0, null, null, 1, null, -50%);
@@ -2316,7 +2318,7 @@ body {
           }
         }
         &-body {
-          @include font-call(GmarketSans, clamp(14px, 768px, 2.180vw), 500);
+          @include font-call(NanumSquareNeo, clamp(14px, 768px, 2.180vw), 400);
           padding: max(20px, calc(20 / var(--cal-width-w)));
           margin-top: max(10px, calc(10 / var(--cal-width-w)));
           li {
@@ -2346,7 +2348,7 @@ body {
       .item {
         flex: 0 0 100%;
         p {
-          @include font-call(GmarketSans, clamp(18px, 768px, 2.997vw), 700);
+          @include font-call(NanumSquareNeo, clamp(18px, 768px, 2.997vw), 900);
         }
       }
     }
@@ -2367,7 +2369,7 @@ body {
         margin-right: max(5px, calc(8 / var(--cal-width-w)));
       }
       span {
-        @include font-call(GmarketSans, clamp(13px, 768px, 2.180vw), 500, 140%);
+        @include font-call(NanumSquareNeo, clamp(13px, 768px, 2.180vw), 400, 140%);
       }
     }
   }
@@ -2382,14 +2384,14 @@ body {
         &:not(:first-child):not(:last-child) {
           span {
             &:not(.footer-logo) {
-              @include font-call(GmarketSans, clamp(12px, 768px, 1.823vw), 500);
+              @include font-call(NanumSquareNeo, clamp(12px, 768px, 1.823vw), 400);
             }
           }
         }
         &:last-child {
           span {
             &:not(.footer-logo) {
-              @include font-call(GmarketSans, clamp(11px, 768px, 1.823vw), 500);
+              @include font-call(NanumSquareNeo, clamp(11px, 768px, 1.823vw), 400);
             }
           }
         }
@@ -2467,16 +2469,16 @@ body {
   }
 
   .section-title1 {
-    @include font-call(GmarketSans, clamp(32px, 768px, 5.722vw), 700);
+    @include font-call(NanumSquareNeo, clamp(32px, 768px, 5.722vw), 900);
   }
   .section-title2 {
-    @include font-call(GmarketSans, clamp(24px, 768px, 4.360vw), 700);
+    @include font-call(NanumSquareNeo, clamp(24px, 768px, 4.360vw), 900);
   }
   .section-subtitle1 {
-    @include font-call(GmarketSans, clamp(20px, 768px, 3.542vw), 500);
+    @include font-call(NanumSquareNeo, clamp(20px, 768px, 3.542vw), 400);
   }
   .section-subtitle2 {
-    @include font-call(GmarketSans, clamp(18px, 768px, 2.997vw), 500);
+    @include font-call(NanumSquareNeo, clamp(18px, 768px, 2.997vw), 400);
     margin: {
       top: 10px;
       bottom: 30px;

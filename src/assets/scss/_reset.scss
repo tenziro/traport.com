@@ -28,10 +28,10 @@ body {
   min-height: 100dvh;
   overflow-x: hidden;
   font: {
-    family: 'GmarketSans', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    family: 'NanumSquareNeo', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
       'Apple SD Gothic Neo', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
       sans-serif;
-    weight: 500;
+    weight: 400;
     feature-settings: 'tnum';
     variant-numeric: tabular-nums;
   }
@@ -102,8 +102,6 @@ img {
 mark {
   background: 0 0;
   color: inherit;
-  font-family: Pretendard, sans-serif;
-  font-weight: normal;
 }
 sup {
   vertical-align: baseline;
@@ -189,7 +187,7 @@ summary {
 }
 strong {
   font: {
-    weight: 700;
+    weight: 900;
   }
 }
 .checkbox,
