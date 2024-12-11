@@ -46,12 +46,12 @@ const traport = {
   motionImage: function () {
     let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const backgrounds = [
-      '../assets/images/img/bg-visual1.jpg',
-      '../assets/images/img/bg-visual2.jpg',
-      '../assets/images/img/bg-visual3.jpg',
-      '../assets/images/img/bg-visual4.jpg',
-      '../assets/images/img/bg-visual5.jpg',
-      '../assets/images/img/bg-visual6.jpg'
+      'assets/images/img/bg-visual1.jpg',
+      'assets/images/img/bg-visual2.jpg',
+      'assets/images/img/bg-visual3.jpg',
+      'assets/images/img/bg-visual4.jpg',
+      'assets/images/img/bg-visual5.jpg',
+      'assets/images/img/bg-visual6.jpg'
     ];
     const $backgroundItems = $('.visual-item');
     let currentIndex = 0;
@@ -281,7 +281,7 @@ const traport = {
         this.saveLanguageToLocalStorage();
       }
       loadLanguageData(callback) {
-        $.getJSON('../assets/js/languages.json', (data) => {
+        $.getJSON('assets/js/languages.json', (data) => {
           this.languageData = data;
           if (typeof callback === "function") {
             callback();
